@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Network Topology Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <style>
+        body { margin: 0; background: #f0f0f0; }
+        #viewer { width: 100vw; height: 100vh; }
+        #info { position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,0.8); padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div id="viewer"></div>
+    <div id="info">
+        <h3>Network Topology Viewer</h3>
+        <p>Devices: 3 | Connections: 2</p>
+        <p>Use mouse to orbit, zoom, and pan</p>
+    </div>
+
+    <script>
+        // Topology data
+        const devices = [
+  {
+    "id": "SW001",
+    "name": "Core Switch",
+    "type": "switch",
+    "vendor": "fortinet"
+  },
+  {
+    "id": "AP001",
+    "name": "Access Point",
+    "type": "access_point",
+    "vendor": "fortinet"
+  },
+  {
+    "id": "FW001",
+    "name": "Firewall",
+    "type": "router",
+    "vendor": "fortinet"
+  }
+];
+        const connections = [
+  [
+    "SW001",
+    "AP001"
+  ],
+  [
+    "FW001",
+    "SW001"
+  ]
+];
+        const layout = {
+  "positions": {
+    "FW001": {
+      "x": -75.0,
+      "y": 0,
+      "z": -43.437266192024325,
+      "layer": "core"
+    },
+    "SW001": {
+      "x": -75.0,
+      "y": 200,
+      "z": 44.56374607434594,
+      "layer": "distribution"
+    },
+    "AP001": {
+      "x": -75.0,
+      "y": 400,
+      "z": 47.30947142318762,
+      "layer": "access"
+    }
+  },
+  "layers": [
+    "core",
+    "distribution",
+    "access"
+  ],
+  "dimensions": {
+    "width": 150,
+    "height": 600,
+    "depth": 100
+  }
+};
+
+        // Three.js scene setup
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xf0f0f0);
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(200, 200, 200);
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('viewer').appendChild(renderer.domElement);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(100, 100, 50);
+        scene.add(directionalLight);
+
+        // Add devices
+        const deviceGeometry = new THREE.BoxGeometry(10, 10, 10);
+        const deviceMaterial = new THREE.MeshLambertMaterial({ color: 0x4a90e2 });
+
+        devices.forEach((device, index) => {
+            const pos = layout.positions ? layout.positions[device.id] : {x: index * 50, y: 0, z: 0};
+
+            const mesh = new THREE.Mesh(deviceGeometry, deviceMaterial);
+            mesh.position.set(pos.x || 0, pos.y || 0, pos.z || 0);
+            mesh.userData = device;
+            scene.add(mesh);
+
+            // Add label
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            context.font = '24px Arial';
+            context.fillStyle = 'rgba(255,255,255,1)';
+            context.fillText(device.name, 0, 24);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.set(pos.x || 0, pos.y + 20 || 20, pos.z || 0);
+            scene.add(sprite);
+        });
+
+        // Add connections
+        connections.forEach(connection => {
+            const sourcePos = layout.positions ? layout.positions[connection.source] : {x: 0, y: 0, z: 0};
+            const targetPos = layout.positions ? layout.positions[connection.target] : {x: 100, y: 0, z: 0};
+
+            const points = [
+                new THREE.Vector3(sourcePos.x || 0, sourcePos.y || 0, sourcePos.z || 0),
+                new THREE.Vector3(targetPos.x || 0, targetPos.y || 0, targetPos.z || 0)
+            ];
+
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const material = new THREE.LineBasicMaterial({ color: 0x666666, linewidth: 2 });
+            const line = new THREE.Line(geometry, material);
+            scene.add(line);
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

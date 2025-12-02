@@ -1,0 +1,96 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Integrated Network Platform"
+  },
+  "scenes": [
+    {
+      "name": "NetworkTopology",
+      "nodes": []
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Core Switch",
+      "translation": [
+        -75.0,
+        200,
+        44.56374607434594
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "Access Point",
+      "translation": [
+        -75.0,
+        400,
+        47.30947142318762
+      ],
+      "mesh": 1
+    },
+    {
+      "name": "Firewall",
+      "translation": [
+        -75.0,
+        0,
+        -43.437266192024325
+      ],
+      "mesh": 2
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Mesh_0",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0
+          },
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Mesh_1",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0
+          },
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Mesh_2",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0
+          },
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "DeviceMaterial",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.7,
+          0.7,
+          0.9,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      }
+    }
+  ],
+  "textures": [],
+  "images": [],
+  "buffers": [],
+  "bufferViews": [],
+  "accessors": []
+}

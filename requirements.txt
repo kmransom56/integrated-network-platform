@@ -1,0 +1,22 @@
+# Core dependencies
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# Data processing
+requests>=2.31.0
+httpx>=0.25.0
+orjson>=3.9.0
+pyyaml>=6.0
+
+# Development and testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Optional: For enhanced image processing (uncomment if needed)
+# Pillow>=10.0.0
+# cairosvg>=2.7.0
+
+# Optional: For 3D model processing (uncomment if needed)
+# pygltflib>=1.0.0
