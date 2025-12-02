@@ -1,0 +1,205 @@
+{
+  "devices": [
+    {
+      "id": "cloud",
+      "label": "Internet",
+      "type": "cloud",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -20.0,
+      "model3d": "assets/models/device_generic.glb",
+      "device_type": "client",
+      "icon": "assets/icons/device_generic.svg",
+      "processed_at": "real_data",
+      "processing_version": "integrated-v1.0",
+      "data_source": "network_map_3d",
+      "position_2d": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "id": "fg1",
+      "label": "Fortigate Firewall",
+      "mac": "00:09:18:11:22:33",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -5.0,
+      "device_type": "firewall",
+      "icon": "assets/icons/fortigate.svg",
+      "model3d": "assets/models/fortinet/FG-600E.glb",
+      "processed_at": "real_data",
+      "processing_version": "integrated-v1.0",
+      "data_source": "network_map_3d",
+      "position_2d": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "id": "fg2",
+      "label": "FORTIGATE",
+      "mac": "00:09:18:44:55:66",
+      "x": 5.0,
+      "y": 0.0,
+      "z": -5.0,
+      "device_type": "firewall",
+      "icon": "assets/icons/fortigate.svg",
+      "model3d": "assets/models/fortinet/FG-600E.glb",
+      "processed_at": "real_data",
+      "processing_version": "integrated-v1.0",
+      "data_source": "network_map_3d",
+      "position_2d": {
+        "x": 5.0,
+        "y": 0.0
+      }
+    },
+    {
+      "id": "sw1",
+      "label": "Switch",
+      "mac": "00:09:1A:11:22:33",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -10.0,
+      "device_type": "switch",
+      "icon": "assets/icons/fortiswitch.svg",
+      "model3d": "assets/models/fortinet/FS-148E.glb",
+      "processed_at": "real_data",
+      "processing_version": "integrated-v1.0",
+      "data_source": "network_map_3d",
+      "position_2d": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "id": "ap1",
+      "label": "FortiAP",
+      "mac": "F4:6D:04:11:22:33",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -15.0,
+      "device_type": "access_point",
+      "icon": "assets/icons/fortiap.svg",
+      "model3d": "assets/models/fortinet/FAP-432F.glb",
+      "processed_at": "real_data",
+      "processing_version": "integrated-v1.0",
+      "data_source": "network_map_3d",
+      "position_2d": {
+        "x": 0.0,
+        "y": 0.0
+      }
+    },
+    {
+      "id": "wd1",
+      "label": "Desktop PC 1",
+      "x": 5.0,
+      "y": 0.0,
+      "z": -20.0,
+      "device_type": "client",
+      "icon": "assets/icons/device_generic.svg",
+      "model3d": "assets/models/device_generic.glb",
+      "processed_at": "real_data",
+      "processing_version": "integrated-v1.0",
+      "data_source": "network_map_3d",
+      "position_2d": {
+        "x": 5.0,
+        "y": 0.0
+      }
+    },
+    {
+      "id": "wd2",
+      "label": "Desktop PC 2",
+      "x": 10.0,
+      "y": 0.0,
+      "z": -20.0,
+      "device_type": "client",
+      "icon": "assets/icons/device_generic.svg",
+      "model3d": "assets/models/device_generic.glb",
+      "processed_at": "real_data",
+      "processing_version": "integrated-v1.0",
+      "data_source": "network_map_3d",
+      "position_2d": {
+        "x": 10.0,
+        "y": 0.0
+      }
+    },
+    {
+      "id": "wld1",
+      "label": "Laptop 1",
+      "x": 15.0,
+      "y": 0.0,
+      "z": -20.0,
+      "model3d": "assets/models/laptop.glb",
+      "device_type": "client",
+      "icon": "assets/icons/device_generic.svg",
+      "processed_at": "real_data",
+      "processing_version": "integrated-v1.0",
+      "data_source": "network_map_3d",
+      "position_2d": {
+        "x": 15.0,
+        "y": 0.0
+      }
+    },
+    {
+      "id": "wld2",
+      "label": "Mobile Phone",
+      "x": 20.0,
+      "y": 0.0,
+      "z": -20.0,
+      "model3d": "assets/models/laptop.glb",
+      "device_type": "client",
+      "icon": "assets/icons/device_generic.svg",
+      "processed_at": "real_data",
+      "processing_version": "integrated-v1.0",
+      "data_source": "network_map_3d",
+      "position_2d": {
+        "x": 20.0,
+        "y": 0.0
+      }
+    }
+  ],
+  "connections": [
+    [
+      "cloud",
+      "fg1"
+    ],
+    [
+      "fg1",
+      "fg2"
+    ],
+    [
+      "fg2",
+      "sw1"
+    ],
+    [
+      "fg2",
+      "ap1"
+    ],
+    [
+      "sw1",
+      "wd1"
+    ],
+    [
+      "sw1",
+      "wd2"
+    ],
+    [
+      "ap1",
+      "wld1"
+    ],
+    [
+      "ap1",
+      "wld2"
+    ]
+  ],
+  "layout": {
+    "type": "2d_force_directed"
+  },
+  "metadata": {
+    "total_devices": 9,
+    "total_connections": 8,
+    "visualization_type": "2d",
+    "data_source": "network_map_3d"
+  }
+}

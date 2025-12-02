@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+    <!-- Device type styles -->
+    <style>
+      .device { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; }
+      .firewall { fill: #ffebee; stroke: #d32f2f; stroke-width: 2; }
+      .switch { fill: #e8f5e8; stroke: #388e3c; stroke-width: 2; }
+      .access-point { fill: #fff3e0; stroke: #f57c00; stroke-width: 2; }
+      .cloud { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; }
+      .connection { stroke: #666; stroke-width: 2; }
+      .device-label { font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; fill: #333; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#fafafa" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="20" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">
+    Network Topology Map
+  </text>
+  <text x="20" y="50" font-family="Arial, sans-serif" font-size="12" fill="#666">
+    Generated from real device data • 9 devices • 8 connections
+  </text>
+
+  <!-- Connection cloud -> fg1 -->
+  <line x1="100.0" y1="100.0"
+        x2="100.0" y2="100.0"
+        class="connection" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection fg1 -> fg2 -->
+  <line x1="100.0" y1="100.0"
+        x2="105.0" y2="100.0"
+        class="connection" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection fg2 -> sw1 -->
+  <line x1="105.0" y1="100.0"
+        x2="100.0" y2="100.0"
+        class="connection" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection fg2 -> ap1 -->
+  <line x1="105.0" y1="100.0"
+        x2="100.0" y2="100.0"
+        class="connection" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection sw1 -> wd1 -->
+  <line x1="100.0" y1="100.0"
+        x2="105.0" y2="100.0"
+        class="connection" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection sw1 -> wd2 -->
+  <line x1="100.0" y1="100.0"
+        x2="110.0" y2="100.0"
+        class="connection" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection ap1 -> wld1 -->
+  <line x1="100.0" y1="100.0"
+        x2="115.0" y2="100.0"
+        class="connection" marker-end="url(#arrowhead)"/>
+
+  <!-- Connection ap1 -> wld2 -->
+  <line x1="100.0" y1="100.0"
+        x2="120.0" y2="100.0"
+        class="connection" marker-end="url(#arrowhead)"/>
+
+  <!-- Device Internet -->
+  <rect x="60.0" y="80.0" width="80" height="40"
+        class="device" rx="8"/>
+  <text x="100.0" y="105.0" class="device-label">
+    Internet
+  </text>
+
+  <!-- Device Fortigate Firewall -->
+  <rect x="60.0" y="80.0" width="80" height="40"
+        class="firewall" rx="8"/>
+  <text x="100.0" y="105.0" class="device-label">
+    Fortigate Firewall
+  </text>
+
+  <!-- Device FORTIGATE -->
+  <rect x="65.0" y="80.0" width="80" height="40"
+        class="firewall" rx="8"/>
+  <text x="105.0" y="105.0" class="device-label">
+    FORTIGATE
+  </text>
+
+  <!-- Device Switch -->
+  <rect x="60.0" y="80.0" width="80" height="40"
+        class="switch" rx="8"/>
+  <text x="100.0" y="105.0" class="device-label">
+    Switch
+  </text>
+
+  <!-- Device FortiAP -->
+  <rect x="60.0" y="80.0" width="80" height="40"
+        class="access-point" rx="8"/>
+  <text x="100.0" y="105.0" class="device-label">
+    FortiAP
+  </text>
+
+  <!-- Device Desktop PC 1 -->
+  <rect x="65.0" y="80.0" width="80" height="40"
+        class="device" rx="8"/>
+  <text x="105.0" y="105.0" class="device-label">
+    Desktop PC 1
+  </text>
+
+  <!-- Device Desktop PC 2 -->
+  <rect x="70.0" y="80.0" width="80" height="40"
+        class="device" rx="8"/>
+  <text x="110.0" y="105.0" class="device-label">
+    Desktop PC 2
+  </text>
+
+  <!-- Device Laptop 1 -->
+  <rect x="75.0" y="80.0" width="80" height="40"
+        class="device" rx="8"/>
+  <text x="115.0" y="105.0" class="device-label">
+    Laptop 1
+  </text>
+
+  <!-- Device Mobile Phone -->
+  <rect x="80.0" y="80.0" width="80" height="40"
+        class="device" rx="8"/>
+  <text x="120.0" y="105.0" class="device-label">
+    Mobile Phone
+  </text>
+
+  <!-- Legend -->
+  <g transform="translate(600,80)">
+    <rect x="0" y="0" width="180" height="140" fill="white" stroke="#ccc" stroke-width="1" rx="5"/>
+    <text x="10" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Legend</text>
+
+    <!-- Firewall -->
+    <rect x="10" y="30" width="20" height="12" class="firewall"/>
+    <text x="40" y="40" font-family="Arial, sans-serif" font-size="11" fill="#333">Firewall</text>
+
+    <!-- Switch -->
+    <rect x="10" y="50" width="20" height="12" class="switch"/>
+    <text x="40" y="60" font-family="Arial, sans-serif" font-size="11" fill="#333">Switch</text>
+
+    <!-- Access Point -->
+    <rect x="10" y="70" width="20" height="12" class="access-point"/>
+    <text x="40" y="80" font-family="Arial, sans-serif" font-size="11" fill="#333">Access Point</text>
+
+    <!-- Cloud -->
+    <rect x="10" y="90" width="20" height="12" class="cloud"/>
+    <text x="40" y="100" font-family="Arial, sans-serif" font-size="11" fill="#333">Internet</text>
+
+    <!-- Device -->
+    <rect x="10" y="110" width="20" height="12" class="device"/>
+    <text x="40" y="120" font-family="Arial, sans-serif" font-size="11" fill="#333">Device</text>
+  </g>
+</svg>
