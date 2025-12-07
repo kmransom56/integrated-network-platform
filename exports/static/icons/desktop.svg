@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .desktop-body { fill: #e8f5e8; stroke: #388e3c; stroke-width: 2; }
+      .desktop-screen { fill: #ffffff; stroke: #388e3c; stroke-width: 2; }
+      .desktop-base { fill: #e8f5e8; stroke: #388e3c; stroke-width: 2; }
+      .desktop-details { fill: #388e3c; }
+    </style>
+  </defs>
+
+  <!-- Desktop base -->
+  <rect x="20" y="45" width="24" height="6" rx="1" class="desktop-base"/>
+
+  <!-- Desktop tower -->
+  <rect x="44" y="20" width="12" height="25" rx="2" class="desktop-body"/>
+
+  <!-- Tower details -->
+  <circle cx="47" cy="25" r="1" class="desktop-details"/>
+  <circle cx="50" cy="25" r="1" class="desktop-details"/>
+  <rect x="46" y="28" width="8" height="2" rx="1" fill="#388e3c"/>
+  <rect x="46" y="32" width="8" height="2" rx="1" fill="#388e3c"/>
+  <circle cx="50" cy="38" r="2" class="desktop-details"/>
+
+  <!-- Monitor -->
+  <rect x="8" y="8" width="32" height="24" rx="2" class="desktop-screen"/>
+
+  <!-- Screen content -->
+  <rect x="12" y="12" width="24" height="16" rx="1" fill="#e8f5e8"/>
+  <rect x="16" y="16" width="16" height="8" rx="1" fill="#388e3c"/>
+
+  <!-- Monitor stand -->
+  <rect x="22" y="32" width="4" height="8" rx="1" class="desktop-body"/>
+  <rect x="18" y="38" width="12" height="2" rx="1" class="desktop-body"/>
+</svg>

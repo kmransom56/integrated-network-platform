@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- MS220-24P Switch Body -->
+  <rect x="4" y="8" width="112" height="24" rx="2" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  
+  <!-- Front Panel -->
+  <rect x="6" y="10" width="108" height="20" rx="1" fill="#2D3B52"/>
+  
+  <!-- Port Panel Section -->
+  <rect x="8" y="12" width="80" height="16" fill="#374151" rx="1"/>
+  
+  <!-- Port LEDs (24 ports in 2x12 grid) -->
+  <g id="ports">
+    <!-- Row 1: Ports 1-12 -->
+    <rect x="10" y="14" width="2" height="2" fill="#10B981"/>
+    <rect x="14" y="14" width="2" height="2" fill="#10B981"/>
+    <rect x="18" y="14" width="2" height="2" fill="#10B981"/>
+    <rect x="22" y="14" width="2" height="2" fill="#10B981"/>
+    <rect x="26" y="14" width="2" height="2" fill="#10B981"/>
+    <rect x="30" y="14" width="2" height="2" fill="#10B981"/>
+    <rect x="34" y="14" width="2" height="2" fill="#10B981"/>
+    <rect x="38" y="14" width="2" height="2" fill="#10B981"/>
+    <rect x="42" y="14" width="2" height="2" fill="#F59E0B"/>
+    <rect x="46" y="14" width="2" height="2" fill="#F59E0B"/>
+    <rect x="50" y="14" width="2" height="2" fill="#F59E0B"/>
+    <rect x="54" y="14" width="2" height="2" fill="#F59E0B"/>
+    
+    <!-- Row 2: Ports 13-24 -->
+    <rect x="10" y="18" width="2" height="2" fill="#10B981"/>
+    <rect x="14" y="18" width="2" height="2" fill="#10B981"/>
+    <rect x="18" y="18" width="2" height="2" fill="#10B981"/>
+    <rect x="22" y="18" width="2" height="2" fill="#10B981"/>
+    <rect x="26" y="18" width="2" height="2" fill="#10B981"/>
+    <rect x="30" y="18" width="2" height="2" fill="#10B981"/>
+    <rect x="34" y="18" width="2" height="2" fill="#10B981"/>
+    <rect x="38" y="18" width="2" height="2" fill="#10B981"/>
+    <rect x="42" y="18" width="2" height="2" fill="#F59E0B"/>
+    <rect x="46" y="18" width="2" height="2" fill="#F59E0B"/>
+    <rect x="50" y="18" width="2" height="2" fill="#F59E0B"/>
+    <rect x="54" y="18" width="2" height="2" fill="#F59E0B"/>
+    
+    <!-- Port Labels -->
+    <text x="15" y="25" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="3">1-12</text>
+    <text x="45" y="25" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="3">13-24</text>
+  </g>
+  
+  <!-- Uplink/SFP+ Ports -->
+  <rect x="60" y="14" width="6" height="4" fill="#4B5563" stroke="#6B7280" stroke-width="0.5"/>
+  <rect x="68" y="14" width="6" height="4" fill="#4B5563" stroke="#6B7280" stroke-width="0.5"/>
+  <rect x="76" y="14" width="6" height="4" fill="#4B5563" stroke="#6B7280" stroke-width="0.5"/>
+  <rect x="84" y="14" width="6" height="4" fill="#4B5563" stroke="#6B7280" stroke-width="0.5"/>
+  
+  <!-- Uplink Status LEDs -->
+  <circle cx="63" cy="20" r="0.5" fill="#10B981"/>
+  <circle cx="71" cy="20" r="0.5" fill="#10B981"/>
+  <circle cx="79" cy="20" r="0.5" fill="#6B7280"/>
+  <circle cx="87" cy="20" r="0.5" fill="#6B7280"/>
+  
+  <!-- System Status Section -->
+  <rect x="92" y="12" width="20" height="16" fill="#1F2937" rx="1"/>
+  
+  <!-- System Status LEDs -->
+  <circle cx="96" cy="15" r="1" fill="#10B981"/>
+  <text x="100" y="16" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="3">PWR</text>
+  
+  <circle cx="96" cy="19" r="1" fill="#10B981"/>
+  <text x="100" y="20" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="3">SYS</text>
+  
+  <circle cx="96" cy="23" r="1" fill="#F59E0B"/>
+  <text x="100" y="24" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="3">FAN</text>
+  
+  <!-- Model Label -->
+  <text x="60" y="35" text-anchor="middle" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="6" font-weight="bold">MS220-24P</text>
+  
+  <!-- Meraki Branding -->
+  <text x="105" y="35" text-anchor="middle" fill="#10B981" font-family="Arial, sans-serif" font-size="5" font-weight="bold">meraki</text>
+  
+  <!-- PoE+ Indicator -->
+  <rect x="8" y="29" width="20" height="3" fill="#F59E0B" rx="1"/>
+  <text x="18" y="31" text-anchor="middle" fill="#1F2937" font-family="Arial, sans-serif" font-size="2" font-weight="bold">PoE+ 185W</text>
+  
+  <!-- Cooling Vents -->
+  <g id="vents">
+    <rect x="5" y="22" width="0.5" height="4" fill="#0F172A"/>
+    <rect x="6" y="22" width="0.5" height="4" fill="#0F172A"/>
+    <rect x="116" y="22" width="0.5" height="4" fill="#0F172A"/>
+    <rect x="115" y="22" width="0.5" height="4" fill="#0F172A"/>
+  </g>
+</svg>

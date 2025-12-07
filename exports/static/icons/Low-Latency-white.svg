@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.7.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Security_Networking" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 192 192" style="enable-background:new 0 0 192 192;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<g id="Lower_Latency">
+	<path class="st0" d="M124,25.3H68c-1.1,0-2-0.9-2-2s0.9-2,2-2h56c1.1,0,2,0.9,2,2S125.1,25.3,124,25.3z"/>
+	<path class="st0" d="M124,48.1H68c-1.1,0-2-0.9-2-2v-9.3c0-1.1,0.9-2,2-2h56c1.1,0,2,0.9,2,2v9.3C126,47.2,125.1,48.1,124,48.1z
+		 M70,44.1h52v-5.3H70V44.1z"/>
+	<path class="st0" d="M124,76.1H68c-1.1,0-2-0.9-2-2V59.6c0-1.1,0.9-2,2-2h56c1.1,0,2,0.9,2,2v14.5C126,75.2,125.1,76.1,124,76.1z
+		 M70,72.1h52V61.6H70V72.1z"/>
+	<path class="st0" d="M96,170.7c-0.5,0-1-0.2-1.4-0.6l-52-50.9c-0.6-0.6-0.8-1.4-0.5-2.2s1-1.2,1.8-1.2h22V87.7c0-1.1,0.9-2,2-2h56
+		c1.1,0,2,0.9,2,2v26.6h22c0.8,0,1.5,0.5,1.9,1.2c0.3,0.8,0.1,1.6-0.4,2.2l-52,52.5C97,170.5,96.5,170.7,96,170.7L96,170.7z
+		 M48.9,119.8L96,165.9l47.2-47.7H124c-1.1,0-2-0.9-2-2V89.7H70v28.1c0,1.1-0.9,2-2,2L48.9,119.8L48.9,119.8z"/>
+</g>
+</svg>

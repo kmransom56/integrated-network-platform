@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Network Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card {
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .viz-preview {
+            height: 200px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Integrated Network Platform</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/docs" target="_blank">API Documentation</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <h1>Network Visualizations</h1>
+                <p class="text-muted">Manage and view 3D network topologies</p>
+            </div>
+            <div class="col-md-4 text-end">
+                <button class="btn btn-primary" onclick="generateDemo()">
+                    <i class="bi bi-plus-circle"></i> Generate New Demo
+                </button>
+                <button class="btn btn-success ms-2" onclick="openDiscoveryModal()">
+                    <i class="bi bi-search"></i> Run Discovery
+                </button>
+                <button class="btn btn-info ms-2" onclick="visualizeDiscovery()">
+                    <i class="bi bi-eye"></i> Visualize Discovery
+                </button>
+            </div>
+        </div>
+
+        <div id="scenes-container" class="row g-4">
+            <!-- Scenes will be loaded here -->
+            <div class="col-12 text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Discovery Modal -->
+    <div class="modal fade" id="discoveryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Run Network Discovery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="discoveryForm">
+                        <div class="mb-3">
+                            <label class="form-label">FortiGate Host/IP</label>
+                            <input type="text" class="form-control" id="fgHost" placeholder="e.g. 192.168.0.254">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" id="fgUser" placeholder="Username">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="fgPass">
+                        </div>
+                        <hr>
+                        <div class="mb-3">
+                            <label class="form-label">Meraki API Key (Optional)</label>
+                            <input type="password" class="form-control" id="merakiKey">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="startDiscovery()">Start Discovery</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ... existing functions ...
+
+        async function openDiscoveryModal() {
+            const modal = new bootstrap.Modal(document.getElementById('discoveryModal'));
+            modal.show();
+
+            // Fetch current config to pre-fill
+            try {
+                const response = await fetch('/config/status');
+                if (response.ok) {
+                    const config = await response.json();
+
+                    // Pre-fill fields if configured
+                    if (config.credentials && config.credentials.fortigate) {
+                        const fg = config.credentials.fortigate;
+                        if (fg.host) document.getElementById('fgHost').value = fg.host;
+                        if (fg.username) document.getElementById('fgUser').value = fg.username;
+                        // Don't pre-fill password for security
+                        if (fg.host && fg.username) {
+                            document.getElementById('fgPass').placeholder = "Configured in .env (leave empty to use)";
+                        }
+                    }
+                }
+            } catch (e) {
+                console.error("Failed to fetch config for pre-fill", e);
+            }
+        }
+
+        async function startDiscovery() {
+            const host = document.getElementById('fgHost').value;
+            const user = document.getElementById('fgUser').value;
+            const pass = document.getElementById('fgPass').value;
+            const apiKey = document.getElementById('merakiKey').value;
+
+            // Allow empty credentials to trigger backend fallback
+            // if (!host && !apiKey) {
+            //    alert('Please provide at least a FortiGate Host or Meraki API Key');
+            //    return;
+            // }
+
+            try {
+                const btn = document.querySelector('#discoveryModal .btn-primary');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Starting...';
+                btn.disabled = true;
+
+                const response = await fetch('/api/v1/devices/collect', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        host: host,
+                        username: user,
+                        password: pass,
+                        api_key: apiKey
+                    })
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert('Discovery started! Check back in a few moments.');
+                    bootstrap.Modal.getInstance(document.getElementById('discoveryModal')).hide();
+                } else {
+                    const err = await response.json();
+                    alert('Failed to start discovery: ' + (err.detail || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error starting discovery');
+            } finally {
+                const btn = document.querySelector('#discoveryModal .btn-primary');
+                if (btn) {
+                    btn.innerHTML = 'Start Discovery';
+                    btn.disabled = false;
+                }
+            }
+        }
+
+        async function loadScenes() {
+            try {
+                const response = await fetch('/api/v1/visualization/scenes');
+                const data = await response.json();
+                const container = document.getElementById('scenes-container');
+
+                container.innerHTML = '';
+
+                if (data.scenes.length === 0) {
+                    container.innerHTML = `
+                        <div class="col-12 text-center py-5">
+                            <h3>No visualizations found</h3>
+                            <p class="text-muted">Click "Generate New Demo" to create one.</p>
+                        </div>`;
+                    return;
+                }
+
+                data.scenes.forEach(scene => {
+                    const date = new Date(scene.modified * 1000).toLocaleString();
+                    const card = `
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="viz-preview text-muted">
+                                    <span style="font-size: 3rem;">🕸️</span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">${scene.name}</h5>
+                                    <p class="card-text">
+                                        <small class="text-muted">Created: ${date}</small><br>
+                                        <span class="badge bg-secondary">${scene.format}</span>
+                                    </p>
+                                    <a href="${scene.url}" class="btn btn-outline-primary w-100" target="_blank">View Visualization</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += card;
+                });
+            } catch (error) {
+                console.error('Error loading scenes:', error);
+                document.getElementById('scenes-container').innerHTML = `
+                    <div class="col-12 text-danger text-center">
+                        Failed to load scenes. Is the API server running?
+                    </div>`;
+            }
+        }
+
+        async function generateDemo() {
+            try {
+                const btn = document.querySelector('button[onclick="generateDemo()"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Generating...';
+                btn.disabled = true;
+
+                const demoData = {
+                    topology_data: {
+                        devices: [
+                            { id: "Core-SW", name: "Core Switch", type: "switch", vendor: "cisco" },
+                            { id: "Dist-SW-1", name: "Distribution Switch 1", type: "switch", vendor: "cisco" },
+                            { id: "Dist-SW-2", name: "Distribution Switch 2", type: "switch", vendor: "cisco" },
+                            { id: "Access-1", name: "Access Point 1", type: "access_point", vendor: "meraki" },
+                            { id: "Access-2", name: "Access Point 2", type: "access_point", vendor: "meraki" },
+                            { id: "FW-Edge", name: "Edge Firewall", type: "router", vendor: "fortinet" }
+                        ],
+                        connections: [
+                            ["FW-Edge", "Core-SW"],
+                            ["Core-SW", "Dist-SW-1"],
+                            ["Core-SW", "Dist-SW-2"],
+                            ["Dist-SW-1", "Access-1"],
+                            ["Dist-SW-2", "Access-2"]
+                        ]
+                    },
+                    format: "html"
+                };
+
+                const response = await fetch('/api/v1/visualization/export', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(demoData)
+                });
+
+                if (response.ok) {
+                    await loadScenes();
+                } else {
+                    alert('Failed to generate demo');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error generating demo');
+            } finally {
+                const btn = document.querySelector('button[onclick="generateDemo()"]');
+                btn.innerHTML = 'Generate New Demo';
+                btn.disabled = false;
+            }
+        }
+
+        async function visualizeDiscovery() {
+            try {
+                const btn = document.querySelector('button[onclick="visualizeDiscovery()"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Processing...';
+                btn.disabled = true;
+
+                const response = await fetch('/api/v1/visualization/generate_from_discovery', {
+                    method: 'POST'
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert(`Generated visualization with ${result.device_count} devices!`);
+                    await loadScenes();
+                } else {
+                    const err = await response.json();
+                    alert('Failed: ' + (err.detail || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error visualizing discovery');
+            } finally {
+                const btn = document.querySelector('button[onclick="visualizeDiscovery()"]');
+                btn.innerHTML = 'Visualize Discovery';
+                btn.disabled = false;
+            }
+        }
+
+        // Load scenes on startup
+        loadScenes();
+    </script>
+</body>
+
+</html>

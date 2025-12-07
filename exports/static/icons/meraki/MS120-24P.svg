@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- MS120-24P Switch Body -->
+  <rect x="4" y="8" width="112" height="24" rx="2" fill="#2E3A59" stroke="#4A5568" stroke-width="1"/>
+  
+  <!-- Front Panel -->
+  <rect x="6" y="10" width="108" height="20" rx="1" fill="#3A4A63"/>
+  
+  <!-- Port LEDs (24 ports) -->
+  <g id="ports">
+    <!-- Row 1: Ports 1-12 -->
+    <rect x="8" y="12" width="2" height="3" fill="#10B981"/>
+    <rect x="12" y="12" width="2" height="3" fill="#10B981"/>
+    <rect x="16" y="12" width="2" height="3" fill="#10B981"/>
+    <rect x="20" y="12" width="2" height="3" fill="#10B981"/>
+    <rect x="24" y="12" width="2" height="3" fill="#10B981"/>
+    <rect x="28" y="12" width="2" height="3" fill="#10B981"/>
+    <rect x="32" y="12" width="2" height="3" fill="#10B981"/>
+    <rect x="36" y="12" width="2" height="3" fill="#10B981"/>
+    <rect x="40" y="12" width="2" height="3" fill="#F59E0B"/>
+    <rect x="44" y="12" width="2" height="3" fill="#F59E0B"/>
+    <rect x="48" y="12" width="2" height="3" fill="#F59E0B"/>
+    <rect x="52" y="12" width="2" height="3" fill="#F59E0B"/>
+    
+    <!-- Row 2: Ports 13-24 -->
+    <rect x="8" y="17" width="2" height="3" fill="#10B981"/>
+    <rect x="12" y="17" width="2" height="3" fill="#10B981"/>
+    <rect x="16" y="17" width="2" height="3" fill="#10B981"/>
+    <rect x="20" y="17" width="2" height="3" fill="#10B981"/>
+    <rect x="24" y="17" width="2" height="3" fill="#10B981"/>
+    <rect x="28" y="17" width="2" height="3" fill="#10B981"/>
+    <rect x="32" y="17" width="2" height="3" fill="#10B981"/>
+    <rect x="36" y="17" width="2" height="3" fill="#10B981"/>
+    <rect x="40" y="17" width="2" height="3" fill="#F59E0B"/>
+    <rect x="44" y="17" width="2" height="3" fill="#F59E0B"/>
+    <rect x="48" y="17" width="2" height="3" fill="#F59E0B"/>
+    <rect x="52" y="17" width="2" height="3" fill="#F59E0B"/>
+  </g>
+  
+  <!-- Uplink Ports (SFP+) -->
+  <rect x="58" y="14" width="8" height="6" fill="#4B5563" stroke="#6B7280" stroke-width="0.5"/>
+  <rect x="68" y="14" width="8" height="6" fill="#4B5563" stroke="#6B7280" stroke-width="0.5"/>
+  <rect x="78" y="14" width="8" height="6" fill="#4B5563" stroke="#6B7280" stroke-width="0.5"/>
+  <rect x="88" y="14" width="8" height="6" fill="#4B5563" stroke="#6B7280" stroke-width="0.5"/>
+  
+  <!-- Status LEDs -->
+  <circle cx="100" cy="17" r="1" fill="#10B981"/>
+  <circle cx="104" cy="17" r="1" fill="#F59E0B"/>
+  <circle cx="108" cy="17" r="1" fill="#EF4444"/>
+  
+  <!-- Model Label -->
+  <text x="60" y="26" text-anchor="middle" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="6">MS120-24P</text>
+  
+  <!-- Meraki Logo Area -->
+  <rect x="98" y="21" width="14" height="7" fill="#1F2937"/>
+  <text x="105" y="26" text-anchor="middle" fill="#10B981" font-family="Arial, sans-serif" font-size="4" font-weight="bold">meraki</text>
+  
+  <!-- Power LED -->
+  <circle cx="110" cy="13" r="1.5" fill="#10B981"/>
+  
+  <!-- Ventilation -->
+  <g id="vents">
+    <rect x="5" y="22" width="1" height="6" fill="#1F2937"/>
+    <rect x="7" y="22" width="1" height="6" fill="#1F2937"/>
+    <rect x="114" y="22" width="1" height="6" fill="#1F2937"/>
+    <rect x="112" y="22" width="1" height="6" fill="#1F2937"/>
+  </g>
+</svg>

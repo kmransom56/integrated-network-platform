@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- MS350-48 Switch Body (Enterprise model) -->
+  <rect x="4" y="8" width="152" height="24" rx="2" fill="#0F172A" stroke="#1F2937" stroke-width="1"/>
+  
+  <!-- Front Panel -->
+  <rect x="6" y="10" width="148" height="20" rx="1" fill="#1F2937"/>
+  
+  <!-- Port Panel Section -->
+  <rect x="8" y="12" width="115" height="16" fill="#374151" rx="1"/>
+  
+  <!-- Port LEDs (48 ports in 2x24 grid) -->
+  <g id="ports">
+    <!-- Row 1: Ports 1-24 -->
+    <rect x="10" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="12.5" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="15" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="17.5" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="20" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="22.5" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="25" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="27.5" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="30" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="32.5" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="35" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="37.5" y="14" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="40" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="42.5" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="45" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="47.5" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="50" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="52.5" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="55" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="57.5" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="60" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="62.5" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="65" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="67.5" y="14" width="1.5" height="1.5" fill="#F59E0B"/>
+    
+    <!-- Row 2: Ports 25-48 -->
+    <rect x="10" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="12.5" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="15" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="17.5" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="20" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="22.5" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="25" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="27.5" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="30" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="32.5" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="35" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="37.5" y="17" width="1.5" height="1.5" fill="#10B981"/>
+    <rect x="40" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="42.5" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="45" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="47.5" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="50" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="52.5" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="55" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="57.5" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="60" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="62.5" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="65" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    <rect x="67.5" y="17" width="1.5" height="1.5" fill="#F59E0B"/>
+    
+    <!-- Port Numbers -->
+    <text x="20" y="21" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="2">1-12</text>
+    <text x="35" y="21" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="2">13-24</text>
+    <text x="50" y="21" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="2">25-36</text>
+    <text x="65" y="21" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="2">37-48</text>
+  </g>
+  
+  <!-- 10G SFP+ Uplink Ports -->
+  <rect x="72" y="14" width="4" height="4" fill="#1E40AF" stroke="#3B82F6" stroke-width="0.5"/>
+  <rect x="78" y="14" width="4" height="4" fill="#1E40AF" stroke="#3B82F6" stroke-width="0.5"/>
+  <rect x="84" y="14" width="4" height="4" fill="#1E40AF" stroke="#3B82F6" stroke-width="0.5"/>
+  <rect x="90" y="14" width="4" height="4" fill="#1E40AF" stroke="#3B82F6" stroke-width="0.5"/>
+  
+  <!-- 10G Port Labels -->
+  <text x="74" y="23" text-anchor="middle" fill="#3B82F6" font-family="Arial, sans-serif" font-size="1.5">49</text>
+  <text x="80" y="23" text-anchor="middle" fill="#3B82F6" font-family="Arial, sans-serif" font-size="1.5">50</text>
+  <text x="86" y="23" text-anchor="middle" fill="#3B82F6" font-family="Arial, sans-serif" font-size="1.5">51</text>
+  <text x="92" y="23" text-anchor="middle" fill="#3B82F6" font-family="Arial, sans-serif" font-size="1.5">52</text>
+  
+  <!-- 10G Status LEDs -->
+  <circle cx="74" cy="20" r="0.5" fill="#3B82F6"/>
+  <circle cx="80" cy="20" r="0.5" fill="#3B82F6"/>
+  <circle cx="86" cy="20" r="0.5" fill="#6B7280"/>
+  <circle cx="92" cy="20" r="0.5" fill="#6B7280"/>
+  
+  <!-- Stacking Ports -->
+  <rect x="96" y="14" width="4" height="4" fill="#7C3AED" stroke="#8B5CF6" stroke-width="0.5"/>
+  <rect x="102" y="14" width="4" height="4" fill="#7C3AED" stroke="#8B5CF6" stroke-width="0.5"/>
+  
+  <!-- Stack Port Labels -->
+  <text x="98" y="23" text-anchor="middle" fill="#8B5CF6" font-family="Arial, sans-serif" font-size="1.5">STK1</text>
+  <text x="104" y="23" text-anchor="middle" fill="#8B5CF6" font-family="Arial, sans-serif" font-size="1.5">STK2</text>
+  
+  <!-- Console Port -->
+  <rect x="108" y="16" width="3" height="2" fill="#4B5563" stroke="#6B7280" stroke-width="0.5"/>
+  <text x="109.5" y="22" text-anchor="middle" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="1.5">CON</text>
+  
+  <!-- Management Port -->
+  <rect x="112" y="16" width="3" height="2" fill="#059669" stroke="#10B981" stroke-width="0.5"/>
+  <text x="113.5" y="22" text-anchor="middle" fill="#10B981" font-family="Arial, sans-serif" font-size="1.5">MGT</text>
+  
+  <!-- USB Port -->
+  <rect x="116" y="16" width="3" height="2" fill="#DC2626" stroke="#EF4444" stroke-width="0.5"/>
+  <text x="117.5" y="22" text-anchor="middle" fill="#EF4444" font-family="Arial, sans-serif" font-size="1.5">USB</text>
+  
+  <!-- System Status Section -->
+  <rect x="128" y="12" width="24" height="16" fill="#0F172A" rx="1"/>
+  
+  <!-- System Status LEDs -->
+  <circle cx="132" cy="15" r="1" fill="#10B981"/>
+  <text x="136" y="16" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="2.5">POWER</text>
+  
+  <circle cx="132" cy="18" r="1" fill="#10B981"/>
+  <text x="136" y="19" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="2.5">STATUS</text>
+  
+  <circle cx="132" cy="21" r="1" fill="#10B981"/>
+  <text x="136" y="22" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="2.5">STACK</text>
+  
+  <circle cx="132" cy="24" r="1" fill="#10B981"/>
+  <text x="136" y="25" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="2.5">FAN</text>
+  
+  <!-- Model Label -->
+  <text x="80" y="35" text-anchor="middle" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="6" font-weight="bold">MS350-48</text>
+  
+  <!-- Meraki Branding -->
+  <text x="130" y="35" text-anchor="middle" fill="#10B981" font-family="Arial, sans-serif" font-size="5" font-weight="bold">meraki</text>
+  
+  <!-- Enterprise Features Indicator -->
+  <rect x="8" y="29" width="35" height="3" fill="#7C3AED" rx="1"/>
+  <text x="25.5" y="31" text-anchor="middle" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="2" font-weight="bold">Layer 3 • Stacking • 10G</text>
+  
+  <!-- Cooling System -->
+  <g id="cooling">
+    <rect x="5" y="18" width="0.5" height="8" fill="#0D1117"/>
+    <rect x="6" y="18" width="0.5" height="8" fill="#0D1117"/>
+    <rect x="7" y="18" width="0.5" height="8" fill="#0D1117"/>
+    <rect x="155" y="18" width="0.5" height="8" fill="#0D1117"/>
+    <rect x="154" y="18" width="0.5" height="8" fill="#0D1117"/>
+    <rect x="153" y="18" width="0.5" height="8" fill="#0D1117"/>
+  </g>
+  
+  <!-- Rack Ears -->
+  <rect x="2" y="12" width="2" height="16" fill="#4B5563" rx="1"/>
+  <rect x="156" y="12" width="2" height="16" fill="#4B5563" rx="1"/>
+  <circle cx="3" cy="16" r="0.5" fill="#1F2937"/>
+  <circle cx="3" cy="24" r="0.5" fill="#1F2937"/>
+  <circle cx="157" cy="16" r="0.5" fill="#1F2937"/>
+  <circle cx="157" cy="24" r="0.5" fill="#1F2937"/>
+</svg>
