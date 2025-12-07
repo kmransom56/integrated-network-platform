@@ -22,6 +22,11 @@ from shared.visualization.renderer import VisualizationRenderer
 from shared.format_standardization.gltf_processor import GLTFProcessor
 from shared.format_standardization.svg_processor import SVGProcessor
 
+# Import Agents
+from shared.agents.discovery_agent import DiscoveryAgent
+from shared.agents.asset_agent import AssetAgent
+from shared.agents.topology_agent import TopologyAgent
+
 
 class IntegratedNetworkPlatform:
     """
@@ -43,6 +48,66 @@ class IntegratedNetworkPlatform:
         print(f"   Config loaded: {self.config.config.app_name}")
         print(f"   3D visualization: {'Enabled' if self.config.config.enable_3d else 'Disabled'}")
         print(f"   Assets directory: {self.asset_manager.base_dir}")
+        
+        # Initialize Agents
+        self.discovery_agent = DiscoveryAgent(self.auth_manager)
+        self.asset_agent = AssetAgent(str(self.asset_manager.base_dir))
+        self.topology_agent = TopologyAgent()
+
+    def run_full_workflow(self, use_demo_data: bool = False):
+        """
+        Execute the consolidated workflow using agents:
+        1. Discovery (Infrastructure + Clients)
+        2. Asset Assignment (MAC lookup, VSS/SVG, 3D)
+        3. Topology Building & Export
+        """
+        print("\n🚀 Starting Integrated Workflow")
+        
+        if use_demo_data:
+            print("   Mode: DEMO/Synthetic Data")
+            # Reuse the demo data logic but through agents ideally
+            # For now, we will just use the run_demo_mode logic but adapted
+            self.run_demo_mode()
+            return
+            
+        # 1. Discovery
+        print("\n📡 Step 1: Network Discovery")
+        # Load config details (mocked for now since we don't have a real config file loaded in context)
+        # In real usage, self.config.config would have these details
+        discovery_config = {
+            'fortigate': {
+                'host': '192.168.1.99', # Example default
+                'username': 'admin',
+                'password': '' 
+            }
+        }
+        
+        # Override with actual config if available
+        if hasattr(self.config, 'config'):
+             # Map config object to dict if needed
+             pass
+             
+        devices = self.discovery_agent.connect_and_discover(discovery_config)
+        
+        # 2. Asset Assignment
+        print("\n🎨 Step 2: Asset & Visual Assignment")
+        # Extract VSS if provided (via CLI or config)
+        # vss_path = self.config.get('vss_path')
+        # if vss_path:
+        #    self.asset_agent.process_vss_file(vss_path)
+            
+        enhanced_devices = self.asset_agent.assign_assets_to_devices(devices)
+        
+        # 3. Topology & Visualization
+        print("\n🕸️ Step 3: Topology Generation")
+        topology = self.topology_agent.build_topology(enhanced_devices)
+        
+        path_html = self.topology_agent.export_topology(topology, format_type='html')
+        path_drawio = self.topology_agent.export_topology(topology, format_type='drawio')
+        
+        print(f"\n✅ Workflow Complete!")
+        print(f"   Interactive 3D Map: {path_html}")
+        print(f"   2D DrawIO Diagram:  {path_drawio}")
 
     def collect_and_process_devices(self, sources: Dict[str, Any]) -> Dict[str, Any]:
         """Collect and process devices from multiple sources"""
@@ -220,64 +285,79 @@ class IntegratedNetworkPlatform:
 
         return results
 
-    def run_demonstration(self) -> Dict[str, Any]:
-        """Run a complete demonstration of the integrated platform"""
-        print("🚀 Starting Integrated Network Platform Demonstration")
-        print("=" * 60)
-
-        results = {}
-
-        # 1. Test asset discovery
-        print("\n📦 Step 1: Asset Discovery")
-        assets = self.manage_assets('discover')
-        results['assets'] = assets
-        print(f"   Found {assets['summary']['total_models']} models, {assets['summary']['total_icons']} icons")
-
-        # 2. Create sample topology
-        print("\n🏗️ Step 2: Sample Topology Creation")
-        sample_devices = [
-            {'id': 'SW001', 'name': 'Core Switch', 'type': 'switch', 'vendor': 'fortinet'},
-            {'id': 'AP001', 'name': 'Access Point', 'type': 'access_point', 'vendor': 'fortinet'},
-            {'id': 'FW001', 'name': 'Firewall', 'type': 'router', 'vendor': 'fortinet'}
+    def run_demo_mode(self):
+        """Run the platform in demo mode with synthetic data"""
+        print("\n🎮 Running in DEMO mode")
+        
+        # Synthetic data
+        demo_devices = [
+            {'id': 'fw-01', 'name': 'Corporate-FW', 'type': 'fortigate', 'ip': '192.168.1.1', 'serial': 'FG100F-DEMO'},
+            {'id': 'sw-core', 'name': 'Core-Switch', 'type': 'meraki_switch', 'ip': '192.168.1.2', 'model': 'MS390'},
+            {'id': 'sw-access-1', 'name': 'Access-Switch-1', 'type': 'meraki_switch', 'ip': '192.168.1.3', 'model': 'MS120'},
+            {'id': 'sw-access-2', 'name': 'Access-Switch-2', 'type': 'meraki_switch', 'ip': '192.168.1.4', 'model': 'MS120'},
+            {'id': 'ap-01', 'name': 'Office-AP-1', 'type': 'meraki_ap', 'ip': '192.168.1.10', 'model': 'MR46'},
+            {'id': 'ap-02', 'name': 'Office-AP-2', 'type': 'meraki_ap', 'ip': '192.168.1.11', 'model': 'MR46'},
+            {'id': 'ap-03', 'name': 'Lobby-AP', 'type': 'meraki_ap', 'ip': '192.168.1.12', 'model': 'MR46'}
         ]
-        sample_connections = [('SW001', 'AP001'), ('FW001', 'SW001')]
+        
+        demo_connections = [
+            ('fw-01', 'sw-core'),
+            ('sw-core', 'sw-access-1'),
+            ('sw-core', 'sw-access-2'),
+            ('sw-access-1', 'ap-01'),
+            ('sw-access-1', 'ap-02'),
+            ('sw-access-2', 'ap-03')
+        ]
+        
+        print(f"   Generated {len(demo_devices)} demo devices")
+        
+        # Process through pipeline
+        print("\n🔄 Processing demo data...")
+        # 1. Process
+        processed_devices = self.device_processor.process_devices(demo_devices)
+        classified_devices = self.device_classifier.classify_devices_batch(processed_devices)
+        
+        # 2. Build Topology
+        # Note: build_topology requires list of dicts for devices
+        topology_result = self.build_network_topology(classified_devices, demo_connections)
+        
+        # 3. Visualize
+        output_dir = Path("demo_output")
+        output_dir.mkdir(exist_ok=True)
+        output_path = output_dir / "demo_network"
+        
+        results = self.create_visualization(topology_result['topology'], str(output_path))
+        
+        print("\n✨ Demo completed successfully!")
+        print(f"   Results saved to: {output_dir.absolute()}")
+        print(f"   View 3D Map: file://{output_dir.absolute()}/demo_network.html")
 
-        topology_result = self.build_network_topology(sample_devices, sample_connections)
-        results['topology'] = topology_result
+    async def start_api_server(self, host: str = "0.0.0.0", port: int = 12500):
+        """Start the integrated API server"""
+        from api.main import create_application
+        import uvicorn
+        import socket
 
-        # 3. Create visualization
-        print("\n🎨 Step 3: Visualization Creation")
-        viz_result = self.create_visualization(
-            topology_result['topology'],
-            'demo_network_topology'
-        )
-        results['visualization'] = viz_result
+        # Check if port is in use and find next available
+        target_port = port
+        while True:
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+                result = sock.connect_ex((host, target_port))
+                if result != 0: # Port is available (connection refused)
+                    break
+                print(f"⚠️  Port {target_port} is already in use.")
+                target_port += 1
+                if target_port > port + 10:
+                    print("❌ Could not find an open port in range.")
+                    return
 
-        # 4. Test format processing
-        print("\n🔧 Step 4: Format Processing")
-        test_files = []  # Would include actual test files
-        format_results = self.standardize_formats(test_files, ['validate'])
-        results['format_processing'] = format_results
+        print(f"🌐 Starting API server on {host}:{target_port}")
 
-        print("\n🎉 Demonstration Complete!")
-        print("=" * 60)
-        print("Summary:")
-        print(f"  • Assets discovered: {assets['summary']['total_models'] + assets['summary']['total_icons']}")
-        print(f"  • Topology built: {len(sample_devices)} devices")
-        print(f"  • Visualizations created: {len(viz_result['files_created'])}")
-        print(f"  • Format operations: {format_results['processed']}")
+        app = create_application()
+        config = uvicorn.Config(app, host=host, port=target_port, log_level="info")
+        server = uvicorn.Server(config)
 
-        return results
-
-    # async def start_api_server(self, host: str = "0.0.0.0", port: int = 8000):
-    #     """Start the integrated API server"""
-    #     print(f"🌐 Starting API server on {host}:{port}")
-    #
-    #     app = create_application()
-    #     config = uvicorn.Config(app, host=host, port=port, log_level="info")
-    #     server = uvicorn.Server(config)
-    #
-    #     await server.serve()
+        await server.serve()
 
 
 def main():
@@ -286,32 +366,31 @@ def main():
 
     parser = argparse.ArgumentParser(description="Integrated Network Platform")
     parser.add_argument('--config', help='Configuration file path')
-    parser.add_argument('--demo', action='store_true', help='Run demonstration')
     parser.add_argument('--api', action='store_true', help='Start API server')
+    parser.add_argument('--demo', action='store_true', help='Run in demo mode with synthetic data')
+    parser.add_argument('--workflow', action='store_true', help='Run the full consolidated workflow (agents)')
     parser.add_argument('--host', default='0.0.0.0', help='API server host')
-    parser.add_argument('--port', type=int, default=8000, help='API server port')
+    parser.add_argument('--port', type=int, default=12500, help='API server port')
 
     args = parser.parse_args()
 
     # Initialize platform
     platform = IntegratedNetworkPlatform(args.config)
 
-    if args.demo:
-        # Run demonstration
-        results = platform.run_demonstration()
-        print("\n📊 Demonstration Results:")
-        for key, value in results.items():
-            if isinstance(value, dict) and 'summary' in value:
-                print(f"  {key}: {value['summary']}")
-
-    # elif args.api:
-    #     # Start API server
-    #     asyncio.run(platform.start_api_server(args.host, args.port))
-
+    if args.api:
+        # Start API server
+        asyncio.run(platform.start_api_server(args.host, args.port))
+    elif args.demo:
+        # Run demo mode
+        platform.run_demo_mode()
+    elif args.workflow:
+        # Run full consolidated workflow
+        platform.run_full_workflow()
     else:
         print("🤖 Integrated Network Platform")
-        print("Use --demo to run demonstration")
-        print("Example: python main_integration.py --demo")
+        print("Use --api to start the API server")
+        print("Use --demo to run a demonstration")
+        print("Use --workflow to run the full consolidated workflow")
 
 
 if __name__ == "__main__":

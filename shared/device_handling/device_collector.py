@@ -26,30 +26,94 @@ class UnifiedDeviceCollector:
         self.network_client = NetworkClient()
         self.collected_devices = []
 
-    def collect_from_fortigate(self, host: str, username: str, password: str) -> List[NetworkDevice]:
+    def collect_from_fortigate(self, host: str, username: str, password: str, port: int = 443, token: Optional[str] = None) -> List[NetworkDevice]:
         """Collect devices from FortiGate (network_map_3d approach)"""
-        logger.info(f"Collecting devices from FortiGate: {host}")
+        print(f"DEBUG: collect_from_fortigate called. Host: {host}, Port: {port}, Token present: {bool(token)}")
+        logger.info(f"Collecting devices from FortiGate: {host}:{port}")
 
-        # Authenticate
-        session = self.auth_manager.authenticate_fortigate(host, username, password)
-        if not session:
-            logger.error("Failed to authenticate with FortiGate")
-            return []
+        session = None
+        if not token:
+            # Authenticate (Session based) only if no token
+            session = self.auth_manager.authenticate_fortigate(host, username, password, port=port)
+            if not session:
+                logger.error("Failed to authenticate with FortiGate")
+                return []
+        else:
+            logger.info("Using API token for FortiGate authentication")
 
         # Update network client
         self.network_client = NetworkClient(
             fortigate_host=host,
-            fortigate_auth=session
+            fortigate_port=port,
+            fortigate_auth=session,
+            fortigate_token=token
         )
 
         # Collect devices
         devices = []
-        devices.extend(self.network_client.get_connected_clients(DeviceType.FORTIGATE))
-        devices.extend(self.network_client._get_fortiswitches())
-        devices.extend(self.network_client._get_fortiaps())
+        
+        # 1. FortiSwitch & Connected Clients (Enhanced)
+        try:
+            from ..services.fortiswitch_service import get_fortiswitch_service
+            # Initialize service with our configured client
+            sw_service = get_fortiswitch_service(self.network_client)
+            enhanced_switches = sw_service.get_enhanced_switches()
+            
+            for sw_data in enhanced_switches:
+                # Create Switch Device
+                sw_dev = NetworkDevice(
+                    id=sw_data.get('serial'),
+                    name=sw_data.get('name') or sw_data.get('serial'),
+                    device_type=DeviceType.FORTISWITCH,
+                    ip_address=sw_data.get('ip'),
+                    serial=sw_data.get('serial'),
+                    model=sw_data.get('model'),
+                    status=sw_data.get('status'),
+                    metadata={'ports': sw_data.get('ports')} # Store full port info
+                )
+                devices.append(sw_dev)
+                
+                # Extract Connected Clients from Ports
+                for port in sw_data.get('ports', []):
+                    for client_data in port.get('connected_devices', []):
+                        # Create Client Device
+                        # Check metadata for classification
+                        metadata = {
+                            'connected_to_switch': sw_data.get('serial'),
+                            'connected_port': port.get('name'),
+                            'vlan': client_data.get('vlan'),
+                            'restaurant_category': client_data.get('restaurant_category')
+                        }
+                        
+                        client_dev = NetworkDevice(
+                            id=client_data.get('device_mac'),
+                            name=client_data.get('device_name'),
+                            device_type=DeviceType.CLIENT,
+                            ip_address=client_data.get('device_ip'),
+                            mac_address=client_data.get('device_mac'),
+                            metadata=metadata
+                        )
+                        devices.append(client_dev)
+                        
+        except Exception as e:
+            logger.error(f"Failed to run Enhanced Switch Discovery: {e}")
+            # Fallback to legacy methods if enhanced fails
+            try:
+                devices.extend(self.network_client._get_fortiswitches())
+            except: pass
+
+        # 2. FortiAPs (Legacy method for now)
+        try:
+            devices.extend(self.network_client._get_fortiaps())
+        except Exception as e:
+            logger.error(f"Failed to collect APs: {e}")
 
         self.collected_devices.extend(devices)
-        logger.info(f"Collected {len(devices)} devices from FortiGate")
+        logger.info(f"Collected {len(devices)} devices from FortiGate (Enhanced)")
+        
+        # Auto-save to disk
+        self.export_devices("data/discovered_devices.json")
+        
         return devices
 
     def collect_from_fortimanager(self, host: str, username: str, password: str) -> List[NetworkDevice]:
@@ -212,7 +276,14 @@ class UnifiedDeviceCollector:
     def export_devices(self, filepath: str) -> bool:
         """Export collected devices to JSON file"""
         try:
-            devices_data = [device.__dict__ for device in self.collected_devices]
+            # Convert devices to dicts, handling Enum serialization
+            devices_data = []
+            for device in self.collected_devices:
+                d_dict = device.__dict__.copy()
+                if isinstance(d_dict.get('device_type'), DeviceType):
+                    d_dict['device_type'] = d_dict['device_type'].value
+                devices_data.append(d_dict)
+
             with open(filepath, 'w') as f:
                 json.dump({
                     'devices': devices_data,
@@ -223,4 +294,56 @@ class UnifiedDeviceCollector:
             return True
         except Exception as e:
             logger.error(f"Failed to export devices: {e}")
+            return False
+
+    def load_devices(self, filepath: str) -> bool:
+        """Load devices from JSON file"""
+        print(f"DEBUG: Loading devices from {filepath}")
+        try:
+            with open(filepath, 'r') as f:
+                data = json.load(f)
+            
+            devices_data = data.get('devices', [])
+            self.collected_devices = []
+            
+            for d_data in devices_data:
+                # Handle DeviceType enum conversion
+                dev_type_str = d_data.get('device_type')
+                dev_type = DeviceType.FORTIGATE # Default
+                try:
+                    if dev_type_str:
+                        # Handle both "fortiswitch" and "DeviceType.FORTISWITCH" formats
+                        if "DeviceType." in dev_type_str:
+                             # Legacy format fallback
+                             clean_type = dev_type_str.split('.')[-1].lower()
+                             # Map legacy names if needed, or iterate enum
+                             for dt in DeviceType:
+                                 if dt.name.lower() == clean_type:
+                                     dev_type = dt
+                                     break
+                        else:
+                            dev_type = DeviceType(dev_type_str)
+                except ValueError:
+                    pass
+
+                device = NetworkDevice(
+                    id=d_data.get('id'),
+                    name=d_data.get('name'),
+                    device_type=dev_type,
+                    ip_address=d_data.get('ip_address'),
+                    mac_address=d_data.get('mac_address'),
+                    model=d_data.get('model'),
+                    serial=d_data.get('serial'),
+                    status=d_data.get('status'),
+                    location=d_data.get('location'),
+                    metadata=d_data.get('metadata')
+                )
+                self.collected_devices.append(device)
+                
+            print(f"DEBUG: Loaded {len(self.collected_devices)} devices")
+            logger.info(f"Loaded {len(self.collected_devices)} devices from {filepath}")
+            return True
+        except Exception as e:
+            print(f"DEBUG: Failed to load devices: {e}")
+            logger.error(f"Failed to load devices: {e}")
             return False
