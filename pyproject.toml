@@ -1,0 +1,29 @@
+[tool.ruff]
+# Enable rules for Pyflakes (F), pycodestyle (E, W), flake8-bugbear (B), flake8-simplify (SIM), and isort (I)
+select = ["F", "E", "W", "B", "SIM", "I"]
+ignore = ["E501"] # Ignore line length for now
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "archived_projects",
+    "venv",
+    ".venv"
+]
+line-length = 120
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+exclude = ["archived_projects"]
+
+[tool.pytest.ini_options]
+addopts = "-ra -q --asyncio-mode=auto --cov=shared --cov=api --cov-report=term-missing"
+testpaths = ["tests"]
+python_files = "test_*.py"

@@ -7,6 +7,14 @@ import requests
 import json
 from typing import Optional, Dict, Any
 import logging
+import platform
+import os
+import certifi
+try:
+    import meraki
+    MERAKI_AVAILABLE = True
+except ImportError:
+    MERAKI_AVAILABLE = False
 
 logger = logging.getLogger(__name__)
 
@@ -23,14 +31,14 @@ class AuthManager:
         self.sessions = {}
         self.credentials = {}
 
-    def authenticate_fortigate(self, host: str, username: str, password: str) -> Optional[requests.Session]:
+    def authenticate_fortigate(self, host: str, username: str, password: str, port: int = 443) -> Optional[requests.Session]:
         """Authenticate with FortiGate (from network_map_3d)"""
         try:
             session = requests.Session()
             session.verify = False
 
             # FortiGate login
-            login_url = f"https://{host}/logincheck"
+            login_url = f"https://{host}:{port}/logincheck"
             login_data = {
                 'username': username,
                 'secretkey': password,
@@ -39,6 +47,13 @@ class AuthManager:
 
             response = session.post(login_url, data=login_data, timeout=30)
             if response.status_code == 200:
+                # Update CSRF token for subsequent requests
+                for cookie in session.cookies:
+                    if cookie.name == 'ccsrftoken':
+                        session.headers.update({'X-CSRFTOKEN': cookie.value.strip('"')})
+                        logger.info("Updated CSRF token from cookie")
+                        break
+                
                 self.sessions[f"fortigate_{host}"] = session
                 logger.info(f"Successfully authenticated with FortiGate {host}")
                 return session
@@ -98,7 +113,90 @@ class AuthManager:
         try:
             self.credentials['meraki'] = {'api_key': api_key}
             logger.info("Meraki API key configured")
+            
+            # Optionally initialize dashboard immediately to cache it
+            try:
+                 self.get_meraki_dashboard(api_key)
+            except Exception:
+                pass 
+                
             return True
+        except Exception as e:
+            logger.error(f"Failed to configure Meraki: {e}")
+            return False
+
+    def get_meraki_dashboard(self, api_key: Optional[str] = None):
+        """
+        Initialize the Meraki Dashboard API with proper SSL configuration.
+        Ported from cisco-meraki-cli-enhanced.
+        """
+        if not api_key:
+             api_key = self.credentials.get('meraki', {}).get('api_key')
+        
+        if not api_key:
+             raise ValueError("No Meraki API key provided")
+
+        if not MERAKI_AVAILABLE:
+            raise ImportError("Meraki SDK is not available. Install it with: pip install meraki")
+
+        # Check cache
+        if "meraki_dashboard" in self.sessions:
+             return self.sessions["meraki_dashboard"]
+
+        is_windows = platform.system() == 'Windows'
+        
+        # Clear conflicting env vars
+        if 'REQUESTS_CA_BUNDLE' in os.environ:
+            del os.environ['REQUESTS_CA_BUNDLE']
+        if 'SSL_CERT_FILE' in os.environ:
+            del os.environ['SSL_CERT_FILE']
+        
+        try:
+            # First try with default settings
+            if is_windows:
+                # For Windows, use environment variables instead of 'verify' parameter
+                os.environ['REQUESTS_CA_BUNDLE'] = certifi.where()
+            
+            dashboard = meraki.DashboardAPI(
+                api_key=api_key,
+                base_url='https://api.meraki.com/api/v1',
+                output_log=False,
+                print_console=False,
+                suppress_logging=False,
+                maximum_retries=3,
+                wait_on_rate_limit=True,
+                retry_4xx_error=True,
+                retry_4xx_error_wait_time=1,
+                use_iterator_for_get_pages=False
+            )
+            
+            # Test connection
+            dashboard.organizations.getOrganizations()
+            
+            self.sessions["meraki_dashboard"] = dashboard
+            logger.info("Successfully initialized Meraki Dashboard API")
+            return dashboard
+
+        except Exception:
+            # Fallback for Windows/SSL issues
+            if is_windows:
+                logger.warning("SSL verification failed. Trying with SSL disabled")
+                os.environ['REQUESTS_CA_BUNDLE'] = ''
+                os.environ['MERAKI_PYTHON_SDK_SIMULATE_API_CALLS'] = 'no'
+                
+                dashboard = meraki.DashboardAPI(
+                    api_key=api_key,
+                    base_url='https://api.meraki.com/api/v1',
+                    output_log=False,
+                    print_console=False,
+                    suppress_logging=False,
+                    maximum_retries=3,
+                    wait_on_rate_limit=True,
+                    retry_4xx_error=True
+                )
+                self.sessions["meraki_dashboard"] = dashboard
+                return dashboard
+            raise
         except Exception as e:
             logger.error(f"Meraki authentication setup error: {e}")
             return False

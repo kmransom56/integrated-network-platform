@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "daab2ebc-cb97-4108-b342-76e192f32916",
+		"name": "FortiAnalyzer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7177108",
+		"_collection_link": "https://www.postman.com/fortinet-emea-tac-api-team/fortinet/collection/dgzuu49/fortianalyzer?action=share&source=collection_link&creator=7177108"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// extract and save session key",
+									"pm.environment.set(\"fmg-session\", JSON.parse(responseBody)[\"session\"]);",
+									"",
+									"// test login success",
+									"pm.test(\"Login successfull\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"",
+									"    if (code == 0) {",
+									"        pm.visualizer.set(\"<html><body><span style='color:green'>Login successfull</span></body></html>\");",
+									"    } else {",
+									"        pm.visualizer.set(\"<html><body><span style='color:red'>Cannot login: \"+ msg +\"</span></body></html>\");",
+									"    }",
+									"",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"data\": {\n                \"user\": \"{{user}}\",\n                \"passwd\": \"{{password}}\"\n            },\n            \"url\": \"/sys/login/user\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// test logout success",
+									"pm.test(\"Login successfull\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"",
+									"    if (code == 0) {",
+									"        pm.visualizer.set(\"<html><body><span style='color:green'>Logout successfull</span></body></html>\");",
+									"    } else {",
+									"        pm.visualizer.set(\"<html><body><span style='color:red'>Cannot logout: \"+ msg +\"</span></body></html>\");",
+									"    }",
+									"",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"url\": \"/sys/logout\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "List layout folders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result']['status']['code'];",
+									"    let msg = pm.response.json()['result']['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <h2>Report layout folders</h2>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>id</td>",
+									"            <td>parent id</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{folder-name}}</td>",
+									"                <td>{{folder-id}}</td>",
+									"                <td>{{parent-id}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"apiver\": 3,\n            \"data\": {\n                \"folder-id\": 0,\n                \"parent-id\": 0\n            },\n            \"url\": \"/report/adom/{{adom}}/config/layout-folder\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create layout folder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result']['status']['code'];",
+									"    let msg = pm.response.json()['result']['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html><body>",
+									"Folder created with ID {{response.folder-id}}",
+									"</body></html>",
+									"`;",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});",
+									"",
+									"// remember id of created folder",
+									"pm.environment.set(\"lastLayoutFolderId\", responseData[\"folder-id\"]);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"add\",\n    \"params\": [\n        {\n            \"apiver\": 3,\n            \"data\": {\n                \"folder-name\": \"{{folder-name}}\"\n            },\n            \"url\": \"/report/adom/{{adom}}/config/layout-folder\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete layout folder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result']['status']['code'];",
+									"    let msg = pm.response.json()['result']['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"delete\",\n    \"params\": [\n        {\n            \"apiver\": 3,\n            \"url\": \"/report/adom/{{adom}}/config/layout-folder/{{lastLayoutFolderId}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "System",
+			"item": [
+				{
+					"name": "Backup to FTP server",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"url\": \"/sys/backup\",\n            \"data\": {\n                \"filename\": \"backup_ftp_api.bak\",\n                \"server\": \"192.168.1.10\",\n                \"port\": 21,\n                \"service\": \"ftp\",\n                \"passwd\": \"file-password\",                \n                \"username\": \"ftp-user\",\n                \"userpasswd\": \"ftp-password\"                \n            }          \n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 16\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

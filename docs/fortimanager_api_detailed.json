@@ -1,0 +1,4244 @@
+{
+  "extraction_date": "2025-11-07T08:03:44.122211",
+  "source": "FortiManager API Documentation - how-to-fortimanager-api.readthedocs.io",
+  "total_sections": 11,
+  "sections": [
+    {
+      "name": "FMG JSON API Introduction",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/001_fmg_json_api_introduction.html",
+      "subsections": [
+        {
+          "name": "Login To Fortimanager",
+          "anchor": "#login-to-fortimanager",
+          "endpoints": [
+            {
+              "path": "/sys/login/user",
+              "method": "POST",
+              "description": "Authenticate user with username/password",
+              "parameters": [
+                "user",
+                "passwd",
+                "secretkey"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/sys/login/challenge",
+              "method": "POST",
+              "description": "Challenge-based authentication",
+              "parameters": [
+                "user",
+                "challenge"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Basic Login Example",
+              "code": "{\"id\": 1, \"method\": \"exec\", \"params\": [{\"url\": \"/sys/login/user\", \"data\": {\"user\": \"admin\", \"passwd\": \"password\"}}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Login To Fortimanager",
+              "description": "Key concepts and operations for login to fortimanager",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Session Based Authentication",
+          "anchor": "#session-based-authentication",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Session Based Authentication",
+              "description": "Key concepts and operations for session based authentication",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Token Based Authentication",
+          "anchor": "#token-based-authentication",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Token Based Authentication",
+              "description": "Key concepts and operations for token based authentication",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Fortimanager Cloud Api Authentication",
+          "anchor": "#fortimanager-cloud-api-authentication",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Fortimanager Cloud Api Authentication",
+              "description": "Key concepts and operations for fortimanager cloud api authentication",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Logout From Fortimanager",
+          "anchor": "#logout-from-fortimanager",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Logout From Fortimanager",
+              "description": "Key concepts and operations for logout from fortimanager",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Managing Device Settings",
+          "anchor": "#managing-device-settings",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Managing Device Settings",
+              "description": "Key concepts and operations for managing device settings",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Installing Device Settings",
+          "anchor": "#installing-device-settings",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Installing Device Settings",
+              "description": "Key concepts and operations for installing device settings",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Managing Security Settings",
+          "anchor": "#managing-security-settings",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Managing Security Settings",
+              "description": "Key concepts and operations for managing security settings",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Multiplexing Requests",
+          "anchor": "#multiplexing-requests",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Multiplexing Requests",
+              "description": "Key concepts and operations for multiplexing requests",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Operations On Tables Objects And Attributes",
+          "anchor": "#operations-on-tables-objects-and-attributes",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Operations On Tables Objects And Attributes",
+              "description": "Key concepts and operations for operations on tables objects and attributes",
+              "importance": "medium"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [
+        {
+          "path": "/sys/login/user",
+          "method": "POST",
+          "description": "Authenticate user with username/password",
+          "parameters": [
+            "user",
+            "passwd",
+            "secretkey"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/sys/login/challenge",
+          "method": "POST",
+          "description": "Challenge-based authentication",
+          "parameters": [
+            "user",
+            "challenge"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "code_examples": [
+        {
+          "title": "Basic Login Example",
+          "code": "{\"id\": 1, \"method\": \"exec\", \"params\": [{\"url\": \"/sys/login/user\", \"data\": {\"user\": \"admin\", \"passwd\": \"password\"}}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        }
+      ],
+      "key_concepts": [
+        {
+          "name": "Login To Fortimanager",
+          "description": "Key concepts and operations for login to fortimanager",
+          "importance": "high"
+        },
+        {
+          "name": "Session Based Authentication",
+          "description": "Key concepts and operations for session based authentication",
+          "importance": "medium"
+        },
+        {
+          "name": "Token Based Authentication",
+          "description": "Key concepts and operations for token based authentication",
+          "importance": "medium"
+        },
+        {
+          "name": "Fortimanager Cloud Api Authentication",
+          "description": "Key concepts and operations for fortimanager cloud api authentication",
+          "importance": "medium"
+        },
+        {
+          "name": "Logout From Fortimanager",
+          "description": "Key concepts and operations for logout from fortimanager",
+          "importance": "medium"
+        },
+        {
+          "name": "Managing Device Settings",
+          "description": "Key concepts and operations for managing device settings",
+          "importance": "high"
+        },
+        {
+          "name": "Installing Device Settings",
+          "description": "Key concepts and operations for installing device settings",
+          "importance": "high"
+        },
+        {
+          "name": "Managing Security Settings",
+          "description": "Key concepts and operations for managing security settings",
+          "importance": "medium"
+        },
+        {
+          "name": "Multiplexing Requests",
+          "description": "Key concepts and operations for multiplexing requests",
+          "importance": "medium"
+        },
+        {
+          "name": "Operations On Tables Objects And Attributes",
+          "description": "Key concepts and operations for operations on tables objects and attributes",
+          "importance": "medium"
+        }
+      ]
+    },
+    {
+      "name": "Objects Management",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/002_objects_management/002_objects_management.html",
+      "subsections": [
+        {
+          "name": "Metadata",
+          "anchor": "#metadata",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Metadata",
+              "description": "Key concepts and operations for metadata",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Firewall Address",
+          "anchor": "#firewall-address",
+          "endpoints": [
+            {
+              "path": "/pm/config/adom/{adom}/obj/firewall/address",
+              "method": "GET",
+              "description": "List firewall address objects",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/pm/config/adom/{adom}/obj/firewall/address",
+              "method": "POST",
+              "description": "Create firewall address object",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Firewall Address",
+              "description": "Key concepts and operations for firewall address",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Firewall Address Groups",
+          "anchor": "#firewall-address-groups",
+          "endpoints": [
+            {
+              "path": "/pm/config/adom/{adom}/obj/firewall/address",
+              "method": "GET",
+              "description": "List firewall address objects",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/pm/config/adom/{adom}/obj/firewall/address",
+              "method": "POST",
+              "description": "Create firewall address object",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Firewall Address Groups",
+              "description": "Key concepts and operations for firewall address groups",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Firewall Vip",
+          "anchor": "#firewall-vip",
+          "endpoints": [
+            {
+              "path": "/pm/config/adom/{adom}/obj/firewall/address",
+              "method": "GET",
+              "description": "List firewall address objects",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/pm/config/adom/{adom}/obj/firewall/address",
+              "method": "POST",
+              "description": "Create firewall address object",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Firewall Vip",
+              "description": "Key concepts and operations for firewall vip",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Wildcard Fqdn",
+          "anchor": "#wildcard-fqdn",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Wildcard Fqdn",
+              "description": "Key concepts and operations for wildcard fqdn",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Objects Operations",
+          "anchor": "#objects-operations",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Objects Operations",
+              "description": "Key concepts and operations for objects operations",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Normalized Interfaces",
+          "anchor": "#normalized-interfaces",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Normalized Interfaces",
+              "description": "Key concepts and operations for normalized interfaces",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Internet Service Objects",
+          "anchor": "#internet-service-objects",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Internet Service Objects",
+              "description": "Key concepts and operations for internet service objects",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Operations On Objects",
+          "anchor": "#operations-on-objects",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Operations On Objects",
+              "description": "Key concepts and operations for operations on objects",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Object Revision",
+          "anchor": "#object-revision",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Object Revision",
+              "description": "Key concepts and operations for object revision",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Per Device Mapping",
+          "anchor": "#per-device-mapping",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Per Device Mapping",
+              "description": "Key concepts and operations for per device mapping",
+              "importance": "high"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [
+        {
+          "path": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "GET",
+          "description": "List firewall address objects",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "POST",
+          "description": "Create firewall address object",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "GET",
+          "description": "List firewall address objects",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "POST",
+          "description": "Create firewall address object",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "GET",
+          "description": "List firewall address objects",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "POST",
+          "description": "Create firewall address object",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "code_examples": [
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        }
+      ],
+      "key_concepts": [
+        {
+          "name": "Metadata",
+          "description": "Key concepts and operations for metadata",
+          "importance": "medium"
+        },
+        {
+          "name": "Firewall Address",
+          "description": "Key concepts and operations for firewall address",
+          "importance": "medium"
+        },
+        {
+          "name": "Firewall Address Groups",
+          "description": "Key concepts and operations for firewall address groups",
+          "importance": "medium"
+        },
+        {
+          "name": "Firewall Vip",
+          "description": "Key concepts and operations for firewall vip",
+          "importance": "medium"
+        },
+        {
+          "name": "Wildcard Fqdn",
+          "description": "Key concepts and operations for wildcard fqdn",
+          "importance": "medium"
+        },
+        {
+          "name": "Objects Operations",
+          "description": "Key concepts and operations for objects operations",
+          "importance": "medium"
+        },
+        {
+          "name": "Normalized Interfaces",
+          "description": "Key concepts and operations for normalized interfaces",
+          "importance": "medium"
+        },
+        {
+          "name": "Internet Service Objects",
+          "description": "Key concepts and operations for internet service objects",
+          "importance": "medium"
+        },
+        {
+          "name": "Operations On Objects",
+          "description": "Key concepts and operations for operations on objects",
+          "importance": "medium"
+        },
+        {
+          "name": "Object Revision",
+          "description": "Key concepts and operations for object revision",
+          "importance": "medium"
+        },
+        {
+          "name": "Per Device Mapping",
+          "description": "Key concepts and operations for per device mapping",
+          "importance": "high"
+        }
+      ]
+    },
+    {
+      "name": "Security Profiles",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/002_security_profiles.html",
+      "subsections": [
+        {
+          "name": "Url Filtering",
+          "anchor": "#url-filtering",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Url Filtering",
+              "description": "Key concepts and operations for url filtering",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Webfilter Urlfilter",
+          "anchor": "#webfilter-urlfilter",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Webfilter Urlfilter",
+              "description": "Key concepts and operations for webfilter urlfilter",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Application Control Management",
+          "anchor": "#application-control-management",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Application Control Management",
+              "description": "Key concepts and operations for application control management",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Dlp Profile Management",
+          "anchor": "#dlp-profile-management",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Dlp Profile Management",
+              "description": "Key concepts and operations for dlp profile management",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Ips Sensors Management",
+          "anchor": "#ips-sensors-management",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Ips Sensors Management",
+              "description": "Key concepts and operations for ips sensors management",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Virtual Patching",
+          "anchor": "#virtual-patching",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Virtual Patching",
+              "description": "Key concepts and operations for virtual patching",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Inline Casb Profile",
+          "anchor": "#inline-casb-profile",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Inline Casb Profile",
+              "description": "Key concepts and operations for inline casb profile",
+              "importance": "medium"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [],
+      "code_examples": [],
+      "key_concepts": [
+        {
+          "name": "Url Filtering",
+          "description": "Key concepts and operations for url filtering",
+          "importance": "medium"
+        },
+        {
+          "name": "Webfilter Urlfilter",
+          "description": "Key concepts and operations for webfilter urlfilter",
+          "importance": "medium"
+        },
+        {
+          "name": "Application Control Management",
+          "description": "Key concepts and operations for application control management",
+          "importance": "medium"
+        },
+        {
+          "name": "Dlp Profile Management",
+          "description": "Key concepts and operations for dlp profile management",
+          "importance": "medium"
+        },
+        {
+          "name": "Ips Sensors Management",
+          "description": "Key concepts and operations for ips sensors management",
+          "importance": "medium"
+        },
+        {
+          "name": "Virtual Patching",
+          "description": "Key concepts and operations for virtual patching",
+          "importance": "medium"
+        },
+        {
+          "name": "Inline Casb Profile",
+          "description": "Key concepts and operations for inline casb profile",
+          "importance": "medium"
+        }
+      ]
+    },
+    {
+      "name": "Device Management",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/007_device_management/007_device_management.html",
+      "subsections": [
+        {
+          "name": "How To Get A Managed Device Oid",
+          "anchor": "#how-to-get-a-managed-device-oid",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "How To Get A Managed Device Oid",
+              "description": "Key concepts and operations for how to get a managed device oid",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "How To Rename A Managed Device",
+          "anchor": "#how-to-rename-a-managed-device",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "How To Rename A Managed Device",
+              "description": "Key concepts and operations for how to rename a managed device",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Device Status",
+          "anchor": "#device-status",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Device Status",
+              "description": "Key concepts and operations for device status",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "How To Refresh A Device",
+          "anchor": "#how-to-refresh-a-device",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "How To Refresh A Device",
+              "description": "Key concepts and operations for how to refresh a device",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Device Timezone",
+          "anchor": "#device-timezone",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Device Timezone",
+              "description": "Key concepts and operations for device timezone",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "How To Get The List Of Devices",
+          "anchor": "#how-to-get-the-list-of-devices",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "How To Get The List Of Devices",
+              "description": "Key concepts and operations for how to get the list of devices",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Real Device",
+          "anchor": "#real-device",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Real Device",
+              "description": "Key concepts and operations for real device",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Model Device",
+          "anchor": "#model-device",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Model Device",
+              "description": "Key concepts and operations for model device",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Device Groups",
+          "anchor": "#device-groups",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Device Groups",
+              "description": "Key concepts and operations for device groups",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Vdom Operations",
+          "anchor": "#vdom-operations",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Vdom Operations",
+              "description": "Key concepts and operations for vdom operations",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Device Revisions",
+          "anchor": "#device-revisions",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "Device Revisions",
+              "description": "Key concepts and operations for device revisions",
+              "importance": "high"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "code_examples": [
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        },
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        }
+      ],
+      "key_concepts": [
+        {
+          "name": "How To Get A Managed Device Oid",
+          "description": "Key concepts and operations for how to get a managed device oid",
+          "importance": "high"
+        },
+        {
+          "name": "How To Rename A Managed Device",
+          "description": "Key concepts and operations for how to rename a managed device",
+          "importance": "high"
+        },
+        {
+          "name": "Device Status",
+          "description": "Key concepts and operations for device status",
+          "importance": "high"
+        },
+        {
+          "name": "How To Refresh A Device",
+          "description": "Key concepts and operations for how to refresh a device",
+          "importance": "high"
+        },
+        {
+          "name": "Device Timezone",
+          "description": "Key concepts and operations for device timezone",
+          "importance": "high"
+        },
+        {
+          "name": "How To Get The List Of Devices",
+          "description": "Key concepts and operations for how to get the list of devices",
+          "importance": "high"
+        },
+        {
+          "name": "Real Device",
+          "description": "Key concepts and operations for real device",
+          "importance": "high"
+        },
+        {
+          "name": "Model Device",
+          "description": "Key concepts and operations for model device",
+          "importance": "high"
+        },
+        {
+          "name": "Device Groups",
+          "description": "Key concepts and operations for device groups",
+          "importance": "high"
+        },
+        {
+          "name": "Vdom Operations",
+          "description": "Key concepts and operations for vdom operations",
+          "importance": "medium"
+        },
+        {
+          "name": "Device Revisions",
+          "description": "Key concepts and operations for device revisions",
+          "importance": "high"
+        }
+      ]
+    },
+    {
+      "name": "Policy Package Management",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/008_policy_package_management.html",
+      "subsections": [
+        {
+          "name": "Policy Package Management",
+          "anchor": "#policy-package-management",
+          "endpoints": [
+            {
+              "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+              "method": "GET",
+              "description": "List firewall policies",
+              "parameters": [
+                "adom",
+                "pkg",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+              "method": "POST",
+              "description": "Create firewall policy",
+              "parameters": [
+                "adom",
+                "pkg",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Policy Package Management",
+              "description": "Key concepts and operations for policy package management",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Policy Blocks",
+          "anchor": "#policy-blocks",
+          "endpoints": [
+            {
+              "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+              "method": "GET",
+              "description": "List firewall policies",
+              "parameters": [
+                "adom",
+                "pkg",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+              "method": "POST",
+              "description": "Create firewall policy",
+              "parameters": [
+                "adom",
+                "pkg",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Policy Blocks",
+              "description": "Key concepts and operations for policy blocks",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Firewall Policies",
+          "anchor": "#firewall-policies",
+          "endpoints": [
+            {
+              "path": "/pm/config/adom/{adom}/obj/firewall/address",
+              "method": "GET",
+              "description": "List firewall address objects",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/pm/config/adom/{adom}/obj/firewall/address",
+              "method": "POST",
+              "description": "Create firewall address object",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Firewall Policies",
+              "description": "Key concepts and operations for firewall policies",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Global Policies Objects",
+          "anchor": "#global-policies-objects",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Global Policies Objects",
+              "description": "Key concepts and operations for global policies objects",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Central Dnat",
+          "anchor": "#central-dnat",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Central Dnat",
+              "description": "Key concepts and operations for central dnat",
+              "importance": "medium"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [
+        {
+          "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+          "method": "GET",
+          "description": "List firewall policies",
+          "parameters": [
+            "adom",
+            "pkg",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+          "method": "POST",
+          "description": "Create firewall policy",
+          "parameters": [
+            "adom",
+            "pkg",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+          "method": "GET",
+          "description": "List firewall policies",
+          "parameters": [
+            "adom",
+            "pkg",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+          "method": "POST",
+          "description": "Create firewall policy",
+          "parameters": [
+            "adom",
+            "pkg",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "GET",
+          "description": "List firewall address objects",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "POST",
+          "description": "Create firewall address object",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "code_examples": [],
+      "key_concepts": [
+        {
+          "name": "Policy Package Management",
+          "description": "Key concepts and operations for policy package management",
+          "importance": "high"
+        },
+        {
+          "name": "Policy Blocks",
+          "description": "Key concepts and operations for policy blocks",
+          "importance": "high"
+        },
+        {
+          "name": "Firewall Policies",
+          "description": "Key concepts and operations for firewall policies",
+          "importance": "medium"
+        },
+        {
+          "name": "Global Policies Objects",
+          "description": "Key concepts and operations for global policies objects",
+          "importance": "medium"
+        },
+        {
+          "name": "Central Dnat",
+          "description": "Key concepts and operations for central dnat",
+          "importance": "medium"
+        }
+      ]
+    },
+    {
+      "name": "Provisioning Template Management",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/009_provisioning_template_management.html",
+      "subsections": [
+        {
+          "name": "Templates Operations",
+          "anchor": "#templates-operations",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Templates Operations",
+              "description": "Key concepts and operations for templates operations",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Firmware Template",
+          "anchor": "#firmware-template",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Firmware Template",
+              "description": "Key concepts and operations for firmware template",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Certificate Template",
+          "anchor": "#certificate-template",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Certificate Template",
+              "description": "Key concepts and operations for certificate template",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "System Template",
+          "anchor": "#system-template",
+          "endpoints": [
+            {
+              "path": "/sys/status",
+              "method": "GET",
+              "description": "Get system status",
+              "parameters": [],
+              "response": {
+                "result": [
+                  {
+                    "data": {},
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/sys/ha/status",
+              "method": "GET",
+              "description": "Get HA status",
+              "parameters": [],
+              "response": {
+                "result": [
+                  {
+                    "data": {},
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "System Template",
+              "description": "Key concepts and operations for system template",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Fortiap Management",
+          "anchor": "#fortiap-management",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Fortiap Management",
+              "description": "Key concepts and operations for fortiap management",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Fortiswitch Management",
+          "anchor": "#fortiswitch-management",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Fortiswitch Management",
+              "description": "Key concepts and operations for fortiswitch management",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Cli Template",
+          "anchor": "#cli-template",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Cli Template",
+              "description": "Key concepts and operations for cli template",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Sd Wan Template",
+          "anchor": "#sd-wan-template",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Sd Wan Template",
+              "description": "Key concepts and operations for sd wan template",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Ipsec Tunnel Template",
+          "anchor": "#ipsec-tunnel-template",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Ipsec Tunnel Template",
+              "description": "Key concepts and operations for ipsec tunnel template",
+              "importance": "medium"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [
+        {
+          "path": "/sys/status",
+          "method": "GET",
+          "description": "Get system status",
+          "parameters": [],
+          "response": {
+            "result": [
+              {
+                "data": {},
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/sys/ha/status",
+          "method": "GET",
+          "description": "Get HA status",
+          "parameters": [],
+          "response": {
+            "result": [
+              {
+                "data": {},
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "code_examples": [],
+      "key_concepts": [
+        {
+          "name": "Templates Operations",
+          "description": "Key concepts and operations for templates operations",
+          "importance": "medium"
+        },
+        {
+          "name": "Firmware Template",
+          "description": "Key concepts and operations for firmware template",
+          "importance": "medium"
+        },
+        {
+          "name": "Certificate Template",
+          "description": "Key concepts and operations for certificate template",
+          "importance": "medium"
+        },
+        {
+          "name": "System Template",
+          "description": "Key concepts and operations for system template",
+          "importance": "medium"
+        },
+        {
+          "name": "Fortiap Management",
+          "description": "Key concepts and operations for fortiap management",
+          "importance": "medium"
+        },
+        {
+          "name": "Fortiswitch Management",
+          "description": "Key concepts and operations for fortiswitch management",
+          "importance": "medium"
+        },
+        {
+          "name": "Cli Template",
+          "description": "Key concepts and operations for cli template",
+          "importance": "medium"
+        },
+        {
+          "name": "Sd Wan Template",
+          "description": "Key concepts and operations for sd wan template",
+          "importance": "medium"
+        },
+        {
+          "name": "Ipsec Tunnel Template",
+          "description": "Key concepts and operations for ipsec tunnel template",
+          "importance": "medium"
+        }
+      ]
+    },
+    {
+      "name": "Alternative FortiManager APIs",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/011_alternative_fortimanager_api.html",
+      "subsections": [
+        {
+          "name": "Fortimanager Gui Api",
+          "anchor": "#fortimanager-gui-api",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Fortimanager Gui Api",
+              "description": "Key concepts and operations for fortimanager gui api",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Rest Api",
+          "anchor": "#rest-api",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Rest Api",
+              "description": "Key concepts and operations for rest api",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Using Requests Python Module",
+          "anchor": "#using-requests-python-module",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Using Requests Python Module",
+              "description": "Key concepts and operations for using requests python module",
+              "importance": "medium"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [],
+      "code_examples": [],
+      "key_concepts": [
+        {
+          "name": "Fortimanager Gui Api",
+          "description": "Key concepts and operations for fortimanager gui api",
+          "importance": "medium"
+        },
+        {
+          "name": "Rest Api",
+          "description": "Key concepts and operations for rest api",
+          "importance": "medium"
+        },
+        {
+          "name": "Using Requests Python Module",
+          "description": "Key concepts and operations for using requests python module",
+          "importance": "medium"
+        }
+      ]
+    },
+    {
+      "name": "CLI Script Management",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/012_cli_script_management.html",
+      "subsections": [
+        {
+          "name": "How To Add A Cli Script",
+          "anchor": "#how-to-add-a-cli-script",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "How To Add A Cli Script",
+              "description": "Key concepts and operations for how to add a cli script",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "How To Run A Cli Script Against A Policy Package",
+          "anchor": "#how-to-run-a-cli-script-against-a-policy-package",
+          "endpoints": [
+            {
+              "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+              "method": "GET",
+              "description": "List firewall policies",
+              "parameters": [
+                "adom",
+                "pkg",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+              "method": "POST",
+              "description": "Create firewall policy",
+              "parameters": [
+                "adom",
+                "pkg",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "How To Run A Cli Script Against A Policy Package",
+              "description": "Key concepts and operations for how to run a cli script against a policy package",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "How To Run A Cli Script Against A Device",
+          "anchor": "#how-to-run-a-cli-script-against-a-device",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "How To Run A Cli Script Against A Device",
+              "description": "Key concepts and operations for how to run a cli script against a device",
+              "importance": "high"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [
+        {
+          "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+          "method": "GET",
+          "description": "List firewall policies",
+          "parameters": [
+            "adom",
+            "pkg",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+          "method": "POST",
+          "description": "Create firewall policy",
+          "parameters": [
+            "adom",
+            "pkg",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "code_examples": [
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        }
+      ],
+      "key_concepts": [
+        {
+          "name": "How To Add A Cli Script",
+          "description": "Key concepts and operations for how to add a cli script",
+          "importance": "medium"
+        },
+        {
+          "name": "How To Run A Cli Script Against A Policy Package",
+          "description": "Key concepts and operations for how to run a cli script against a policy package",
+          "importance": "high"
+        },
+        {
+          "name": "How To Run A Cli Script Against A Device",
+          "description": "Key concepts and operations for how to run a cli script against a device",
+          "importance": "high"
+        }
+      ]
+    },
+    {
+      "name": "ADOM Management",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/013_adom_management.html",
+      "subsections": [
+        {
+          "name": "Adom Creation",
+          "anchor": "#adom-creation",
+          "endpoints": [
+            {
+              "path": "/dvmdb/adom",
+              "method": "GET",
+              "description": "List all ADOMs",
+              "parameters": [
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/adom",
+              "method": "POST",
+              "description": "Create new ADOM",
+              "parameters": [
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Adom Creation",
+              "description": "Key concepts and operations for adom creation",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Adom Deletion",
+          "anchor": "#adom-deletion",
+          "endpoints": [
+            {
+              "path": "/dvmdb/adom",
+              "method": "GET",
+              "description": "List all ADOMs",
+              "parameters": [
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/adom",
+              "method": "POST",
+              "description": "Create new ADOM",
+              "parameters": [
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Adom Deletion",
+              "description": "Key concepts and operations for adom deletion",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "How To Move A Device Vdom In A New Adom",
+          "anchor": "#how-to-move-a-device-vdom-in-a-new-adom",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "How To Move A Device Vdom In A New Adom",
+              "description": "Key concepts and operations for how to move a device vdom in a new adom",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Adom Revision",
+          "anchor": "#adom-revision",
+          "endpoints": [
+            {
+              "path": "/dvmdb/adom",
+              "method": "GET",
+              "description": "List all ADOMs",
+              "parameters": [
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/adom",
+              "method": "POST",
+              "description": "Create new ADOM",
+              "parameters": [
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Adom Revision",
+              "description": "Key concepts and operations for adom revision",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Adom Upgrade",
+          "anchor": "#adom-upgrade",
+          "endpoints": [
+            {
+              "path": "/dvmdb/adom",
+              "method": "GET",
+              "description": "List all ADOMs",
+              "parameters": [
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/adom",
+              "method": "POST",
+              "description": "Create new ADOM",
+              "parameters": [
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Adom Upgrade",
+              "description": "Key concepts and operations for adom upgrade",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Adom Workspace Mode",
+          "anchor": "#adom-workspace-mode",
+          "endpoints": [
+            {
+              "path": "/dvmdb/adom",
+              "method": "GET",
+              "description": "List all ADOMs",
+              "parameters": [
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/adom",
+              "method": "POST",
+              "description": "Create new ADOM",
+              "parameters": [
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Adom Workspace Mode",
+              "description": "Key concepts and operations for adom workspace mode",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "Adom Workflow Mode",
+          "anchor": "#adom-workflow-mode",
+          "endpoints": [
+            {
+              "path": "/dvmdb/adom",
+              "method": "GET",
+              "description": "List all ADOMs",
+              "parameters": [
+                "fields",
+                "filter",
+                "range"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/adom",
+              "method": "POST",
+              "description": "Create new ADOM",
+              "parameters": [
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Adom Workflow Mode",
+              "description": "Key concepts and operations for adom workflow mode",
+              "importance": "high"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [
+        {
+          "path": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List all ADOMs",
+          "parameters": [
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM",
+          "parameters": [
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List all ADOMs",
+          "parameters": [
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM",
+          "parameters": [
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List all ADOMs",
+          "parameters": [
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM",
+          "parameters": [
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List all ADOMs",
+          "parameters": [
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM",
+          "parameters": [
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List all ADOMs",
+          "parameters": [
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM",
+          "parameters": [
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List all ADOMs",
+          "parameters": [
+            "fields",
+            "filter",
+            "range"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM",
+          "parameters": [
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "code_examples": [
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        }
+      ],
+      "key_concepts": [
+        {
+          "name": "Adom Creation",
+          "description": "Key concepts and operations for adom creation",
+          "importance": "high"
+        },
+        {
+          "name": "Adom Deletion",
+          "description": "Key concepts and operations for adom deletion",
+          "importance": "high"
+        },
+        {
+          "name": "How To Move A Device Vdom In A New Adom",
+          "description": "Key concepts and operations for how to move a device vdom in a new adom",
+          "importance": "high"
+        },
+        {
+          "name": "Adom Revision",
+          "description": "Key concepts and operations for adom revision",
+          "importance": "high"
+        },
+        {
+          "name": "Adom Upgrade",
+          "description": "Key concepts and operations for adom upgrade",
+          "importance": "high"
+        },
+        {
+          "name": "Adom Workspace Mode",
+          "description": "Key concepts and operations for adom workspace mode",
+          "importance": "high"
+        },
+        {
+          "name": "Adom Workflow Mode",
+          "description": "Key concepts and operations for adom workflow mode",
+          "importance": "high"
+        }
+      ]
+    },
+    {
+      "name": "FortiGuard Management",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/014_fortiguard_management.html",
+      "subsections": [
+        {
+          "name": "Firmware Management",
+          "anchor": "#firmware-management",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Firmware Management",
+              "description": "Key concepts and operations for firmware management",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "How To Get Contracts For Managed Devices",
+          "anchor": "#how-to-get-contracts-for-managed-devices",
+          "endpoints": [
+            {
+              "path": "/dvmdb/device",
+              "method": "GET",
+              "description": "List all managed devices",
+              "parameters": [
+                "adom",
+                "fields",
+                "filter"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "data": [],
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/dvmdb/device",
+              "method": "POST",
+              "description": "Add new managed device",
+              "parameters": [
+                "adom",
+                "data"
+              ],
+              "response": {
+                "result": [
+                  {
+                    "status": {
+                      "code": 0,
+                      "message": "OK"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [
+            {
+              "title": "Get Device List",
+              "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+            }
+          ],
+          "concepts": [
+            {
+              "name": "How To Get Contracts For Managed Devices",
+              "description": "Key concepts and operations for how to get contracts for managed devices",
+              "importance": "high"
+            }
+          ]
+        },
+        {
+          "name": "How To Export Import Fortiguard Objects",
+          "anchor": "#how-to-export-import-fortiguard-objects",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "How To Export Import Fortiguard Objects",
+              "description": "Key concepts and operations for how to export import fortiguard objects",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Local External Resources",
+          "anchor": "#local-external-resources",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Local External Resources",
+              "description": "Key concepts and operations for local external resources",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Remote External Resources",
+          "anchor": "#remote-external-resources",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Remote External Resources",
+              "description": "Key concepts and operations for remote external resources",
+              "importance": "medium"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [
+        {
+          "path": "/dvmdb/device",
+          "method": "GET",
+          "description": "List all managed devices",
+          "parameters": [
+            "adom",
+            "fields",
+            "filter"
+          ],
+          "response": {
+            "result": [
+              {
+                "data": [],
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new managed device",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "response": {
+            "result": [
+              {
+                "status": {
+                  "code": 0,
+                  "message": "OK"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "code_examples": [
+        {
+          "title": "Get Device List",
+          "code": "{\"id\": 1, \"method\": \"get\", \"params\": [{\"url\": \"/dvmdb/device\"}], \"verbose\": 1}"
+        }
+      ],
+      "key_concepts": [
+        {
+          "name": "Firmware Management",
+          "description": "Key concepts and operations for firmware management",
+          "importance": "medium"
+        },
+        {
+          "name": "How To Get Contracts For Managed Devices",
+          "description": "Key concepts and operations for how to get contracts for managed devices",
+          "importance": "high"
+        },
+        {
+          "name": "How To Export Import Fortiguard Objects",
+          "description": "Key concepts and operations for how to export import fortiguard objects",
+          "importance": "medium"
+        },
+        {
+          "name": "Local External Resources",
+          "description": "Key concepts and operations for local external resources",
+          "importance": "medium"
+        },
+        {
+          "name": "Remote External Resources",
+          "description": "Key concepts and operations for remote external resources",
+          "importance": "medium"
+        }
+      ]
+    },
+    {
+      "name": "System Operations",
+      "url": "https://how-to-fortimanager-api.readthedocs.io/en/latest/017_fmg_operations.html",
+      "subsections": [
+        {
+          "name": "Fortimanager Certificates",
+          "anchor": "#fortimanager-certificates",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Fortimanager Certificates",
+              "description": "Key concepts and operations for fortimanager certificates",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "How To Get The Fortimanager System Ha Status",
+          "anchor": "#how-to-get-the-fortimanager-system-ha-status",
+          "endpoints": [
+            {
+              "path": "/sys/status",
+              "method": "GET",
+              "description": "Get system status",
+              "parameters": [],
+              "response": {
+                "result": [
+                  {
+                    "data": {},
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/sys/ha/status",
+              "method": "GET",
+              "description": "Get HA status",
+              "parameters": [],
+              "response": {
+                "result": [
+                  {
+                    "data": {},
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "How To Get The Fortimanager System Ha Status",
+              "description": "Key concepts and operations for how to get the fortimanager system ha status",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Rbac",
+          "anchor": "#rbac",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Rbac",
+              "description": "Key concepts and operations for rbac",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Operating The Fortimanager System",
+          "anchor": "#operating-the-fortimanager-system",
+          "endpoints": [
+            {
+              "path": "/sys/status",
+              "method": "GET",
+              "description": "Get system status",
+              "parameters": [],
+              "response": {
+                "result": [
+                  {
+                    "data": {},
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/sys/ha/status",
+              "method": "GET",
+              "description": "Get HA status",
+              "parameters": [],
+              "response": {
+                "result": [
+                  {
+                    "data": {},
+                    "status": {
+                      "code": 0
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Operating The Fortimanager System",
+              "description": "Key concepts and operations for operating the fortimanager system",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Task Management",
+          "anchor": "#task-management",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Task Management",
+              "description": "Key concepts and operations for task management",
+              "importance": "medium"
+            }
+          ]
+        },
+        {
+          "name": "Fortimanager Packet Capture",
+          "anchor": "#fortimanager-packet-capture",
+          "endpoints": [],
+          "examples": [],
+          "concepts": [
+            {
+              "name": "Fortimanager Packet Capture",
+              "description": "Key concepts and operations for fortimanager packet capture",
+              "importance": "medium"
+            }
+          ]
+        }
+      ],
+      "api_endpoints": [
+        {
+          "path": "/sys/status",
+          "method": "GET",
+          "description": "Get system status",
+          "parameters": [],
+          "response": {
+            "result": [
+              {
+                "data": {},
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/sys/ha/status",
+          "method": "GET",
+          "description": "Get HA status",
+          "parameters": [],
+          "response": {
+            "result": [
+              {
+                "data": {},
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/sys/status",
+          "method": "GET",
+          "description": "Get system status",
+          "parameters": [],
+          "response": {
+            "result": [
+              {
+                "data": {},
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "path": "/sys/ha/status",
+          "method": "GET",
+          "description": "Get HA status",
+          "parameters": [],
+          "response": {
+            "result": [
+              {
+                "data": {},
+                "status": {
+                  "code": 0
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "code_examples": [],
+      "key_concepts": [
+        {
+          "name": "Fortimanager Certificates",
+          "description": "Key concepts and operations for fortimanager certificates",
+          "importance": "medium"
+        },
+        {
+          "name": "How To Get The Fortimanager System Ha Status",
+          "description": "Key concepts and operations for how to get the fortimanager system ha status",
+          "importance": "medium"
+        },
+        {
+          "name": "Rbac",
+          "description": "Key concepts and operations for rbac",
+          "importance": "medium"
+        },
+        {
+          "name": "Operating The Fortimanager System",
+          "description": "Key concepts and operations for operating the fortimanager system",
+          "importance": "medium"
+        },
+        {
+          "name": "Task Management",
+          "description": "Key concepts and operations for task management",
+          "importance": "medium"
+        },
+        {
+          "name": "Fortimanager Packet Capture",
+          "description": "Key concepts and operations for fortimanager packet capture",
+          "importance": "medium"
+        }
+      ]
+    }
+  ]
+}

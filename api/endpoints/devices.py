@@ -3,15 +3,18 @@ Device Management Endpoints
 Combines device APIs from both applications
 """
 
-from fastapi import APIRouter, HTTPException, BackgroundTasks
+from fastapi import APIRouter, HTTPException, BackgroundTasks, Request
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
 
-from ...shared.device_handling.device_collector import UnifiedDeviceCollector
-from ...shared.device_handling.device_processor import DeviceProcessor, DeviceMatcher
-from ...shared.device_handling.device_classifier import DeviceClassifier
-from ...shared.network_utils.authentication import AuthManager
-from ...shared.config.config_manager import ConfigManager
+from shared.device_handling.device_collector import UnifiedDeviceCollector
+from shared.device_handling.device_processor import DeviceProcessor, DeviceMatcher
+from shared.device_handling.device_classifier import DeviceClassifier
+from shared.network_utils.authentication import AuthManager
+from shared.config.config_manager import ConfigManager
+import logging
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
@@ -34,29 +37,101 @@ class DeviceFilter(BaseModel):
 
 
 @router.post("/collect")
-async def collect_devices(credentials: DeviceCredentials, background_tasks: BackgroundTasks):
+async def collect_devices(credentials: DeviceCredentials, background_tasks: BackgroundTasks, req: Request = None):
     """
     Collect devices from configured sources
     Combines FortiGate, FortiManager, and Meraki collection
     """
+    print(f"DEBUG: collect_devices endpoint called")
+    logger.info(f"Collect request received. Host: {credentials.host}, User: {credentials.username}, Pass provided: {bool(credentials.password)}")
     try:
         # Initialize components
         auth_manager = AuthManager()
         collector = UnifiedDeviceCollector(auth_manager)
+        
+        # Get config from app state if available
+        config = None
+        if req and hasattr(req.app.state, 'config'):
+            config = req.app.state.config
+
+        # Fallback to env/config if credentials missing
+        import os
+        if not credentials.host:
+            credentials.host = (config.get('fortigate_host') if config else None) or os.getenv('FORTIGATE_HOST') or os.getenv('FORTIGATE_HOSTS')
+        if not credentials.username:
+            credentials.username = (config.get('fortigate_username') if config else None) or os.getenv('FORTIGATE_USERNAME')
+        if not credentials.password:
+            credentials.password = (config.get('fortigate_password') if config else None) or os.getenv('FORTIGATE_PASSWORD')
+        
+        if not credentials.api_key:
+            credentials.api_key = (config.get('meraki_api_key') if config else None) or os.getenv('MERAKI_API_KEY')
+
+        logger.info(f"Resolved credentials - Host: {credentials.host}, User: {credentials.username}, Pass: {'*' * 8 if credentials.password else 'None'}")
 
         # Configure authentication based on provided credentials
-        if credentials.host and credentials.username and credentials.password:
-            # FortiGate authentication
-            auth_manager.authenticate_fortigate(
-                credentials.host,
-                credentials.username,
-                credentials.password
-            )
+        if credentials.host and credentials.username:
+            logger.info(f"Processing FortiGate credentials for host: {credentials.host}")
+            
+            # Strip protocol if present
+            if credentials.host.startswith('https://'):
+                credentials.host = credentials.host[8:]
+            elif credentials.host.startswith('http://'):
+                credentials.host = credentials.host[7:]
+
+            # Determine port
+            port = 443
+            
+            # Check if host has port
+            if ':' in credentials.host:
+                try:
+                    host_parts = credentials.host.split(':')
+                    credentials.host = host_parts[0]
+                    port = int(host_parts[1])
+                except (ValueError, IndexError):
+                    pass
+            
+            logger.info(f"Resolved FortiGate host: {credentials.host}, port: {port}")
+
+            # If port is still default, try env lookup
+            if port == 443 and credentials.host:
+                # Try to find specific port for this host
+                # Env var format: FORTIGATE_192_168_0_254_PORT
+                env_host_key = credentials.host.replace('.', '_')
+                port_key = f"FORTIGATE_{env_host_key}_PORT"
+                port_str = os.getenv(port_key)
+                if port_str:
+                    try:
+                        port = int(port_str)
+                    except ValueError:
+                        pass
+
+            # Try to find specific token for this host
+            # Env var format: FORTIGATE_192_168_0_254_TOKEN
+            env_host_key = credentials.host.replace('.', '_')
+            token_key = f"FORTIGATE_{env_host_key}_TOKEN"
+            token = os.getenv(token_key)
+            
+            if token:
+                print(f"DEBUG: Found API token for host {credentials.host}")
+            
+            # Only authenticate session if no token
+            if not token:
+                print(f"DEBUG: Authenticating with session (no token)")
+                auth_manager.authenticate_fortigate(
+                    credentials.host,
+                    credentials.username,
+                    credentials.password,
+                    port=port
+                )
+            
+            print(f"DEBUG: Adding background task for FortiGate")
             background_tasks.add_task(
                 collector.collect_from_fortigate,
                 credentials.host,
                 credentials.username,
-                credentials.password
+                credentials.password,
+                port=port,
+                token=token
             )
 
         if credentials.api_key:
@@ -67,6 +142,13 @@ async def collect_devices(credentials: DeviceCredentials, background_tasks: Back
                 credentials.api_key,
                 credentials.org_id
             )
+        
+        if not (credentials.host or credentials.api_key):
+             return {
+                "message": "No credentials provided and no defaults found in configuration.",
+                "status": "failed",
+                "sources": {}
+            }
 
         # Return initial response - collection happens in background
         return {

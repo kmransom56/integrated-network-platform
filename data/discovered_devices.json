@@ -1,0 +1,90 @@
+/home/keith/integrated-network-platform/shared/visualization{
+  "devices": [
+    {
+      "id": "b8:16:5f:3b:36:12",
+      "name": "LGwebOSTV",
+      "device_type": "fortigate",
+      "ip_address": "192.168.2.4",
+      "mac_address": "b8:16:5f:3b:36:12",
+      "model": null,
+      "serial": null,
+      "status": "unknown",
+      "location": null,
+      "metadata": null
+    },
+    {
+      "id": "dc:a0:d0:06:25:6b",
+      "name": "dc:a0:d0:06:25:6b",
+      "device_type": "fortigate",
+      "ip_address": "192.168.2.3",
+      "mac_address": "dc:a0:d0:06:25:6b",
+      "model": null,
+      "serial": null,
+      "status": "unknown",
+      "location": null,
+      "metadata": null
+    },
+    {
+      "id": "8e:91:f1:79:70:7d",
+      "name": "Android_NPKPZTZK",
+      "device_type": "fortigate",
+      "ip_address": "192.168.2.5",
+      "mac_address": "8e:91:f1:79:70:7d",
+      "model": null,
+      "serial": null,
+      "status": "unknown",
+      "location": null,
+      "metadata": null
+    },
+    {
+      "id": "0a:11:00:d3:10:75",
+      "name": "Android_MMRZK6PY",
+      "device_type": "fortigate",
+      "ip_address": "192.168.2.8",
+      "mac_address": "0a:11:00:d3:10:75",
+      "model": null,
+      "serial": null,
+      "status": "unknown",
+      "location": null,
+      "metadata": null
+    },
+    {
+      "id": "S124EPTQ22000276",
+      "name": "S124EPTQ22000276",
+      "device_type": "fortiswitch",
+      "ip_address": null,
+      "mac_address": null,
+      "model": null,
+      "serial": "S124EPTQ22000276",
+      "status": "Connected",
+      "location": null,
+      "metadata": null
+    },
+    {
+      "id": "FP231FTF20023043",
+      "name": "AP",
+      "device_type": "fortiap",
+      "ip_address": null,
+      "mac_address": null,
+      "model": null,
+      "serial": "FP231FTF20023043",
+      "status": "connected",
+      "location": null,
+      "metadata": null
+    },
+    {
+      "id": "FP231FTF22003593",
+      "name": "AP2",
+      "device_type": "fortiap",
+      "ip_address": null,
+      "mac_address": null,
+      "model": null,
+      "serial": "FP231FTF22003593",
+      "status": "connected",
+      "location": null,
+      "metadata": null
+    }
+  ],
+  "total_count": 7,
+  "exported_at": "2025-12-05 00:17:18.902683"
+}

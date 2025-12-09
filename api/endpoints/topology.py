@@ -7,9 +7,9 @@ from fastapi import APIRouter, HTTPException
 from typing import List, Dict, Any, Tuple
 from pydantic import BaseModel
 
-from ...shared.network_utils.topology_builder import TopologyBuilder
-from ...shared.network_utils.data_formatter import NetworkDataFormatter
-from ...shared.device_handling.device_processor import DeviceProcessor
+from shared.network_utils.topology_builder import TopologyBuilder
+from shared.network_utils.data_formatter import NetworkDataFormatter
+from shared.device_handling.device_processor import DeviceProcessor
 
 router = APIRouter()
 

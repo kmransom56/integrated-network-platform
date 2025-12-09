@@ -1,0 +1,4829 @@
+{
+  "extraction_date": "2025-11-07T08:02:44.698365",
+  "source": "FortiManager API Documentation - how-to-fortimanager-api.readthedocs.io",
+  "total_categories": 13,
+  "total_endpoints": 342,
+  "categories": [
+    {
+      "category": "FMG JSON API Introduction",
+      "endpoints": [
+        {
+          "id": 1,
+          "endpoint": "/sys/login/user",
+          "method": "POST",
+          "description": "Authenticate user session - Login to FortiManager",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Login to FortiManager",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Login to FortiManager",
+          "response_format": "JSON"
+        },
+        {
+          "id": 2,
+          "endpoint": "/sys/login/challenge",
+          "method": "POST",
+          "description": "Challenge-based authentication - Login to FortiManager",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Login to FortiManager",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Login to FortiManager",
+          "response_format": "JSON"
+        },
+        {
+          "id": 3,
+          "endpoint": "/pm/config/session_based_authentication",
+          "method": "GET",
+          "description": "Get Session based authentication configuration",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Session based authentication",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Session based authentication settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 4,
+          "endpoint": "/pm/config/session_based_authentication",
+          "method": "POST",
+          "description": "Create Session based authentication",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Session based authentication",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Session based authentication",
+          "response_format": "JSON"
+        },
+        {
+          "id": 5,
+          "endpoint": "/pm/config/token-based_authentication",
+          "method": "GET",
+          "description": "Get Token-based authentication configuration",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Token-based authentication",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Token-based authentication settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 6,
+          "endpoint": "/pm/config/token-based_authentication",
+          "method": "POST",
+          "description": "Create Token-based authentication",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Token-based authentication",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Token-based authentication",
+          "response_format": "JSON"
+        },
+        {
+          "id": 7,
+          "endpoint": "/pm/config/fortimanager_cloud_api_authentication",
+          "method": "GET",
+          "description": "Get FortiManager Cloud API authentication configuration",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "FortiManager Cloud API authentication",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get FortiManager Cloud API authentication settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 8,
+          "endpoint": "/pm/config/fortimanager_cloud_api_authentication",
+          "method": "POST",
+          "description": "Create FortiManager Cloud API authentication",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "FortiManager Cloud API authentication",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new FortiManager Cloud API authentication",
+          "response_format": "JSON"
+        },
+        {
+          "id": 9,
+          "endpoint": "/sys/logout",
+          "method": "POST",
+          "description": "Terminate user session - Logout from FortiManager",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Logout from FortiManager",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Logout from FortiManager",
+          "response_format": "JSON"
+        },
+        {
+          "id": 10,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Managing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Managing Device Settings",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Managing Device Settings information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 11,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Managing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Managing Device Settings",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Managing Device Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 12,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Managing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Managing Device Settings",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Managing Device Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 13,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Managing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Managing Device Settings",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Managing Device Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 14,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Managing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Managing Device Settings",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Managing Device Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 15,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Installing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Installing Device Settings",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Installing Device Settings information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 16,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Installing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Installing Device Settings",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Installing Device Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 17,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Installing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Installing Device Settings",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Installing Device Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 18,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Installing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Installing Device Settings",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Installing Device Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 19,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Installing Device Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Installing Device Settings",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Installing Device Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 20,
+          "endpoint": "/pm/config/managing_security_settings",
+          "method": "GET",
+          "description": "Get Managing Security Settings configuration",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Managing Security Settings",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Managing Security Settings settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 21,
+          "endpoint": "/pm/config/managing_security_settings",
+          "method": "POST",
+          "description": "Create Managing Security Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Managing Security Settings",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Managing Security Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 22,
+          "endpoint": "/pm/config/installing_security_settings",
+          "method": "GET",
+          "description": "Get Installing Security Settings configuration",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Installing Security Settings",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Installing Security Settings settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 23,
+          "endpoint": "/pm/config/installing_security_settings",
+          "method": "POST",
+          "description": "Create Installing Security Settings",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Installing Security Settings",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Installing Security Settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 24,
+          "endpoint": "/monitor/system/status",
+          "method": "GET",
+          "description": "Monitor system status - Monitoring a task",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Monitoring a task",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Monitoring a task information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 25,
+          "endpoint": "/monitor/device/status",
+          "method": "GET",
+          "description": "Monitor device status - Monitoring a task",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Monitoring a task",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Monitoring a task information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 26,
+          "endpoint": "/task/task",
+          "method": "GET",
+          "description": "Monitor tasks - Monitoring a task",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Monitoring a task",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Monitoring a task information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 27,
+          "endpoint": "/pm/config/multiplexing_requests",
+          "method": "GET",
+          "description": "Get Multiplexing requests configuration",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Multiplexing requests",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Multiplexing requests settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 28,
+          "endpoint": "/pm/config/multiplexing_requests",
+          "method": "POST",
+          "description": "Create Multiplexing requests",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Multiplexing requests",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Multiplexing requests",
+          "response_format": "JSON"
+        },
+        {
+          "id": 29,
+          "endpoint": "/pm/config/working_with_symbolic_values",
+          "method": "GET",
+          "description": "Get Working with symbolic values configuration",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Working with symbolic values",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Working with symbolic values settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 30,
+          "endpoint": "/pm/config/working_with_symbolic_values",
+          "method": "POST",
+          "description": "Create Working with symbolic values",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Working with symbolic values",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Working with symbolic values",
+          "response_format": "JSON"
+        },
+        {
+          "id": 31,
+          "endpoint": "/pm/config/operations_on_tables,_objects_and_attributes",
+          "method": "GET",
+          "description": "Get Operations on tables, objects and attributes configuration",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Operations on tables, objects and attributes",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Operations on tables, objects and attributes settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 32,
+          "endpoint": "/pm/config/operations_on_tables,_objects_and_attributes",
+          "method": "POST",
+          "description": "Create Operations on tables, objects and attributes",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Operations on tables, objects and attributes",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Operations on tables, objects and attributes",
+          "response_format": "JSON"
+        },
+        {
+          "id": 33,
+          "endpoint": "/pm/config/permissions",
+          "method": "GET",
+          "description": "Get Permissions configuration",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Permissions",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Permissions settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 34,
+          "endpoint": "/pm/config/permissions",
+          "method": "POST",
+          "description": "Create Permissions",
+          "category": "FMG JSON API Introduction",
+          "subcategory": "Permissions",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Permissions",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "The option attribute",
+      "endpoints": [
+        {
+          "id": 35,
+          "endpoint": "/pm/config/extra_info",
+          "method": "GET",
+          "description": "Get extra info configuration",
+          "category": "The option attribute",
+          "subcategory": "extra info",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get extra info settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 36,
+          "endpoint": "/pm/config/extra_info",
+          "method": "POST",
+          "description": "Create extra info",
+          "category": "The option attribute",
+          "subcategory": "extra info",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new extra info",
+          "response_format": "JSON"
+        },
+        {
+          "id": 37,
+          "endpoint": "/pm/config/loadsub",
+          "method": "GET",
+          "description": "Get loadsub configuration",
+          "category": "The option attribute",
+          "subcategory": "loadsub",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get loadsub settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 38,
+          "endpoint": "/pm/config/loadsub",
+          "method": "POST",
+          "description": "Create loadsub",
+          "category": "The option attribute",
+          "subcategory": "loadsub",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new loadsub",
+          "response_format": "JSON"
+        },
+        {
+          "id": 39,
+          "endpoint": "/pm/config/count",
+          "method": "GET",
+          "description": "Get count configuration",
+          "category": "The option attribute",
+          "subcategory": "count",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get count settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 40,
+          "endpoint": "/pm/config/count",
+          "method": "POST",
+          "description": "Create count",
+          "category": "The option attribute",
+          "subcategory": "count",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new count",
+          "response_format": "JSON"
+        },
+        {
+          "id": 41,
+          "endpoint": "/pm/config/syntax",
+          "method": "GET",
+          "description": "Get syntax configuration",
+          "category": "The option attribute",
+          "subcategory": "syntax",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get syntax settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 42,
+          "endpoint": "/pm/config/syntax",
+          "method": "POST",
+          "description": "Create syntax",
+          "category": "The option attribute",
+          "subcategory": "syntax",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new syntax",
+          "response_format": "JSON"
+        },
+        {
+          "id": 43,
+          "endpoint": "/pm/config/devinfo",
+          "method": "GET",
+          "description": "Get devinfo configuration",
+          "category": "The option attribute",
+          "subcategory": "devinfo",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get devinfo settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 44,
+          "endpoint": "/pm/config/devinfo",
+          "method": "POST",
+          "description": "Create devinfo",
+          "category": "The option attribute",
+          "subcategory": "devinfo",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new devinfo",
+          "response_format": "JSON"
+        },
+        {
+          "id": 45,
+          "endpoint": "/pm/config/obj_flags",
+          "method": "GET",
+          "description": "Get obj flags configuration",
+          "category": "The option attribute",
+          "subcategory": "obj flags",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get obj flags settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 46,
+          "endpoint": "/pm/config/obj_flags",
+          "method": "POST",
+          "description": "Create obj flags",
+          "category": "The option attribute",
+          "subcategory": "obj flags",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new obj flags",
+          "response_format": "JSON"
+        },
+        {
+          "id": 47,
+          "endpoint": "/pm/config/datasrc",
+          "method": "GET",
+          "description": "Get datasrc configuration",
+          "category": "The option attribute",
+          "subcategory": "datasrc",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get datasrc settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 48,
+          "endpoint": "/pm/config/datasrc",
+          "method": "POST",
+          "description": "Create datasrc",
+          "category": "The option attribute",
+          "subcategory": "datasrc",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new datasrc",
+          "response_format": "JSON"
+        },
+        {
+          "id": 49,
+          "endpoint": "/pm/config/chksum",
+          "method": "GET",
+          "description": "Get chksum configuration",
+          "category": "The option attribute",
+          "subcategory": "chksum",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get chksum settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 50,
+          "endpoint": "/pm/config/chksum",
+          "method": "POST",
+          "description": "Create chksum",
+          "category": "The option attribute",
+          "subcategory": "chksum",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new chksum",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "Objects Management",
+      "endpoints": [
+        {
+          "id": 51,
+          "endpoint": "/pm/config/metadata",
+          "method": "GET",
+          "description": "Get Metadata configuration",
+          "category": "Objects Management",
+          "subcategory": "Metadata",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Metadata settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 52,
+          "endpoint": "/pm/config/metadata",
+          "method": "POST",
+          "description": "Create Metadata",
+          "category": "Objects Management",
+          "subcategory": "Metadata",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Metadata",
+          "response_format": "JSON"
+        },
+        {
+          "id": 53,
+          "endpoint": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "GET",
+          "description": "List firewall addresses - Firewall Address",
+          "category": "Objects Management",
+          "subcategory": "Firewall Address",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Firewall Address information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 54,
+          "endpoint": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "POST",
+          "description": "Create firewall address - Firewall Address",
+          "category": "Objects Management",
+          "subcategory": "Firewall Address",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Firewall Address",
+          "response_format": "JSON"
+        },
+        {
+          "id": 55,
+          "endpoint": "/pm/config/adom/{adom}/obj/firewall/address/{name}",
+          "method": "PUT",
+          "description": "Update firewall address - Firewall Address",
+          "category": "Objects Management",
+          "subcategory": "Firewall Address",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "name - Object name",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Firewall Address",
+          "response_format": "JSON"
+        },
+        {
+          "id": 56,
+          "endpoint": "/pm/config/adom/{adom}/obj/firewall/address/{name}",
+          "method": "DELETE",
+          "description": "Delete firewall address - Firewall Address",
+          "category": "Objects Management",
+          "subcategory": "Firewall Address",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "name - Object name"
+          ],
+          "example_usage": "Remove Firewall Address",
+          "response_format": "JSON"
+        },
+        {
+          "id": 57,
+          "endpoint": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "GET",
+          "description": "List firewall addresses - Firewall Address Groups",
+          "category": "Objects Management",
+          "subcategory": "Firewall Address Groups",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Firewall Address Groups information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 58,
+          "endpoint": "/pm/config/adom/{adom}/obj/firewall/address",
+          "method": "POST",
+          "description": "Create firewall address - Firewall Address Groups",
+          "category": "Objects Management",
+          "subcategory": "Firewall Address Groups",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Firewall Address Groups",
+          "response_format": "JSON"
+        },
+        {
+          "id": 59,
+          "endpoint": "/pm/config/adom/{adom}/obj/firewall/address/{name}",
+          "method": "PUT",
+          "description": "Update firewall address - Firewall Address Groups",
+          "category": "Objects Management",
+          "subcategory": "Firewall Address Groups",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "name - Object name",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Firewall Address Groups",
+          "response_format": "JSON"
+        },
+        {
+          "id": 60,
+          "endpoint": "/pm/config/adom/{adom}/obj/firewall/address/{name}",
+          "method": "DELETE",
+          "description": "Delete firewall address - Firewall Address Groups",
+          "category": "Objects Management",
+          "subcategory": "Firewall Address Groups",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "name - Object name"
+          ],
+          "example_usage": "Remove Firewall Address Groups",
+          "response_format": "JSON"
+        },
+        {
+          "id": 61,
+          "endpoint": "/pm/config/firewall_vip",
+          "method": "GET",
+          "description": "Get Firewall VIP configuration",
+          "category": "Objects Management",
+          "subcategory": "Firewall VIP",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Firewall VIP settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 62,
+          "endpoint": "/pm/config/firewall_vip",
+          "method": "POST",
+          "description": "Create Firewall VIP",
+          "category": "Objects Management",
+          "subcategory": "Firewall VIP",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Firewall VIP",
+          "response_format": "JSON"
+        },
+        {
+          "id": 63,
+          "endpoint": "/pm/config/wildcard_fqdn",
+          "method": "GET",
+          "description": "Get Wildcard FQDN configuration",
+          "category": "Objects Management",
+          "subcategory": "Wildcard FQDN",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Wildcard FQDN settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 64,
+          "endpoint": "/pm/config/wildcard_fqdn",
+          "method": "POST",
+          "description": "Create Wildcard FQDN",
+          "category": "Objects Management",
+          "subcategory": "Wildcard FQDN",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Wildcard FQDN",
+          "response_format": "JSON"
+        },
+        {
+          "id": 65,
+          "endpoint": "/pm/config/objects_operations",
+          "method": "GET",
+          "description": "Get Objects Operations configuration",
+          "category": "Objects Management",
+          "subcategory": "Objects Operations",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Objects Operations settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 66,
+          "endpoint": "/pm/config/objects_operations",
+          "method": "POST",
+          "description": "Create Objects Operations",
+          "category": "Objects Management",
+          "subcategory": "Objects Operations",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Objects Operations",
+          "response_format": "JSON"
+        },
+        {
+          "id": 67,
+          "endpoint": "/pm/config/normalized_interfaces",
+          "method": "GET",
+          "description": "Get Normalized Interfaces configuration",
+          "category": "Objects Management",
+          "subcategory": "Normalized Interfaces",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Normalized Interfaces settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 68,
+          "endpoint": "/pm/config/normalized_interfaces",
+          "method": "POST",
+          "description": "Create Normalized Interfaces",
+          "category": "Objects Management",
+          "subcategory": "Normalized Interfaces",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Normalized Interfaces",
+          "response_format": "JSON"
+        },
+        {
+          "id": 69,
+          "endpoint": "/pm/config/internet_service_objects",
+          "method": "GET",
+          "description": "Get Internet Service Objects configuration",
+          "category": "Objects Management",
+          "subcategory": "Internet Service Objects",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Internet Service Objects settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 70,
+          "endpoint": "/pm/config/internet_service_objects",
+          "method": "POST",
+          "description": "Create Internet Service Objects",
+          "category": "Objects Management",
+          "subcategory": "Internet Service Objects",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Internet Service Objects",
+          "response_format": "JSON"
+        },
+        {
+          "id": 71,
+          "endpoint": "/pm/config/operations_on_objects",
+          "method": "GET",
+          "description": "Get Operations on objects configuration",
+          "category": "Objects Management",
+          "subcategory": "Operations on objects",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Operations on objects settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 72,
+          "endpoint": "/pm/config/operations_on_objects",
+          "method": "POST",
+          "description": "Create Operations on objects",
+          "category": "Objects Management",
+          "subcategory": "Operations on objects",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Operations on objects",
+          "response_format": "JSON"
+        },
+        {
+          "id": 73,
+          "endpoint": "/pm/config/object_revision",
+          "method": "GET",
+          "description": "Get Object Revision configuration",
+          "category": "Objects Management",
+          "subcategory": "Object Revision",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Object Revision settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 74,
+          "endpoint": "/pm/config/object_revision",
+          "method": "POST",
+          "description": "Create Object Revision",
+          "category": "Objects Management",
+          "subcategory": "Object Revision",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Object Revision",
+          "response_format": "JSON"
+        },
+        {
+          "id": 75,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Per-device mapping",
+          "category": "Objects Management",
+          "subcategory": "Per-device mapping",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Per-device mapping information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 76,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Per-device mapping",
+          "category": "Objects Management",
+          "subcategory": "Per-device mapping",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Per-device mapping",
+          "response_format": "JSON"
+        },
+        {
+          "id": 77,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Per-device mapping",
+          "category": "Objects Management",
+          "subcategory": "Per-device mapping",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Per-device mapping",
+          "response_format": "JSON"
+        },
+        {
+          "id": 78,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Per-device mapping",
+          "category": "Objects Management",
+          "subcategory": "Per-device mapping",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Per-device mapping",
+          "response_format": "JSON"
+        },
+        {
+          "id": 79,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Per-device mapping",
+          "category": "Objects Management",
+          "subcategory": "Per-device mapping",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Per-device mapping",
+          "response_format": "JSON"
+        },
+        {
+          "id": 80,
+          "endpoint": "/pm/config/replacement_message_group",
+          "method": "GET",
+          "description": "Get Replacement Message Group configuration",
+          "category": "Objects Management",
+          "subcategory": "Replacement Message Group",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Replacement Message Group settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 81,
+          "endpoint": "/pm/config/replacement_message_group",
+          "method": "POST",
+          "description": "Create Replacement Message Group",
+          "category": "Objects Management",
+          "subcategory": "Replacement Message Group",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Replacement Message Group",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "Security Profiles",
+      "endpoints": [
+        {
+          "id": 82,
+          "endpoint": "/pm/config/url_filtering",
+          "method": "GET",
+          "description": "Get URL Filtering configuration",
+          "category": "Security Profiles",
+          "subcategory": "URL Filtering",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get URL Filtering settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 83,
+          "endpoint": "/pm/config/url_filtering",
+          "method": "POST",
+          "description": "Create URL Filtering",
+          "category": "Security Profiles",
+          "subcategory": "URL Filtering",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new URL Filtering",
+          "response_format": "JSON"
+        },
+        {
+          "id": 84,
+          "endpoint": "/pm/config/webfilter_urlfilter",
+          "method": "GET",
+          "description": "Get Webfilter urlfilter configuration",
+          "category": "Security Profiles",
+          "subcategory": "Webfilter urlfilter",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Webfilter urlfilter settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 85,
+          "endpoint": "/pm/config/webfilter_urlfilter",
+          "method": "POST",
+          "description": "Create Webfilter urlfilter",
+          "category": "Security Profiles",
+          "subcategory": "Webfilter urlfilter",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Webfilter urlfilter",
+          "response_format": "JSON"
+        },
+        {
+          "id": 86,
+          "endpoint": "/pm/config/web_rating_overrides",
+          "method": "GET",
+          "description": "Get Web rating overrides configuration",
+          "category": "Security Profiles",
+          "subcategory": "Web rating overrides",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Web rating overrides settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 87,
+          "endpoint": "/pm/config/web_rating_overrides",
+          "method": "POST",
+          "description": "Create Web rating overrides",
+          "category": "Security Profiles",
+          "subcategory": "Web rating overrides",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Web rating overrides",
+          "response_format": "JSON"
+        },
+        {
+          "id": 88,
+          "endpoint": "/pm/config/webfilter_profile",
+          "method": "GET",
+          "description": "Get Webfilter profile configuration",
+          "category": "Security Profiles",
+          "subcategory": "Webfilter profile",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Webfilter profile settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 89,
+          "endpoint": "/pm/config/webfilter_profile",
+          "method": "POST",
+          "description": "Create Webfilter profile",
+          "category": "Security Profiles",
+          "subcategory": "Webfilter profile",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Webfilter profile",
+          "response_format": "JSON"
+        },
+        {
+          "id": 90,
+          "endpoint": "/pm/config/dns_filter_domain-filter",
+          "method": "GET",
+          "description": "Get DNS filter domain-filter configuration",
+          "category": "Security Profiles",
+          "subcategory": "DNS filter domain-filter",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get DNS filter domain-filter settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 91,
+          "endpoint": "/pm/config/dns_filter_domain-filter",
+          "method": "POST",
+          "description": "Create DNS filter domain-filter",
+          "category": "Security Profiles",
+          "subcategory": "DNS filter domain-filter",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new DNS filter domain-filter",
+          "response_format": "JSON"
+        },
+        {
+          "id": 92,
+          "endpoint": "/pm/config/application_control_management",
+          "method": "GET",
+          "description": "Get Application Control Management configuration",
+          "category": "Security Profiles",
+          "subcategory": "Application Control Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Application Control Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 93,
+          "endpoint": "/pm/config/application_control_management",
+          "method": "POST",
+          "description": "Create Application Control Management",
+          "category": "Security Profiles",
+          "subcategory": "Application Control Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Application Control Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 94,
+          "endpoint": "/pm/config/dlp_profile_management",
+          "method": "GET",
+          "description": "Get DLP Profile Management configuration",
+          "category": "Security Profiles",
+          "subcategory": "DLP Profile Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get DLP Profile Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 95,
+          "endpoint": "/pm/config/dlp_profile_management",
+          "method": "POST",
+          "description": "Create DLP Profile Management",
+          "category": "Security Profiles",
+          "subcategory": "DLP Profile Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new DLP Profile Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 96,
+          "endpoint": "/pm/config/ips_sensors_management",
+          "method": "GET",
+          "description": "Get IPS Sensors Management configuration",
+          "category": "Security Profiles",
+          "subcategory": "IPS Sensors Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get IPS Sensors Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 97,
+          "endpoint": "/pm/config/ips_sensors_management",
+          "method": "POST",
+          "description": "Create IPS Sensors Management",
+          "category": "Security Profiles",
+          "subcategory": "IPS Sensors Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new IPS Sensors Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 98,
+          "endpoint": "/pm/config/virtual_patching",
+          "method": "GET",
+          "description": "Get Virtual Patching configuration",
+          "category": "Security Profiles",
+          "subcategory": "Virtual Patching",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Virtual Patching settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 99,
+          "endpoint": "/pm/config/virtual_patching",
+          "method": "POST",
+          "description": "Create Virtual Patching",
+          "category": "Security Profiles",
+          "subcategory": "Virtual Patching",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Virtual Patching",
+          "response_format": "JSON"
+        },
+        {
+          "id": 100,
+          "endpoint": "/pm/config/inline_casb_profile",
+          "method": "GET",
+          "description": "Get Inline CASB Profile configuration",
+          "category": "Security Profiles",
+          "subcategory": "Inline CASB Profile",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Inline CASB Profile settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 101,
+          "endpoint": "/pm/config/inline_casb_profile",
+          "method": "POST",
+          "description": "Create Inline CASB Profile",
+          "category": "Security Profiles",
+          "subcategory": "Inline CASB Profile",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Inline CASB Profile",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "Device Management",
+      "endpoints": [
+        {
+          "id": 102,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device OID management",
+          "category": "Device Management",
+          "subcategory": "Device OID management",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device OID management information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 103,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device OID management",
+          "category": "Device Management",
+          "subcategory": "Device OID management",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device OID management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 104,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device OID management",
+          "category": "Device Management",
+          "subcategory": "Device OID management",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device OID management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 105,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device OID management",
+          "category": "Device Management",
+          "subcategory": "Device OID management",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device OID management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 106,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device OID management",
+          "category": "Device Management",
+          "subcategory": "Device OID management",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device OID management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 107,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device renaming",
+          "category": "Device Management",
+          "subcategory": "Device renaming",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device renaming information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 108,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device renaming",
+          "category": "Device Management",
+          "subcategory": "Device renaming",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device renaming",
+          "response_format": "JSON"
+        },
+        {
+          "id": 109,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device renaming",
+          "category": "Device Management",
+          "subcategory": "Device renaming",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device renaming",
+          "response_format": "JSON"
+        },
+        {
+          "id": 110,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device renaming",
+          "category": "Device Management",
+          "subcategory": "Device renaming",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device renaming",
+          "response_format": "JSON"
+        },
+        {
+          "id": 111,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device renaming",
+          "category": "Device Management",
+          "subcategory": "Device renaming",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device renaming",
+          "response_format": "JSON"
+        },
+        {
+          "id": 112,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device status",
+          "category": "Device Management",
+          "subcategory": "Device status",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device status information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 113,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device status",
+          "category": "Device Management",
+          "subcategory": "Device status",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device status",
+          "response_format": "JSON"
+        },
+        {
+          "id": 114,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device status",
+          "category": "Device Management",
+          "subcategory": "Device status",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device status",
+          "response_format": "JSON"
+        },
+        {
+          "id": 115,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device status",
+          "category": "Device Management",
+          "subcategory": "Device status",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device status",
+          "response_format": "JSON"
+        },
+        {
+          "id": 116,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device status",
+          "category": "Device Management",
+          "subcategory": "Device status",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device status",
+          "response_format": "JSON"
+        },
+        {
+          "id": 117,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device refresh",
+          "category": "Device Management",
+          "subcategory": "Device refresh",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device refresh information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 118,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device refresh",
+          "category": "Device Management",
+          "subcategory": "Device refresh",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device refresh",
+          "response_format": "JSON"
+        },
+        {
+          "id": 119,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device refresh",
+          "category": "Device Management",
+          "subcategory": "Device refresh",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device refresh",
+          "response_format": "JSON"
+        },
+        {
+          "id": 120,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device refresh",
+          "category": "Device Management",
+          "subcategory": "Device refresh",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device refresh",
+          "response_format": "JSON"
+        },
+        {
+          "id": 121,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device refresh",
+          "category": "Device Management",
+          "subcategory": "Device refresh",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device refresh",
+          "response_format": "JSON"
+        },
+        {
+          "id": 122,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device timezone",
+          "category": "Device Management",
+          "subcategory": "Device timezone",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device timezone information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 123,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device timezone",
+          "category": "Device Management",
+          "subcategory": "Device timezone",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device timezone",
+          "response_format": "JSON"
+        },
+        {
+          "id": 124,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device timezone",
+          "category": "Device Management",
+          "subcategory": "Device timezone",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device timezone",
+          "response_format": "JSON"
+        },
+        {
+          "id": 125,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device timezone",
+          "category": "Device Management",
+          "subcategory": "Device timezone",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device timezone",
+          "response_format": "JSON"
+        },
+        {
+          "id": 126,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device timezone",
+          "category": "Device Management",
+          "subcategory": "Device timezone",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device timezone",
+          "response_format": "JSON"
+        },
+        {
+          "id": 127,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device coordinates",
+          "category": "Device Management",
+          "subcategory": "Device coordinates",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device coordinates information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 128,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device coordinates",
+          "category": "Device Management",
+          "subcategory": "Device coordinates",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device coordinates",
+          "response_format": "JSON"
+        },
+        {
+          "id": 129,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device coordinates",
+          "category": "Device Management",
+          "subcategory": "Device coordinates",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device coordinates",
+          "response_format": "JSON"
+        },
+        {
+          "id": 130,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device coordinates",
+          "category": "Device Management",
+          "subcategory": "Device coordinates",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device coordinates",
+          "response_format": "JSON"
+        },
+        {
+          "id": 131,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device coordinates",
+          "category": "Device Management",
+          "subcategory": "Device coordinates",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device coordinates",
+          "response_format": "JSON"
+        },
+        {
+          "id": 132,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device database syntax",
+          "category": "Device Management",
+          "subcategory": "Device database syntax",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device database syntax information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 133,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device database syntax",
+          "category": "Device Management",
+          "subcategory": "Device database syntax",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device database syntax",
+          "response_format": "JSON"
+        },
+        {
+          "id": 134,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device database syntax",
+          "category": "Device Management",
+          "subcategory": "Device database syntax",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device database syntax",
+          "response_format": "JSON"
+        },
+        {
+          "id": 135,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device database syntax",
+          "category": "Device Management",
+          "subcategory": "Device database syntax",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device database syntax",
+          "response_format": "JSON"
+        },
+        {
+          "id": 136,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device database syntax",
+          "category": "Device Management",
+          "subcategory": "Device database syntax",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device database syntax",
+          "response_format": "JSON"
+        },
+        {
+          "id": 137,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Real Device management",
+          "category": "Device Management",
+          "subcategory": "Real Device management",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Real Device management information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 138,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Real Device management",
+          "category": "Device Management",
+          "subcategory": "Real Device management",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Real Device management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 139,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Real Device management",
+          "category": "Device Management",
+          "subcategory": "Real Device management",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Real Device management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 140,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Real Device management",
+          "category": "Device Management",
+          "subcategory": "Real Device management",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Real Device management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 141,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Real Device management",
+          "category": "Device Management",
+          "subcategory": "Real Device management",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Real Device management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 142,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Model Device management",
+          "category": "Device Management",
+          "subcategory": "Model Device management",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Model Device management information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 143,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Model Device management",
+          "category": "Device Management",
+          "subcategory": "Model Device management",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Model Device management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 144,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Model Device management",
+          "category": "Device Management",
+          "subcategory": "Model Device management",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Model Device management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 145,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Model Device management",
+          "category": "Device Management",
+          "subcategory": "Model Device management",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Model Device management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 146,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Model Device management",
+          "category": "Device Management",
+          "subcategory": "Model Device management",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Model Device management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 147,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device Groups",
+          "category": "Device Management",
+          "subcategory": "Device Groups",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device Groups information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 148,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device Groups",
+          "category": "Device Management",
+          "subcategory": "Device Groups",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device Groups",
+          "response_format": "JSON"
+        },
+        {
+          "id": 149,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device Groups",
+          "category": "Device Management",
+          "subcategory": "Device Groups",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device Groups",
+          "response_format": "JSON"
+        },
+        {
+          "id": 150,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device Groups",
+          "category": "Device Management",
+          "subcategory": "Device Groups",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device Groups",
+          "response_format": "JSON"
+        },
+        {
+          "id": 151,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device Groups",
+          "category": "Device Management",
+          "subcategory": "Device Groups",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device Groups",
+          "response_format": "JSON"
+        },
+        {
+          "id": 152,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device meta fields",
+          "category": "Device Management",
+          "subcategory": "Device meta fields",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device meta fields information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 153,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device meta fields",
+          "category": "Device Management",
+          "subcategory": "Device meta fields",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device meta fields",
+          "response_format": "JSON"
+        },
+        {
+          "id": 154,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device meta fields",
+          "category": "Device Management",
+          "subcategory": "Device meta fields",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device meta fields",
+          "response_format": "JSON"
+        },
+        {
+          "id": 155,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device meta fields",
+          "category": "Device Management",
+          "subcategory": "Device meta fields",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device meta fields",
+          "response_format": "JSON"
+        },
+        {
+          "id": 156,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device meta fields",
+          "category": "Device Management",
+          "subcategory": "Device meta fields",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device meta fields",
+          "response_format": "JSON"
+        },
+        {
+          "id": 157,
+          "endpoint": "/pm/config/vdom_operations",
+          "method": "GET",
+          "description": "Get VDOM operations configuration",
+          "category": "Device Management",
+          "subcategory": "VDOM operations",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get VDOM operations settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 158,
+          "endpoint": "/pm/config/vdom_operations",
+          "method": "POST",
+          "description": "Create VDOM operations",
+          "category": "Device Management",
+          "subcategory": "VDOM operations",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new VDOM operations",
+          "response_format": "JSON"
+        },
+        {
+          "id": 159,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - Device revisions",
+          "category": "Device Management",
+          "subcategory": "Device revisions",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Device revisions information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 160,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - Device revisions",
+          "category": "Device Management",
+          "subcategory": "Device revisions",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device revisions",
+          "response_format": "JSON"
+        },
+        {
+          "id": 161,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - Device revisions",
+          "category": "Device Management",
+          "subcategory": "Device revisions",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Device revisions",
+          "response_format": "JSON"
+        },
+        {
+          "id": 162,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - Device revisions",
+          "category": "Device Management",
+          "subcategory": "Device revisions",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove Device revisions",
+          "response_format": "JSON"
+        },
+        {
+          "id": 163,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - Device revisions",
+          "category": "Device Management",
+          "subcategory": "Device revisions",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Device revisions",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "Policy Package Management",
+      "endpoints": [
+        {
+          "id": 164,
+          "endpoint": "/pm/config/policy_package_operations",
+          "method": "GET",
+          "description": "Get Policy Package operations configuration",
+          "category": "Policy Package Management",
+          "subcategory": "Policy Package operations",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Policy Package operations settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 165,
+          "endpoint": "/pm/config/policy_package_operations",
+          "method": "POST",
+          "description": "Create Policy Package operations",
+          "category": "Policy Package Management",
+          "subcategory": "Policy Package operations",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Policy Package operations",
+          "response_format": "JSON"
+        },
+        {
+          "id": 166,
+          "endpoint": "/pm/config/policy_blocks",
+          "method": "GET",
+          "description": "Get Policy Blocks configuration",
+          "category": "Policy Package Management",
+          "subcategory": "Policy Blocks",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Policy Blocks settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 167,
+          "endpoint": "/pm/config/policy_blocks",
+          "method": "POST",
+          "description": "Create Policy Blocks",
+          "category": "Policy Package Management",
+          "subcategory": "Policy Blocks",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Policy Blocks",
+          "response_format": "JSON"
+        },
+        {
+          "id": 168,
+          "endpoint": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+          "method": "GET",
+          "description": "List firewall policies - Firewall Policies",
+          "category": "Policy Package Management",
+          "subcategory": "Firewall Policies",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "pkg - Policy package name",
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Firewall Policies information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 169,
+          "endpoint": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy",
+          "method": "POST",
+          "description": "Create firewall policy - Firewall Policies",
+          "category": "Policy Package Management",
+          "subcategory": "Firewall Policies",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "pkg - Policy package name",
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Firewall Policies",
+          "response_format": "JSON"
+        },
+        {
+          "id": 170,
+          "endpoint": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy/{policyid}",
+          "method": "PUT",
+          "description": "Update firewall policy - Firewall Policies",
+          "category": "Policy Package Management",
+          "subcategory": "Firewall Policies",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "pkg - Policy package name",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Firewall Policies",
+          "response_format": "JSON"
+        },
+        {
+          "id": 171,
+          "endpoint": "/pm/config/adom/{adom}/pkg/{pkg}/firewall/policy/{policyid}",
+          "method": "DELETE",
+          "description": "Delete firewall policy - Firewall Policies",
+          "category": "Policy Package Management",
+          "subcategory": "Firewall Policies",
+          "parameters": [
+            "adom - Administrative Domain name",
+            "pkg - Policy package name"
+          ],
+          "example_usage": "Remove Firewall Policies",
+          "response_format": "JSON"
+        },
+        {
+          "id": 172,
+          "endpoint": "/pm/config/global_policies_&_objects",
+          "method": "GET",
+          "description": "Get Global Policies & objects configuration",
+          "category": "Policy Package Management",
+          "subcategory": "Global Policies & objects",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Global Policies & objects settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 173,
+          "endpoint": "/pm/config/global_policies_&_objects",
+          "method": "POST",
+          "description": "Create Global Policies & objects",
+          "category": "Policy Package Management",
+          "subcategory": "Global Policies & objects",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Global Policies & objects",
+          "response_format": "JSON"
+        },
+        {
+          "id": 174,
+          "endpoint": "/pm/config/central_dnat",
+          "method": "GET",
+          "description": "Get Central DNAT configuration",
+          "category": "Policy Package Management",
+          "subcategory": "Central DNAT",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Central DNAT settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 175,
+          "endpoint": "/pm/config/central_dnat",
+          "method": "POST",
+          "description": "Create Central DNAT",
+          "category": "Policy Package Management",
+          "subcategory": "Central DNAT",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Central DNAT",
+          "response_format": "JSON"
+        },
+        {
+          "id": 176,
+          "endpoint": "/pm/config/import_configuration",
+          "method": "GET",
+          "description": "Get Import Configuration configuration",
+          "category": "Policy Package Management",
+          "subcategory": "Import Configuration",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Import Configuration settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 177,
+          "endpoint": "/pm/config/import_configuration",
+          "method": "POST",
+          "description": "Create Import Configuration",
+          "category": "Policy Package Management",
+          "subcategory": "Import Configuration",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Import Configuration",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "Provisioning Template Management",
+      "endpoints": [
+        {
+          "id": 178,
+          "endpoint": "/pm/devprof",
+          "method": "GET",
+          "description": "List device profiles/templates - Templates Operations",
+          "category": "Provisioning Template Management",
+          "subcategory": "Templates Operations",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Templates Operations information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 179,
+          "endpoint": "/pm/devprof",
+          "method": "POST",
+          "description": "Create device profile - Templates Operations",
+          "category": "Provisioning Template Management",
+          "subcategory": "Templates Operations",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Templates Operations",
+          "response_format": "JSON"
+        },
+        {
+          "id": 180,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "PUT",
+          "description": "Update device profile - Templates Operations",
+          "category": "Provisioning Template Management",
+          "subcategory": "Templates Operations",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Templates Operations",
+          "response_format": "JSON"
+        },
+        {
+          "id": 181,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "DELETE",
+          "description": "Delete device profile - Templates Operations",
+          "category": "Provisioning Template Management",
+          "subcategory": "Templates Operations",
+          "parameters": [],
+          "example_usage": "Remove Templates Operations",
+          "response_format": "JSON"
+        },
+        {
+          "id": 182,
+          "endpoint": "/pm/devprof",
+          "method": "GET",
+          "description": "List device profiles/templates - Firmware Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Firmware Template",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Firmware Template information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 183,
+          "endpoint": "/pm/devprof",
+          "method": "POST",
+          "description": "Create device profile - Firmware Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Firmware Template",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Firmware Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 184,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "PUT",
+          "description": "Update device profile - Firmware Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Firmware Template",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Firmware Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 185,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "DELETE",
+          "description": "Delete device profile - Firmware Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Firmware Template",
+          "parameters": [],
+          "example_usage": "Remove Firmware Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 186,
+          "endpoint": "/pm/devprof",
+          "method": "GET",
+          "description": "List device profiles/templates - Certificate Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Certificate Template",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Certificate Template information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 187,
+          "endpoint": "/pm/devprof",
+          "method": "POST",
+          "description": "Create device profile - Certificate Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Certificate Template",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Certificate Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 188,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "PUT",
+          "description": "Update device profile - Certificate Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Certificate Template",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Certificate Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 189,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "DELETE",
+          "description": "Delete device profile - Certificate Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Certificate Template",
+          "parameters": [],
+          "example_usage": "Remove Certificate Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 190,
+          "endpoint": "/pm/devprof",
+          "method": "GET",
+          "description": "List device profiles/templates - System Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "System Template",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve System Template information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 191,
+          "endpoint": "/pm/devprof",
+          "method": "POST",
+          "description": "Create device profile - System Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "System Template",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new System Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 192,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "PUT",
+          "description": "Update device profile - System Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "System Template",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing System Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 193,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "DELETE",
+          "description": "Delete device profile - System Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "System Template",
+          "parameters": [],
+          "example_usage": "Remove System Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 194,
+          "endpoint": "/sys/status",
+          "method": "GET",
+          "description": "Get system status - System Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "System Template",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve System Template information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 195,
+          "endpoint": "/sys/ha/status",
+          "method": "GET",
+          "description": "Get HA status - System Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "System Template",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve System Template information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 196,
+          "endpoint": "/sys/reboot",
+          "method": "POST",
+          "description": "Reboot system - System Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "System Template",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new System Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 197,
+          "endpoint": "/sys/backup",
+          "method": "POST",
+          "description": "Create system backup - System Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "System Template",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new System Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 198,
+          "endpoint": "/pm/config/fortiap_management",
+          "method": "GET",
+          "description": "Get FortiAP Management configuration",
+          "category": "Provisioning Template Management",
+          "subcategory": "FortiAP Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get FortiAP Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 199,
+          "endpoint": "/pm/config/fortiap_management",
+          "method": "POST",
+          "description": "Create FortiAP Management",
+          "category": "Provisioning Template Management",
+          "subcategory": "FortiAP Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new FortiAP Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 200,
+          "endpoint": "/pm/config/fortiswitch_management",
+          "method": "GET",
+          "description": "Get FortiSwitch Management configuration",
+          "category": "Provisioning Template Management",
+          "subcategory": "FortiSwitch Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get FortiSwitch Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 201,
+          "endpoint": "/pm/config/fortiswitch_management",
+          "method": "POST",
+          "description": "Create FortiSwitch Management",
+          "category": "Provisioning Template Management",
+          "subcategory": "FortiSwitch Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new FortiSwitch Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 202,
+          "endpoint": "/pm/config/fortiextender",
+          "method": "GET",
+          "description": "Get FortiExtender configuration",
+          "category": "Provisioning Template Management",
+          "subcategory": "FortiExtender",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get FortiExtender settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 203,
+          "endpoint": "/pm/config/fortiextender",
+          "method": "POST",
+          "description": "Create FortiExtender",
+          "category": "Provisioning Template Management",
+          "subcategory": "FortiExtender",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new FortiExtender",
+          "response_format": "JSON"
+        },
+        {
+          "id": 204,
+          "endpoint": "/pm/devprof",
+          "method": "GET",
+          "description": "List device profiles/templates - CLI Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "CLI Template",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve CLI Template information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 205,
+          "endpoint": "/pm/devprof",
+          "method": "POST",
+          "description": "Create device profile - CLI Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "CLI Template",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new CLI Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 206,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "PUT",
+          "description": "Update device profile - CLI Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "CLI Template",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing CLI Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 207,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "DELETE",
+          "description": "Delete device profile - CLI Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "CLI Template",
+          "parameters": [],
+          "example_usage": "Remove CLI Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 208,
+          "endpoint": "/pm/devprof",
+          "method": "GET",
+          "description": "List device profiles/templates - SD-WAN Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "SD-WAN Template",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve SD-WAN Template information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 209,
+          "endpoint": "/pm/devprof",
+          "method": "POST",
+          "description": "Create device profile - SD-WAN Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "SD-WAN Template",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new SD-WAN Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 210,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "PUT",
+          "description": "Update device profile - SD-WAN Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "SD-WAN Template",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing SD-WAN Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 211,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "DELETE",
+          "description": "Delete device profile - SD-WAN Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "SD-WAN Template",
+          "parameters": [],
+          "example_usage": "Remove SD-WAN Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 212,
+          "endpoint": "/pm/devprof",
+          "method": "GET",
+          "description": "List device profiles/templates - IPsec Tunnel Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "IPsec Tunnel Template",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve IPsec Tunnel Template information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 213,
+          "endpoint": "/pm/devprof",
+          "method": "POST",
+          "description": "Create device profile - IPsec Tunnel Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "IPsec Tunnel Template",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new IPsec Tunnel Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 214,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "PUT",
+          "description": "Update device profile - IPsec Tunnel Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "IPsec Tunnel Template",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing IPsec Tunnel Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 215,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "DELETE",
+          "description": "Delete device profile - IPsec Tunnel Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "IPsec Tunnel Template",
+          "parameters": [],
+          "example_usage": "Remove IPsec Tunnel Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 216,
+          "endpoint": "/pm/devprof",
+          "method": "GET",
+          "description": "List device profiles/templates - Static Route Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Static Route Template",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Static Route Template information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 217,
+          "endpoint": "/pm/devprof",
+          "method": "POST",
+          "description": "Create device profile - Static Route Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Static Route Template",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Static Route Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 218,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "PUT",
+          "description": "Update device profile - Static Route Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Static Route Template",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Static Route Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 219,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "DELETE",
+          "description": "Delete device profile - Static Route Template",
+          "category": "Provisioning Template Management",
+          "subcategory": "Static Route Template",
+          "parameters": [],
+          "example_usage": "Remove Static Route Template",
+          "response_format": "JSON"
+        },
+        {
+          "id": 220,
+          "endpoint": "/pm/devprof",
+          "method": "GET",
+          "description": "List device profiles/templates - Template Group",
+          "category": "Provisioning Template Management",
+          "subcategory": "Template Group",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve Template Group information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 221,
+          "endpoint": "/pm/devprof",
+          "method": "POST",
+          "description": "Create device profile - Template Group",
+          "category": "Provisioning Template Management",
+          "subcategory": "Template Group",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new Template Group",
+          "response_format": "JSON"
+        },
+        {
+          "id": 222,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "PUT",
+          "description": "Update device profile - Template Group",
+          "category": "Provisioning Template Management",
+          "subcategory": "Template Group",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing Template Group",
+          "response_format": "JSON"
+        },
+        {
+          "id": 223,
+          "endpoint": "/pm/devprof/{template_name}",
+          "method": "DELETE",
+          "description": "Delete device profile - Template Group",
+          "category": "Provisioning Template Management",
+          "subcategory": "Template Group",
+          "parameters": [],
+          "example_usage": "Remove Template Group",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "Alternative FortiManager APIs",
+      "endpoints": [
+        {
+          "id": 224,
+          "endpoint": "/pm/config/fortimanager_gui_api",
+          "method": "GET",
+          "description": "Get FortiManager GUI API configuration",
+          "category": "Alternative FortiManager APIs",
+          "subcategory": "FortiManager GUI API",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get FortiManager GUI API settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 225,
+          "endpoint": "/pm/config/fortimanager_gui_api",
+          "method": "POST",
+          "description": "Create FortiManager GUI API",
+          "category": "Alternative FortiManager APIs",
+          "subcategory": "FortiManager GUI API",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new FortiManager GUI API",
+          "response_format": "JSON"
+        },
+        {
+          "id": 226,
+          "endpoint": "/pm/config/rest_api",
+          "method": "GET",
+          "description": "Get REST API configuration",
+          "category": "Alternative FortiManager APIs",
+          "subcategory": "REST API",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get REST API settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 227,
+          "endpoint": "/pm/config/rest_api",
+          "method": "POST",
+          "description": "Create REST API",
+          "category": "Alternative FortiManager APIs",
+          "subcategory": "REST API",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new REST API",
+          "response_format": "JSON"
+        },
+        {
+          "id": 228,
+          "endpoint": "/pm/config/using_requests_python_module",
+          "method": "GET",
+          "description": "Get Using requests python module configuration",
+          "category": "Alternative FortiManager APIs",
+          "subcategory": "Using requests python module",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Using requests python module settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 229,
+          "endpoint": "/pm/config/using_requests_python_module",
+          "method": "POST",
+          "description": "Create Using requests python module",
+          "category": "Alternative FortiManager APIs",
+          "subcategory": "Using requests python module",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Using requests python module",
+          "response_format": "JSON"
+        },
+        {
+          "id": 230,
+          "endpoint": "/pm/config/using_serviceproxy_python_module",
+          "method": "GET",
+          "description": "Get Using ServiceProxy python module configuration",
+          "category": "Alternative FortiManager APIs",
+          "subcategory": "Using ServiceProxy python module",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Using ServiceProxy python module settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 231,
+          "endpoint": "/pm/config/using_serviceproxy_python_module",
+          "method": "POST",
+          "description": "Create Using ServiceProxy python module",
+          "category": "Alternative FortiManager APIs",
+          "subcategory": "Using ServiceProxy python module",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Using ServiceProxy python module",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "CLI Script Management",
+      "endpoints": [
+        {
+          "id": 232,
+          "endpoint": "/pm/config/cli_script_operations",
+          "method": "GET",
+          "description": "Get CLI Script operations configuration",
+          "category": "CLI Script Management",
+          "subcategory": "CLI Script operations",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get CLI Script operations settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 233,
+          "endpoint": "/pm/config/cli_script_operations",
+          "method": "POST",
+          "description": "Create CLI Script operations",
+          "category": "CLI Script Management",
+          "subcategory": "CLI Script operations",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new CLI Script operations",
+          "response_format": "JSON"
+        },
+        {
+          "id": 234,
+          "endpoint": "/pm/config/cli_script_execution",
+          "method": "GET",
+          "description": "Get CLI Script execution configuration",
+          "category": "CLI Script Management",
+          "subcategory": "CLI Script execution",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get CLI Script execution settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 235,
+          "endpoint": "/pm/config/cli_script_execution",
+          "method": "POST",
+          "description": "Create CLI Script execution",
+          "category": "CLI Script Management",
+          "subcategory": "CLI Script execution",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new CLI Script execution",
+          "response_format": "JSON"
+        },
+        {
+          "id": 236,
+          "endpoint": "/pm/config/cli_script_groups",
+          "method": "GET",
+          "description": "Get CLI Script Groups configuration",
+          "category": "CLI Script Management",
+          "subcategory": "CLI Script Groups",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get CLI Script Groups settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 237,
+          "endpoint": "/pm/config/cli_script_groups",
+          "method": "POST",
+          "description": "Create CLI Script Groups",
+          "category": "CLI Script Management",
+          "subcategory": "CLI Script Groups",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new CLI Script Groups",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "ADOM Management",
+      "endpoints": [
+        {
+          "id": 238,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM creation",
+          "category": "ADOM Management",
+          "subcategory": "ADOM creation",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM creation information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 239,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM creation",
+          "category": "ADOM Management",
+          "subcategory": "ADOM creation",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM creation",
+          "response_format": "JSON"
+        },
+        {
+          "id": 240,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM creation",
+          "category": "ADOM Management",
+          "subcategory": "ADOM creation",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM creation",
+          "response_format": "JSON"
+        },
+        {
+          "id": 241,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM creation",
+          "category": "ADOM Management",
+          "subcategory": "ADOM creation",
+          "parameters": [],
+          "example_usage": "Remove ADOM creation",
+          "response_format": "JSON"
+        },
+        {
+          "id": 242,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM deletion",
+          "category": "ADOM Management",
+          "subcategory": "ADOM deletion",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM deletion information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 243,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM deletion",
+          "category": "ADOM Management",
+          "subcategory": "ADOM deletion",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM deletion",
+          "response_format": "JSON"
+        },
+        {
+          "id": 244,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM deletion",
+          "category": "ADOM Management",
+          "subcategory": "ADOM deletion",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM deletion",
+          "response_format": "JSON"
+        },
+        {
+          "id": 245,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM deletion",
+          "category": "ADOM Management",
+          "subcategory": "ADOM deletion",
+          "parameters": [],
+          "example_usage": "Remove ADOM deletion",
+          "response_format": "JSON"
+        },
+        {
+          "id": 246,
+          "endpoint": "/dvmdb/device",
+          "method": "GET",
+          "description": "List managed devices - ADOM device movement",
+          "category": "ADOM Management",
+          "subcategory": "ADOM device movement",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM device movement information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 247,
+          "endpoint": "/dvmdb/device",
+          "method": "POST",
+          "description": "Add new device - ADOM device movement",
+          "category": "ADOM Management",
+          "subcategory": "ADOM device movement",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM device movement",
+          "response_format": "JSON"
+        },
+        {
+          "id": 248,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "PUT",
+          "description": "Update device configuration - ADOM device movement",
+          "category": "ADOM Management",
+          "subcategory": "ADOM device movement",
+          "parameters": [
+            "device_name - Device identifier",
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM device movement",
+          "response_format": "JSON"
+        },
+        {
+          "id": 249,
+          "endpoint": "/dvmdb/device/{device_name}",
+          "method": "DELETE",
+          "description": "Remove device - ADOM device movement",
+          "category": "ADOM Management",
+          "subcategory": "ADOM device movement",
+          "parameters": [
+            "device_name - Device identifier"
+          ],
+          "example_usage": "Remove ADOM device movement",
+          "response_format": "JSON"
+        },
+        {
+          "id": 250,
+          "endpoint": "/exec/device/sync",
+          "method": "POST",
+          "description": "Synchronize device - ADOM device movement",
+          "category": "ADOM Management",
+          "subcategory": "ADOM device movement",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM device movement",
+          "response_format": "JSON"
+        },
+        {
+          "id": 251,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM device movement",
+          "category": "ADOM Management",
+          "subcategory": "ADOM device movement",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM device movement information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 252,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM device movement",
+          "category": "ADOM Management",
+          "subcategory": "ADOM device movement",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM device movement",
+          "response_format": "JSON"
+        },
+        {
+          "id": 253,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM device movement",
+          "category": "ADOM Management",
+          "subcategory": "ADOM device movement",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM device movement",
+          "response_format": "JSON"
+        },
+        {
+          "id": 254,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM device movement",
+          "category": "ADOM Management",
+          "subcategory": "ADOM device movement",
+          "parameters": [],
+          "example_usage": "Remove ADOM device movement",
+          "response_format": "JSON"
+        },
+        {
+          "id": 255,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM checksum",
+          "category": "ADOM Management",
+          "subcategory": "ADOM checksum",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM checksum information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 256,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM checksum",
+          "category": "ADOM Management",
+          "subcategory": "ADOM checksum",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM checksum",
+          "response_format": "JSON"
+        },
+        {
+          "id": 257,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM checksum",
+          "category": "ADOM Management",
+          "subcategory": "ADOM checksum",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM checksum",
+          "response_format": "JSON"
+        },
+        {
+          "id": 258,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM checksum",
+          "category": "ADOM Management",
+          "subcategory": "ADOM checksum",
+          "parameters": [],
+          "example_usage": "Remove ADOM checksum",
+          "response_format": "JSON"
+        },
+        {
+          "id": 259,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM display options",
+          "category": "ADOM Management",
+          "subcategory": "ADOM display options",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM display options information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 260,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM display options",
+          "category": "ADOM Management",
+          "subcategory": "ADOM display options",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM display options",
+          "response_format": "JSON"
+        },
+        {
+          "id": 261,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM display options",
+          "category": "ADOM Management",
+          "subcategory": "ADOM display options",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM display options",
+          "response_format": "JSON"
+        },
+        {
+          "id": 262,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM display options",
+          "category": "ADOM Management",
+          "subcategory": "ADOM display options",
+          "parameters": [],
+          "example_usage": "Remove ADOM display options",
+          "response_format": "JSON"
+        },
+        {
+          "id": 263,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM revisions",
+          "category": "ADOM Management",
+          "subcategory": "ADOM revisions",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM revisions information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 264,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM revisions",
+          "category": "ADOM Management",
+          "subcategory": "ADOM revisions",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM revisions",
+          "response_format": "JSON"
+        },
+        {
+          "id": 265,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM revisions",
+          "category": "ADOM Management",
+          "subcategory": "ADOM revisions",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM revisions",
+          "response_format": "JSON"
+        },
+        {
+          "id": 266,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM revisions",
+          "category": "ADOM Management",
+          "subcategory": "ADOM revisions",
+          "parameters": [],
+          "example_usage": "Remove ADOM revisions",
+          "response_format": "JSON"
+        },
+        {
+          "id": 267,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM upgrade",
+          "category": "ADOM Management",
+          "subcategory": "ADOM upgrade",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM upgrade information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 268,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM upgrade",
+          "category": "ADOM Management",
+          "subcategory": "ADOM upgrade",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM upgrade",
+          "response_format": "JSON"
+        },
+        {
+          "id": 269,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM upgrade",
+          "category": "ADOM Management",
+          "subcategory": "ADOM upgrade",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM upgrade",
+          "response_format": "JSON"
+        },
+        {
+          "id": 270,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM upgrade",
+          "category": "ADOM Management",
+          "subcategory": "ADOM upgrade",
+          "parameters": [],
+          "example_usage": "Remove ADOM upgrade",
+          "response_format": "JSON"
+        },
+        {
+          "id": 271,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM Workspace Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Workspace Mode",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM Workspace Mode information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 272,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM Workspace Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Workspace Mode",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM Workspace Mode",
+          "response_format": "JSON"
+        },
+        {
+          "id": 273,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM Workspace Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Workspace Mode",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM Workspace Mode",
+          "response_format": "JSON"
+        },
+        {
+          "id": 274,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM Workspace Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Workspace Mode",
+          "parameters": [],
+          "example_usage": "Remove ADOM Workspace Mode",
+          "response_format": "JSON"
+        },
+        {
+          "id": 275,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM Workflow Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Workflow Mode",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM Workflow Mode information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 276,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM Workflow Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Workflow Mode",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM Workflow Mode",
+          "response_format": "JSON"
+        },
+        {
+          "id": 277,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM Workflow Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Workflow Mode",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM Workflow Mode",
+          "response_format": "JSON"
+        },
+        {
+          "id": 278,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM Workflow Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Workflow Mode",
+          "parameters": [],
+          "example_usage": "Remove ADOM Workflow Mode",
+          "response_format": "JSON"
+        },
+        {
+          "id": 279,
+          "endpoint": "/dvmdb/adom",
+          "method": "GET",
+          "description": "List ADOMs - ADOM Backup Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Backup Mode",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve ADOM Backup Mode information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 280,
+          "endpoint": "/dvmdb/adom",
+          "method": "POST",
+          "description": "Create new ADOM - ADOM Backup Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Backup Mode",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new ADOM Backup Mode",
+          "response_format": "JSON"
+        },
+        {
+          "id": 281,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "PUT",
+          "description": "Update ADOM settings - ADOM Backup Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Backup Mode",
+          "parameters": [
+            "data - Updated object data"
+          ],
+          "example_usage": "Update existing ADOM Backup Mode",
+          "response_format": "JSON"
+        },
+        {
+          "id": 282,
+          "endpoint": "/dvmdb/adom/{adom_name}",
+          "method": "DELETE",
+          "description": "Delete ADOM - ADOM Backup Mode",
+          "category": "ADOM Management",
+          "subcategory": "ADOM Backup Mode",
+          "parameters": [],
+          "example_usage": "Remove ADOM Backup Mode",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "FortiGuard Management",
+      "endpoints": [
+        {
+          "id": 283,
+          "endpoint": "/pm/config/fortiguard_object_versions",
+          "method": "GET",
+          "description": "Get FortiGuard object versions configuration",
+          "category": "FortiGuard Management",
+          "subcategory": "FortiGuard object versions",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get FortiGuard object versions settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 284,
+          "endpoint": "/pm/config/fortiguard_object_versions",
+          "method": "POST",
+          "description": "Create FortiGuard object versions",
+          "category": "FortiGuard Management",
+          "subcategory": "FortiGuard object versions",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new FortiGuard object versions",
+          "response_format": "JSON"
+        },
+        {
+          "id": 285,
+          "endpoint": "/pm/config/firmware_management",
+          "method": "GET",
+          "description": "Get Firmware Management configuration",
+          "category": "FortiGuard Management",
+          "subcategory": "Firmware Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Firmware Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 286,
+          "endpoint": "/pm/config/firmware_management",
+          "method": "POST",
+          "description": "Create Firmware Management",
+          "category": "FortiGuard Management",
+          "subcategory": "Firmware Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Firmware Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 287,
+          "endpoint": "/pm/config/contracts_management",
+          "method": "GET",
+          "description": "Get Contracts management configuration",
+          "category": "FortiGuard Management",
+          "subcategory": "Contracts management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Contracts management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 288,
+          "endpoint": "/pm/config/contracts_management",
+          "method": "POST",
+          "description": "Create Contracts management",
+          "category": "FortiGuard Management",
+          "subcategory": "Contracts management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Contracts management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 289,
+          "endpoint": "/pm/config/package_versions",
+          "method": "GET",
+          "description": "Get Package versions configuration",
+          "category": "FortiGuard Management",
+          "subcategory": "Package versions",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Package versions settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 290,
+          "endpoint": "/pm/config/package_versions",
+          "method": "POST",
+          "description": "Create Package versions",
+          "category": "FortiGuard Management",
+          "subcategory": "Package versions",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Package versions",
+          "response_format": "JSON"
+        },
+        {
+          "id": 291,
+          "endpoint": "/pm/config/license_status",
+          "method": "GET",
+          "description": "Get License status configuration",
+          "category": "FortiGuard Management",
+          "subcategory": "License status",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get License status settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 292,
+          "endpoint": "/pm/config/license_status",
+          "method": "POST",
+          "description": "Create License status",
+          "category": "FortiGuard Management",
+          "subcategory": "License status",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new License status",
+          "response_format": "JSON"
+        },
+        {
+          "id": 293,
+          "endpoint": "/pm/config/update_history",
+          "method": "GET",
+          "description": "Get Update history configuration",
+          "category": "FortiGuard Management",
+          "subcategory": "Update history",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Update history settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 294,
+          "endpoint": "/pm/config/update_history",
+          "method": "POST",
+          "description": "Create Update history",
+          "category": "FortiGuard Management",
+          "subcategory": "Update history",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Update history",
+          "response_format": "JSON"
+        },
+        {
+          "id": 295,
+          "endpoint": "/pm/config/export/import_fortiguard_objects",
+          "method": "GET",
+          "description": "Get Export/Import FortiGuard objects configuration",
+          "category": "FortiGuard Management",
+          "subcategory": "Export/Import FortiGuard objects",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Export/Import FortiGuard objects settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 296,
+          "endpoint": "/pm/config/export/import_fortiguard_objects",
+          "method": "POST",
+          "description": "Create Export/Import FortiGuard objects",
+          "category": "FortiGuard Management",
+          "subcategory": "Export/Import FortiGuard objects",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Export/Import FortiGuard objects",
+          "response_format": "JSON"
+        },
+        {
+          "id": 297,
+          "endpoint": "/pm/config/local_external_resources",
+          "method": "GET",
+          "description": "Get Local External Resources configuration",
+          "category": "FortiGuard Management",
+          "subcategory": "Local External Resources",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Local External Resources settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 298,
+          "endpoint": "/pm/config/local_external_resources",
+          "method": "POST",
+          "description": "Create Local External Resources",
+          "category": "FortiGuard Management",
+          "subcategory": "Local External Resources",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Local External Resources",
+          "response_format": "JSON"
+        },
+        {
+          "id": 299,
+          "endpoint": "/pm/config/remote_external_resources",
+          "method": "GET",
+          "description": "Get Remote External Resources configuration",
+          "category": "FortiGuard Management",
+          "subcategory": "Remote External Resources",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Remote External Resources settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 300,
+          "endpoint": "/pm/config/remote_external_resources",
+          "method": "POST",
+          "description": "Create Remote External Resources",
+          "category": "FortiGuard Management",
+          "subcategory": "Remote External Resources",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Remote External Resources",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "System Operations",
+      "endpoints": [
+        {
+          "id": 301,
+          "endpoint": "/pm/config/fortimanager_configuration",
+          "method": "GET",
+          "description": "Get FortiManager configuration configuration",
+          "category": "System Operations",
+          "subcategory": "FortiManager configuration",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get FortiManager configuration settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 302,
+          "endpoint": "/pm/config/fortimanager_configuration",
+          "method": "POST",
+          "description": "Create FortiManager configuration",
+          "category": "System Operations",
+          "subcategory": "FortiManager configuration",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new FortiManager configuration",
+          "response_format": "JSON"
+        },
+        {
+          "id": 303,
+          "endpoint": "/sys/status",
+          "method": "GET",
+          "description": "Get system status - System status",
+          "category": "System Operations",
+          "subcategory": "System status",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve System status information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 304,
+          "endpoint": "/sys/ha/status",
+          "method": "GET",
+          "description": "Get HA status - System status",
+          "category": "System Operations",
+          "subcategory": "System status",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve System status information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 305,
+          "endpoint": "/sys/reboot",
+          "method": "POST",
+          "description": "Reboot system - System status",
+          "category": "System Operations",
+          "subcategory": "System status",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new System status",
+          "response_format": "JSON"
+        },
+        {
+          "id": 306,
+          "endpoint": "/sys/backup",
+          "method": "POST",
+          "description": "Create system backup - System status",
+          "category": "System Operations",
+          "subcategory": "System status",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new System status",
+          "response_format": "JSON"
+        },
+        {
+          "id": 307,
+          "endpoint": "/pm/config/ha_status",
+          "method": "GET",
+          "description": "Get HA status configuration",
+          "category": "System Operations",
+          "subcategory": "HA status",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get HA status settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 308,
+          "endpoint": "/pm/config/ha_status",
+          "method": "POST",
+          "description": "Create HA status",
+          "category": "System Operations",
+          "subcategory": "HA status",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new HA status",
+          "response_format": "JSON"
+        },
+        {
+          "id": 309,
+          "endpoint": "/pm/config/license_management",
+          "method": "GET",
+          "description": "Get License management configuration",
+          "category": "System Operations",
+          "subcategory": "License management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get License management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 310,
+          "endpoint": "/pm/config/license_management",
+          "method": "POST",
+          "description": "Create License management",
+          "category": "System Operations",
+          "subcategory": "License management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new License management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 311,
+          "endpoint": "/pm/config/rbac",
+          "method": "GET",
+          "description": "Get RBAC configuration",
+          "category": "System Operations",
+          "subcategory": "RBAC",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get RBAC settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 312,
+          "endpoint": "/pm/config/rbac",
+          "method": "POST",
+          "description": "Create RBAC",
+          "category": "System Operations",
+          "subcategory": "RBAC",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new RBAC",
+          "response_format": "JSON"
+        },
+        {
+          "id": 313,
+          "endpoint": "/pm/config/session_management",
+          "method": "GET",
+          "description": "Get Session Management configuration",
+          "category": "System Operations",
+          "subcategory": "Session Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Session Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 314,
+          "endpoint": "/pm/config/session_management",
+          "method": "POST",
+          "description": "Create Session Management",
+          "category": "System Operations",
+          "subcategory": "Session Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Session Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 315,
+          "endpoint": "/sys/status",
+          "method": "GET",
+          "description": "Get system status - System backup/restore",
+          "category": "System Operations",
+          "subcategory": "System backup/restore",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve System backup/restore information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 316,
+          "endpoint": "/sys/ha/status",
+          "method": "GET",
+          "description": "Get HA status - System backup/restore",
+          "category": "System Operations",
+          "subcategory": "System backup/restore",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve System backup/restore information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 317,
+          "endpoint": "/sys/reboot",
+          "method": "POST",
+          "description": "Reboot system - System backup/restore",
+          "category": "System Operations",
+          "subcategory": "System backup/restore",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new System backup/restore",
+          "response_format": "JSON"
+        },
+        {
+          "id": 318,
+          "endpoint": "/sys/backup",
+          "method": "POST",
+          "description": "Create system backup - System backup/restore",
+          "category": "System Operations",
+          "subcategory": "System backup/restore",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new System backup/restore",
+          "response_format": "JSON"
+        },
+        {
+          "id": 319,
+          "endpoint": "/sys/status",
+          "method": "GET",
+          "description": "Get system status - System upgrade",
+          "category": "System Operations",
+          "subcategory": "System upgrade",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve System upgrade information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 320,
+          "endpoint": "/sys/ha/status",
+          "method": "GET",
+          "description": "Get HA status - System upgrade",
+          "category": "System Operations",
+          "subcategory": "System upgrade",
+          "parameters": [
+            "filter - Query filters",
+            "range - Result range",
+            "sortings - Sort criteria"
+          ],
+          "example_usage": "Retrieve System upgrade information",
+          "response_format": "JSON"
+        },
+        {
+          "id": 321,
+          "endpoint": "/sys/reboot",
+          "method": "POST",
+          "description": "Reboot system - System upgrade",
+          "category": "System Operations",
+          "subcategory": "System upgrade",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new System upgrade",
+          "response_format": "JSON"
+        },
+        {
+          "id": 322,
+          "endpoint": "/sys/backup",
+          "method": "POST",
+          "description": "Create system backup - System upgrade",
+          "category": "System Operations",
+          "subcategory": "System upgrade",
+          "parameters": [
+            "data - Object data",
+            "params - Additional parameters"
+          ],
+          "example_usage": "Create new System upgrade",
+          "response_format": "JSON"
+        },
+        {
+          "id": 323,
+          "endpoint": "/pm/config/task_management",
+          "method": "GET",
+          "description": "Get Task Management configuration",
+          "category": "System Operations",
+          "subcategory": "Task Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Task Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 324,
+          "endpoint": "/pm/config/task_management",
+          "method": "POST",
+          "description": "Create Task Management",
+          "category": "System Operations",
+          "subcategory": "Task Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Task Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 325,
+          "endpoint": "/pm/config/packet_capture",
+          "method": "GET",
+          "description": "Get Packet capture configuration",
+          "category": "System Operations",
+          "subcategory": "Packet capture",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Packet capture settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 326,
+          "endpoint": "/pm/config/packet_capture",
+          "method": "POST",
+          "description": "Create Packet capture",
+          "category": "System Operations",
+          "subcategory": "Packet capture",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Packet capture",
+          "response_format": "JSON"
+        }
+      ]
+    },
+    {
+      "category": "Advanced Features",
+      "endpoints": [
+        {
+          "id": 327,
+          "endpoint": "/pm/config/docker_management",
+          "method": "GET",
+          "description": "Get Docker Management configuration",
+          "category": "Advanced Features",
+          "subcategory": "Docker Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Docker Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 328,
+          "endpoint": "/pm/config/docker_management",
+          "method": "POST",
+          "description": "Create Docker Management",
+          "category": "Advanced Features",
+          "subcategory": "Docker Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Docker Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 329,
+          "endpoint": "/pm/config/sd-wan_management",
+          "method": "GET",
+          "description": "Get SD-WAN Management configuration",
+          "category": "Advanced Features",
+          "subcategory": "SD-WAN Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get SD-WAN Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 330,
+          "endpoint": "/pm/config/sd-wan_management",
+          "method": "POST",
+          "description": "Create SD-WAN Management",
+          "category": "Advanced Features",
+          "subcategory": "SD-WAN Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new SD-WAN Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 331,
+          "endpoint": "/pm/config/connector_management",
+          "method": "GET",
+          "description": "Get Connector Management configuration",
+          "category": "Advanced Features",
+          "subcategory": "Connector Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Connector Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 332,
+          "endpoint": "/pm/config/connector_management",
+          "method": "POST",
+          "description": "Create Connector Management",
+          "category": "Advanced Features",
+          "subcategory": "Connector Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Connector Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 333,
+          "endpoint": "/pm/config/vpn_management",
+          "method": "GET",
+          "description": "Get VPN Management configuration",
+          "category": "Advanced Features",
+          "subcategory": "VPN Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get VPN Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 334,
+          "endpoint": "/pm/config/vpn_management",
+          "method": "POST",
+          "description": "Create VPN Management",
+          "category": "Advanced Features",
+          "subcategory": "VPN Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new VPN Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 335,
+          "endpoint": "/pm/config/qos_management",
+          "method": "GET",
+          "description": "Get QoS management configuration",
+          "category": "Advanced Features",
+          "subcategory": "QoS management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get QoS management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 336,
+          "endpoint": "/pm/config/qos_management",
+          "method": "POST",
+          "description": "Create QoS management",
+          "category": "Advanced Features",
+          "subcategory": "QoS management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new QoS management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 337,
+          "endpoint": "/pm/config/meta-fields_management",
+          "method": "GET",
+          "description": "Get Meta-fields Management configuration",
+          "category": "Advanced Features",
+          "subcategory": "Meta-fields Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Meta-fields Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 338,
+          "endpoint": "/pm/config/meta-fields_management",
+          "method": "POST",
+          "description": "Create Meta-fields Management",
+          "category": "Advanced Features",
+          "subcategory": "Meta-fields Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Meta-fields Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 339,
+          "endpoint": "/pm/config/csf_management",
+          "method": "GET",
+          "description": "Get CSF Management configuration",
+          "category": "Advanced Features",
+          "subcategory": "CSF Management",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get CSF Management settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 340,
+          "endpoint": "/pm/config/csf_management",
+          "method": "POST",
+          "description": "Create CSF Management",
+          "category": "Advanced Features",
+          "subcategory": "CSF Management",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new CSF Management",
+          "response_format": "JSON"
+        },
+        {
+          "id": 341,
+          "endpoint": "/pm/config/proxying_apis",
+          "method": "GET",
+          "description": "Get Proxying APIs configuration",
+          "category": "Advanced Features",
+          "subcategory": "Proxying APIs",
+          "parameters": [
+            "adom",
+            "filters"
+          ],
+          "example_usage": "Get Proxying APIs settings",
+          "response_format": "JSON"
+        },
+        {
+          "id": 342,
+          "endpoint": "/pm/config/proxying_apis",
+          "method": "POST",
+          "description": "Create Proxying APIs",
+          "category": "Advanced Features",
+          "subcategory": "Proxying APIs",
+          "parameters": [
+            "adom",
+            "data"
+          ],
+          "example_usage": "Create new Proxying APIs",
+          "response_format": "JSON"
+        }
+      ]
+    }
+  ]
+}

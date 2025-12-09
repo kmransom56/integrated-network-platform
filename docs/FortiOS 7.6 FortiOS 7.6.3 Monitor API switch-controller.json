@@ -1,0 +1,1781 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "FortiOS Monitor",
+        "description": "REST API for configuring FortiOS objects and settings",
+        "version": "v2",
+        "termsOfService": "http:\/\/fortinet.com\/terms\/",
+        "contact": {
+            "name": "FortiOS Web Application Team",
+            "email": "fosguiqateam@fortinet.com",
+            "url": "http:\/\/modskristensen.net"
+        }
+    },
+    "host": "172.16.177.65",
+    "basePath": "\/api\/v2\/monitor",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application\/json"
+    ],
+    "produces": [
+        "application\/json"
+    ],
+    "securityDefinitions": {
+        "APIKeyQueryParam": {
+            "type": "apiKey",
+            "in": "query",
+            "name": "access_token"
+        }
+    },
+    "security": [
+        {
+            "APIKeyQueryParam": []
+        }
+    ],
+    "paths": {
+        "\/switch-controller\/managed-switch\/status": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve statistics for configured FortiSwitches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "Filter: FortiSwitch ID.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/port-stats": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve port statistics for configured FortiSwitches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "Filter: FortiSwitch ID.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/port-stats-reset": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Reset port statistics for a given FortiSwitch.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "mkey": {
+                                    "description": "FortiSwitch ID.",
+                                    "type": "string"
+                                },
+                                "ports": {
+                                    "description": "Name of ports to reset statistics on.",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/update": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Update administrative state for a given FortiSwitch (enable or disable authorization).\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "mkey": {
+                                    "description": "FortiSwitch name.",
+                                    "type": "string"
+                                },
+                                "admin": {
+                                    "description": "New FortiSwitch administrative state [enable|disable|discovered].",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/restart": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Restart a given FortiSwitch.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "mkey": {
+                                    "description": "Name of managed FortiSwitch.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/poe-reset": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Reset PoE on a given FortiSwitch's port.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "mkey": {
+                                    "description": "Name of managed FortiSwitch.",
+                                    "type": "string"
+                                },
+                                "port": {
+                                    "description": "Name of port to reset PoE on.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/bounce-port": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Reset the port to force all connected clients to re-request DHCP lease. All active client sessions will be terminated.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "mkey": {
+                                    "description": "FortiSwitch ID.",
+                                    "type": "string"
+                                },
+                                "port": {
+                                    "description": "FortiSwitch Port ID.",
+                                    "type": "string"
+                                },
+                                "duration": {
+                                    "description": "Duration in seconds from 1 to 5 for port to be down. Defaults to 1 second if not provided.",
+                                    "type": "integer"
+                                },
+                                "stop": {
+                                    "description": "Stop a bounce in progress.",
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/faceplate-xml": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve XML for rendering FortiSwitch faceplate widget.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "Name of managed FortiSwitch.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/factory-reset": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Send 'Factory Reset' command to a given FortiSwitch.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "mkey": {
+                                    "description": "Name of managed FortiSwitch.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/dhcp-snooping": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve DHCP servers monitored by FortiSwitches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                }
+            }
+        },
+        "\/switch-controller\/managed-switch\/transceivers": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Get a list of transceivers being used by managed FortiSwitches.\nAccess Group: any",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                }
+            }
+        },
+        "\/switch-controller\/managed-switch\/bios": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Get a list of BIOS info by managed FortiSwitches.\nAccess Group: any",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "Filter: FortiSwitch ID.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/health-status": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve health-check statistics for managed FortiSwitches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "Filter: FortiSwitch ID.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "serial",
+                        "in": "query",
+                        "description": "Filter: FortiSwitch Serial.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/port-health": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve port health statistics for managed FortiSwitches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "Filter: FortiSwitch ID.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/cable-status": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Diagnose cable information for a port. Virtual FortiSwitches and FortiLink ports are not supported.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "Filter: FortiSwitch ID.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "port",
+                        "in": "query",
+                        "description": "Name of managed FortiSwitch port.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/managed-switch\/models": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve a list of FortiSwitch models that may be pre-configured.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                }
+            }
+        },
+        "\/switch-controller\/managed-switch\/tx-rx": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve the transceiver Tx and Rx power for a specific port.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "Filter: FortiSwitch ID.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "port",
+                        "in": "query",
+                        "description": "Name of the port.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/fsw-firmware": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve a list of recommended firmware for managed FortiSwitches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "Filter: FortiSwitch ID.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "timeout",
+                        "in": "query",
+                        "description": "FortiGuard connection timeout (defaults to 3 seconds).",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "description": "Target firmware version of the parent FortiGate.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/fsw-firmware\/download": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Download FortiSwitch firmware from FortiGuard to the FortiGate according to FortiSwitch image ID.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "image_id": {
+                                    "description": "FortiSwitch image ID.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/fsw-firmware\/push": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Push FortiSwitch firmware to the given device.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "switch_id": {
+                                    "description": "The target device's switch ID.",
+                                    "type": "string"
+                                },
+                                "image_id": {
+                                    "description": "FortiSwitch image ID.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/fsw-firmware\/upload": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Upload FortiSwitch firmware to the management FortiGate and then push to target FortiSwitches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "switch_ids": {
+                                    "description": "The target device's switch ID.",
+                                    "type": "string"
+                                },
+                                "file_content": {
+                                    "description": "Provided when uploading a file: base64 encoded file data. Must not contain whitespace or other invalid base64 characters. Must be included in HTTP body.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/detected-device": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve a list of devices detected on all switches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                }
+            }
+        },
+        "\/switch-controller\/mclag-icl\/eligible-peer": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Find a pair of FortiSwitches that are eligible to form a tier-1 MC-LAG.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "fortilink",
+                        "in": "query",
+                        "description": "FortiLink interface name.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/mclag-icl\/set-tier1": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Setup a tier-1 MC-LAG link between a pair of FortiSwitches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "fortilink": {
+                                    "description": "FortiLink interface name.",
+                                    "type": "string"
+                                },
+                                "peer1": {
+                                    "description": "FortiSwitch ID for MC-LAG peer 1.",
+                                    "type": "string"
+                                },
+                                "peer2": {
+                                    "description": "FortiSwitch ID for MC-LAG peer 2.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/mclag-icl\/set-tier-plus": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Setup a tier 2\/3 MC-LAG link between a pair of FortiSwitches.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "fortilink": {
+                                    "description": "FortiLink interface name.",
+                                    "type": "string"
+                                },
+                                "parent_peer1": {
+                                    "description": "FortiSwitch ID for MC-LAG parent peer 1.",
+                                    "type": "string"
+                                },
+                                "parent_peer2": {
+                                    "description": "FortiSwitch ID for MC-LAG parent peer 2.",
+                                    "type": "string"
+                                },
+                                "peer1": {
+                                    "description": "FortiSwitch ID for MC-LAG peer 1.",
+                                    "type": "string"
+                                },
+                                "peer2": {
+                                    "description": "FortiSwitch ID for MC-LAG peer 2.",
+                                    "type": "string"
+                                },
+                                "isl_port_group": {
+                                    "description": "ISL port group name.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/mclag-icl\/tier-plus-candidates": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Find a pair of FortiSwitches that are eligible to form a tier 2\/3 MC-LAG.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "fortilink",
+                        "in": "query",
+                        "description": "FortiLink interface name.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "parent_peer1",
+                        "in": "query",
+                        "description": "FortiSwitch ID for MC-LAG parent peer 1.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "parent_peer2",
+                        "in": "query",
+                        "description": "FortiSwitch ID for MC-LAG parent peer 2.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "is_tier2",
+                        "in": "query",
+                        "description": "Whether candidates are for a Tier 2 MC-LAG.",
+                        "required": true,
+                        "type": "boolean"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/recommendation\/pse-config": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Execute switch recommendation for pse-config to prevent PSE-PSE scenarios.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "fortilink": {
+                                    "description": "FortiLink interface name.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/matched-devices": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Return a list of devices that match NAC and\/or dynamic port policies.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "mkey",
+                        "in": "query",
+                        "description": "FortiSwitch ID. Will return all devices if no ID is provided.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "include_dynamic",
+                        "in": "query",
+                        "description": "If true, include devices that match dynamic port policies. Default value is false.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "mac",
+                        "in": "query",
+                        "description": "FortiSwitch client MAC address.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/nac-device\/stats": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Return the current FortiSwitch matched NAC device counts and limits for the FortiGate.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                }
+            }
+        },
+        "\/switch-controller\/known-nac-device-criteria-list": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Retrieve a list of commonly configured NAC devices.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                }
+            }
+        },
+        "\/switch-controller\/isl-lockdown\/status": {
+            "get": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Get current status of ISL lockdown.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "fortilink",
+                        "in": "query",
+                        "description": "FortiLink interface name.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "\/switch-controller\/isl-lockdown\/update": {
+            "post": {
+                "tags": [
+                    "switch-controller"
+                ],
+                "summary": "Enable\/disable ISL lockdown.\nAccess Group: wifi",
+                "responses": {
+                    "200": {
+                        "description": "OK: Request returns successful"
+                    },
+                    "400": {
+                        "description": "Bad Request: Request cannot be processed by the API"
+                    },
+                    "401": {
+                        "description": "Not Authorized: Request without successful login session"
+                    },
+                    "403": {
+                        "description": "Forbidden: Request is missing CSRF token or administrator is missing access profile permissions."
+                    },
+                    "404": {
+                        "description": "Resource Not Found: Unable to find the specified resource."
+                    },
+                    "405": {
+                        "description": "Method Not Allowed: Specified HTTP method is not allowed for this resource. "
+                    },
+                    "413": {
+                        "description": "Request Entity Too Large: Request cannot be processed due to large entity "
+                    },
+                    "424": {
+                        "description": "Failed Dependency: Fail dependency can be duplicate resource, missing required parameter, missing required attribute, invalid attribute value"
+                    },
+                    "429": {
+                        "description": "Access temporarily blocked: Maximum failed authentications reached. The offended source is temporarily blocked for certain amount of time."
+                    },
+                    "500": {
+                        "description": "Internal Server Error: Internal error when processing the request "
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Possible parameters to go in the body for the request.",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "fortilink": {
+                                    "description": "FortiLink interface name.",
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "description": "To enable or disable lockdown. [enable|disable]",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,1604 @@
+{
+  "fortinet_vss": {
+    "svgs": {
+      "fortigate_series_r22_2025q2_65": {
+        "filename": "FortiGate_Series_R22_2025Q2_65.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_65.svg"
+      },
+      "fortigate_series_r22_2025q2_132": {
+        "filename": "FortiGate_Series_R22_2025Q2_132.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_132.svg"
+      },
+      "fortiswitch_series_r14_2025q2_20": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_20.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_20.svg"
+      },
+      "fortigate_series_r22_2025q2_30": {
+        "filename": "FortiGate_Series_R22_2025Q2_30.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_30.svg"
+      },
+      "fortigate_series_r22_2025q2_46": {
+        "filename": "FortiGate_Series_R22_2025Q2_46.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_46.svg"
+      },
+      "fortiap_series_r8_2025q2_24": {
+        "filename": "FortiAP Series_R8_2025Q2_24.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_24.svg"
+      },
+      "fortigate_series_r22_2025q2_124": {
+        "filename": "FortiGate_Series_R22_2025Q2_124.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_124.svg"
+      },
+      "fortiswitch_series_r14_2025q2_4": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_4.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_4.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_17": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_17.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_17.svg"
+      },
+      "fortiswitch_series_r14_2025q2_43": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_43.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_43.svg"
+      },
+      "fortiswitch_series_r14_2025q2_52": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_52.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_52.svg"
+      },
+      "fortigate_series_r22_2025q2_128": {
+        "filename": "FortiGate_Series_R22_2025Q2_128.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_128.svg"
+      },
+      "fortigate_series_r22_2025q2_60": {
+        "filename": "FortiGate_Series_R22_2025Q2_60.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_60.svg"
+      },
+      "fortiswitch_series_r14_2025q2_13": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_13.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_13.svg"
+      },
+      "fortiap_series_r8_2025q2_12": {
+        "filename": "FortiAP Series_R8_2025Q2_12.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_12.svg"
+      },
+      "fortiswitch_series_r14_2025q2_64": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_64.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_64.svg"
+      },
+      "fortigate_series_r22_2025q2_54": {
+        "filename": "FortiGate_Series_R22_2025Q2_54.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_54.svg"
+      },
+      "fortiswitch_series_r14_2025q2_26": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_26.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_26.svg"
+      },
+      "fortiswitch_series_r14_2025q2_56": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_56.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_56.svg"
+      },
+      "fortigate_series_r22_2025q2_35": {
+        "filename": "FortiGate_Series_R22_2025Q2_35.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_35.svg"
+      },
+      "fortigate_series_r22_2025q2_97": {
+        "filename": "FortiGate_Series_R22_2025Q2_97.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_97.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_7": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_7.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_7.svg"
+      },
+      "fortiswitch_series_r14_2025q2_9": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_9.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_9.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_38": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_38.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_38.svg"
+      },
+      "fortigate_series_r22_2025q2_43": {
+        "filename": "FortiGate_Series_R22_2025Q2_43.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_43.svg"
+      },
+      "fortigate_series_r22_2025q2_3": {
+        "filename": "FortiGate_Series_R22_2025Q2_3.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_3.svg"
+      },
+      "fortigate_series_r22_2025q2_82": {
+        "filename": "FortiGate_Series_R22_2025Q2_82.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_82.svg"
+      },
+      "fortigate_series_r22_2025q2_55": {
+        "filename": "FortiGate_Series_R22_2025Q2_55.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_55.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_26": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_26.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_26.svg"
+      },
+      "fortigate_series_r22_2025q2_13": {
+        "filename": "FortiGate_Series_R22_2025Q2_13.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_13.svg"
+      },
+      "fortigate_series_r22_2025q2_88": {
+        "filename": "FortiGate_Series_R22_2025Q2_88.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_88.svg"
+      },
+      "fortiswitch_series_r14_2025q2_59": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_59.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_59.svg"
+      },
+      "fortigate_series_r22_2025q2_32": {
+        "filename": "FortiGate_Series_R22_2025Q2_32.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_32.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_24": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_24.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_24.svg"
+      },
+      "fortiswitch_series_r14_2025q2_3": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_3.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_3.svg"
+      },
+      "fortigate_series_r22_2025q2_112": {
+        "filename": "FortiGate_Series_R22_2025Q2_112.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_112.svg"
+      },
+      "fortiswitch_series_r14_2025q2_46": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_46.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_46.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_21": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_21.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_21.svg"
+      },
+      "fortigate_series_r22_2025q2_39": {
+        "filename": "FortiGate_Series_R22_2025Q2_39.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_39.svg"
+      },
+      "fortigate_series_r22_2025q2_69": {
+        "filename": "FortiGate_Series_R22_2025Q2_69.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_69.svg"
+      },
+      "fortigate_series_r22_2025q2_12": {
+        "filename": "FortiGate_Series_R22_2025Q2_12.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_12.svg"
+      },
+      "fortiswitch_series_r14_2025q2_49": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_49.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_49.svg"
+      },
+      "fortiswitch_series_r14_2025q2_40": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_40.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_40.svg"
+      },
+      "fortigate_series_r22_2025q2_73": {
+        "filename": "FortiGate_Series_R22_2025Q2_73.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_73.svg"
+      },
+      "fortigate_series_r22_2025q2_7": {
+        "filename": "FortiGate_Series_R22_2025Q2_7.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_7.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_58": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_58.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_58.svg"
+      },
+      "fortigate_series_r22_2025q2_95": {
+        "filename": "FortiGate_Series_R22_2025Q2_95.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_95.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_6": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_6.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_6.svg"
+      },
+      "fortigate_series_r22_2025q2_15": {
+        "filename": "FortiGate_Series_R22_2025Q2_15.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_15.svg"
+      },
+      "fortiap_series_r8_2025q2_15": {
+        "filename": "FortiAP Series_R8_2025Q2_15.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_15.svg"
+      },
+      "fortigate_series_r22_2025q2_27": {
+        "filename": "FortiGate_Series_R22_2025Q2_27.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_27.svg"
+      },
+      "fortiswitch_series_r14_2025q2_34": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_34.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_34.svg"
+      },
+      "fortigate_series_r22_2025q2_8": {
+        "filename": "FortiGate_Series_R22_2025Q2_8.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_8.svg"
+      },
+      "fortigate_series_r22_2025q2_23": {
+        "filename": "FortiGate_Series_R22_2025Q2_23.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_23.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_45": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_45.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_45.svg"
+      },
+      "fortigate_series_r22_2025q2_125": {
+        "filename": "FortiGate_Series_R22_2025Q2_125.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_125.svg"
+      },
+      "fortiap_series_r8_2025q2_5": {
+        "filename": "FortiAP Series_R8_2025Q2_5.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_5.svg"
+      },
+      "fortigate_series_r22_2025q2_53": {
+        "filename": "FortiGate_Series_R22_2025Q2_53.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_53.svg"
+      },
+      "fortiswitch_series_r14_2025q2_62": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_62.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_62.svg"
+      },
+      "fortiap_series_r8_2025q2_28": {
+        "filename": "FortiAP Series_R8_2025Q2_28.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_28.svg"
+      },
+      "fortiswitch_series_r14_2025q2_33": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_33.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_33.svg"
+      },
+      "fortiswitch_series_r14_2025q2_24": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_24.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_24.svg"
+      },
+      "fortigate_series_r22_2025q2_135": {
+        "filename": "FortiGate_Series_R22_2025Q2_135.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_135.svg"
+      },
+      "fortiap_series_r8_2025q2_8": {
+        "filename": "FortiAP Series_R8_2025Q2_8.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_8.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_30": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_30.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_30.svg"
+      },
+      "fortigate_series_r22_2025q2_20": {
+        "filename": "FortiGate_Series_R22_2025Q2_20.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_20.svg"
+      },
+      "fortigate_series_r22_2025q2_130": {
+        "filename": "FortiGate_Series_R22_2025Q2_130.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_130.svg"
+      },
+      "fortiswitch_series_r14_2025q2_63": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_63.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_63.svg"
+      },
+      "fortigate_series_r22_2025q2_107": {
+        "filename": "FortiGate_Series_R22_2025Q2_107.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_107.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_9": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_9.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_9.svg"
+      },
+      "fortigate_series_r22_2025q2_28": {
+        "filename": "FortiGate_Series_R22_2025Q2_28.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_28.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_57": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_57.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_57.svg"
+      },
+      "fortiswitch_series_r14_2025q2_38": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_38.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_38.svg"
+      },
+      "fortigate_series_r22_2025q2_115": {
+        "filename": "FortiGate_Series_R22_2025Q2_115.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_115.svg"
+      },
+      "fortigate_series_r22_2025q2_19": {
+        "filename": "FortiGate_Series_R22_2025Q2_19.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_19.svg"
+      },
+      "fortiswitch_series_r14_2025q2_8": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_8.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_8.svg"
+      },
+      "fortigate_series_r22_2025q2_93": {
+        "filename": "FortiGate_Series_R22_2025Q2_93.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_93.svg"
+      },
+      "fortigate_series_r22_2025q2_22": {
+        "filename": "FortiGate_Series_R22_2025Q2_22.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_22.svg"
+      },
+      "fortiap_series_r8_2025q2_14": {
+        "filename": "FortiAP Series_R8_2025Q2_14.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_14.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_48": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_48.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_48.svg"
+      },
+      "fortiswitch_series_r14_2025q2_15": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_15.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_15.svg"
+      },
+      "fortiswitch_series_r14_2025q2_35": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_35.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_35.svg"
+      },
+      "fortigate_series_r22_2025q2_58": {
+        "filename": "FortiGate_Series_R22_2025Q2_58.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_58.svg"
+      },
+      "fortigate_series_r22_2025q2_89": {
+        "filename": "FortiGate_Series_R22_2025Q2_89.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_89.svg"
+      },
+      "fortigate_series_r22_2025q2_90": {
+        "filename": "FortiGate_Series_R22_2025Q2_90.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_90.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_10": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_10.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_10.svg"
+      },
+      "fortigate_series_r22_2025q2_72": {
+        "filename": "FortiGate_Series_R22_2025Q2_72.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_72.svg"
+      },
+      "fortigate_series_r22_2025q2_33": {
+        "filename": "FortiGate_Series_R22_2025Q2_33.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_33.svg"
+      },
+      "fortiap_series_r8_2025q2_27": {
+        "filename": "FortiAP Series_R8_2025Q2_27.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_27.svg"
+      },
+      "fortiswitch_series_r14_2025q2_27": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_27.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_27.svg"
+      },
+      "fortiswitch_series_r14_2025q2_22": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_22.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_22.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_16": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_16.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_16.svg"
+      },
+      "fortigate_series_r22_2025q2_51": {
+        "filename": "FortiGate_Series_R22_2025Q2_51.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_51.svg"
+      },
+      "fortigate_series_r22_2025q2_50": {
+        "filename": "FortiGate_Series_R22_2025Q2_50.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_50.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_5": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_5.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_5.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_27": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_27.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_27.svg"
+      },
+      "fortigate_series_r22_2025q2_29": {
+        "filename": "FortiGate_Series_R22_2025Q2_29.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_29.svg"
+      },
+      "fortigate_series_r22_2025q2_129": {
+        "filename": "FortiGate_Series_R22_2025Q2_129.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_129.svg"
+      },
+      "fortigate_series_r22_2025q2_94": {
+        "filename": "FortiGate_Series_R22_2025Q2_94.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_94.svg"
+      },
+      "fortigate_series_r22_2025q2_16": {
+        "filename": "FortiGate_Series_R22_2025Q2_16.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_16.svg"
+      },
+      "fortigate_series_r22_2025q2_75": {
+        "filename": "FortiGate_Series_R22_2025Q2_75.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_75.svg"
+      },
+      "fortigate_series_r22_2025q2_26": {
+        "filename": "FortiGate_Series_R22_2025Q2_26.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_26.svg"
+      },
+      "fortiswitch_series_r14_2025q2_17": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_17.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_17.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_29": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_29.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_29.svg"
+      },
+      "fortiswitch_series_r14_2025q2_12": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_12.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_12.svg"
+      },
+      "fortigate_series_r22_2025q2_37": {
+        "filename": "FortiGate_Series_R22_2025Q2_37.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_37.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_41": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_41.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_41.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_36": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_36.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_36.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_59": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_59.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_59.svg"
+      },
+      "fortiswitch_series_r14_2025q2_54": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_54.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_54.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_56": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_56.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_56.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_8": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_8.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_8.svg"
+      },
+      "fortiap_series_r8_2025q2_22": {
+        "filename": "FortiAP Series_R8_2025Q2_22.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_22.svg"
+      },
+      "fortiap_series_r8_2025q2_11": {
+        "filename": "FortiAP Series_R8_2025Q2_11.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_11.svg"
+      },
+      "fortigate_series_r22_2025q2_110": {
+        "filename": "FortiGate_Series_R22_2025Q2_110.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_110.svg"
+      },
+      "fortigate_series_r22_2025q2_56": {
+        "filename": "FortiGate_Series_R22_2025Q2_56.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_56.svg"
+      },
+      "fortigate_series_r22_2025q2_109": {
+        "filename": "FortiGate_Series_R22_2025Q2_109.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_109.svg"
+      },
+      "fortiswitch_series_r14_2025q2_60": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_60.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_60.svg"
+      },
+      "fortiswitch_series_r14_2025q2_23": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_23.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_23.svg"
+      },
+      "fortiswitch_series_r14_2025q2_16": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_16.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_16.svg"
+      },
+      "fortiswitch_series_r14_2025q2_18": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_18.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_18.svg"
+      },
+      "fortigate_series_r22_2025q2_85": {
+        "filename": "FortiGate_Series_R22_2025Q2_85.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_85.svg"
+      },
+      "fortiswitch_series_r14_2025q2_50": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_50.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_50.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_47": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_47.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_47.svg"
+      },
+      "fortigate_series_r22_2025q2_91": {
+        "filename": "FortiGate_Series_R22_2025Q2_91.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_91.svg"
+      },
+      "fortiswitch_series_r14_2025q2_31": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_31.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_31.svg"
+      },
+      "fortigate_series_r22_2025q2_34": {
+        "filename": "FortiGate_Series_R22_2025Q2_34.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_34.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_12": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_12.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_12.svg"
+      },
+      "fortiswitch_series_r14_2025q2_57": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_57.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_57.svg"
+      },
+      "fortiswitch_series_r14_2025q2_67": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_67.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_67.svg"
+      },
+      "fortigate_series_r22_2025q2_121": {
+        "filename": "FortiGate_Series_R22_2025Q2_121.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_121.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_33": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_33.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_33.svg"
+      },
+      "fortigate_series_r22_2025q2_4": {
+        "filename": "FortiGate_Series_R22_2025Q2_4.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_4.svg"
+      },
+      "fortigate_series_r22_2025q2_9": {
+        "filename": "FortiGate_Series_R22_2025Q2_9.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_9.svg"
+      },
+      "fortigate_series_r22_2025q2_25": {
+        "filename": "FortiGate_Series_R22_2025Q2_25.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_25.svg"
+      },
+      "fortigate_series_r22_2025q2_66": {
+        "filename": "FortiGate_Series_R22_2025Q2_66.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_66.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_19": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_19.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_19.svg"
+      },
+      "fortigate_series_r22_2025q2_92": {
+        "filename": "FortiGate_Series_R22_2025Q2_92.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_92.svg"
+      },
+      "fortiap_series_r8_2025q2_21": {
+        "filename": "FortiAP Series_R8_2025Q2_21.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_21.svg"
+      },
+      "fortigate_series_r22_2025q2_120": {
+        "filename": "FortiGate_Series_R22_2025Q2_120.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_120.svg"
+      },
+      "fortiap_series_r8_2025q2_32": {
+        "filename": "FortiAP Series_R8_2025Q2_32.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_32.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_55": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_55.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_55.svg"
+      },
+      "fortigate_series_r22_2025q2_114": {
+        "filename": "FortiGate_Series_R22_2025Q2_114.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_114.svg"
+      },
+      "fortigate_series_r22_2025q2_52": {
+        "filename": "FortiGate_Series_R22_2025Q2_52.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_52.svg"
+      },
+      "fortigate_series_r22_2025q2_49": {
+        "filename": "FortiGate_Series_R22_2025Q2_49.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_49.svg"
+      },
+      "fortiswitch_series_r14_2025q2_10": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_10.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_10.svg"
+      },
+      "fortiswitch_series_r14_2025q2_66": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_66.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_66.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_15": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_15.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_15.svg"
+      },
+      "fortigate_series_r22_2025q2_36": {
+        "filename": "FortiGate_Series_R22_2025Q2_36.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_36.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_42": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_42.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_42.svg"
+      },
+      "fortigate_series_r22_2025q2_106": {
+        "filename": "FortiGate_Series_R22_2025Q2_106.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_106.svg"
+      },
+      "fortigate_series_r22_2025q2_31": {
+        "filename": "FortiGate_Series_R22_2025Q2_31.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_31.svg"
+      },
+      "fortigate_series_r22_2025q2_42": {
+        "filename": "FortiGate_Series_R22_2025Q2_42.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_42.svg"
+      },
+      "fortigate_series_r22_2025q2_122": {
+        "filename": "FortiGate_Series_R22_2025Q2_122.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_122.svg"
+      },
+      "fortigate_series_r22_2025q2_117": {
+        "filename": "FortiGate_Series_R22_2025Q2_117.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_117.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_46": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_46.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_46.svg"
+      },
+      "fortigate_series_r22_2025q2_17": {
+        "filename": "FortiGate_Series_R22_2025Q2_17.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_17.svg"
+      },
+      "fortigate_series_r22_2025q2_24": {
+        "filename": "FortiGate_Series_R22_2025Q2_24.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_24.svg"
+      },
+      "fortigate_series_r22_2025q2_80": {
+        "filename": "FortiGate_Series_R22_2025Q2_80.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_80.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_52": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_52.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_52.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_4": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_4.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_4.svg"
+      },
+      "fortiswitch_series_r14_2025q2_6": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_6.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_6.svg"
+      },
+      "fortiap_series_r8_2025q2_10": {
+        "filename": "FortiAP Series_R8_2025Q2_10.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_10.svg"
+      },
+      "fortiap_series_r8_2025q2_30": {
+        "filename": "FortiAP Series_R8_2025Q2_30.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_30.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_20": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_20.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_20.svg"
+      },
+      "fortigate_series_r22_2025q2_123": {
+        "filename": "FortiGate_Series_R22_2025Q2_123.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_123.svg"
+      },
+      "fortiswitch_series_r14_2025q2_41": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_41.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_41.svg"
+      },
+      "fortiap_series_r8_2025q2_33": {
+        "filename": "FortiAP Series_R8_2025Q2_33.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_33.svg"
+      },
+      "fortigate_series_r22_2025q2_6": {
+        "filename": "FortiGate_Series_R22_2025Q2_6.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_6.svg"
+      },
+      "fortiap_series_r8_2025q2_23": {
+        "filename": "FortiAP Series_R8_2025Q2_23.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_23.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_44": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_44.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_44.svg"
+      },
+      "fortigate_series_r22_2025q2_98": {
+        "filename": "FortiGate_Series_R22_2025Q2_98.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_98.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_13": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_13.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_13.svg"
+      },
+      "fortiswitch_series_r14_2025q2_39": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_39.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_39.svg"
+      },
+      "fortiap_series_r8_2025q2_6": {
+        "filename": "FortiAP Series_R8_2025Q2_6.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_6.svg"
+      },
+      "fortigate_series_r22_2025q2_87": {
+        "filename": "FortiGate_Series_R22_2025Q2_87.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_87.svg"
+      },
+      "fortiswitch_series_r14_2025q2_30": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_30.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_30.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_25": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_25.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_25.svg"
+      },
+      "fortiap_series_r8_2025q2_7": {
+        "filename": "FortiAP Series_R8_2025Q2_7.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_7.svg"
+      },
+      "fortiswitch_series_r14_2025q2_28": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_28.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_28.svg"
+      },
+      "fortigate_series_r22_2025q2_2": {
+        "filename": "FortiGate_Series_R22_2025Q2_2.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_2.svg"
+      },
+      "fortiswitch_series_r14_2025q2_2": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_2.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_2.svg"
+      },
+      "fortiswitch_series_r14_2025q2_7": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_7.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_7.svg"
+      },
+      "fortigate_series_r22_2025q2_18": {
+        "filename": "FortiGate_Series_R22_2025Q2_18.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_18.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_53": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_53.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_53.svg"
+      },
+      "fortigate_series_r22_2025q2_104": {
+        "filename": "FortiGate_Series_R22_2025Q2_104.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_104.svg"
+      },
+      "fortiap_series_r8_2025q2_3": {
+        "filename": "FortiAP Series_R8_2025Q2_3.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_3.svg"
+      },
+      "fortigate_series_r22_2025q2_108": {
+        "filename": "FortiGate_Series_R22_2025Q2_108.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_108.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_54": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_54.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_54.svg"
+      },
+      "fortiap_series_r8_2025q2_34": {
+        "filename": "FortiAP Series_R8_2025Q2_34.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_34.svg"
+      },
+      "fortiap_series_r8_2025q2_20": {
+        "filename": "FortiAP Series_R8_2025Q2_20.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_20.svg"
+      },
+      "fortiswitch_series_r14_2025q2_32": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_32.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_32.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_14": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_14.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_14.svg"
+      },
+      "fortigate_series_r22_2025q2_76": {
+        "filename": "FortiGate_Series_R22_2025Q2_76.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_76.svg"
+      },
+      "fortigate_series_r22_2025q2_100": {
+        "filename": "FortiGate_Series_R22_2025Q2_100.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_100.svg"
+      },
+      "fortigate_series_r22_2025q2_61": {
+        "filename": "FortiGate_Series_R22_2025Q2_61.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_61.svg"
+      },
+      "fortigate_series_r22_2025q2_5": {
+        "filename": "FortiGate_Series_R22_2025Q2_5.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_5.svg"
+      },
+      "fortiswitch_series_r14_2025q2_51": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_51.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_51.svg"
+      },
+      "fortiap_series_r8_2025q2_1": {
+        "filename": "FortiAP Series_R8_2025Q2_1.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_1.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_1": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_1.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_1.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_50": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_50.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_50.svg"
+      },
+      "fortiswitch_series_r14_2025q2_55": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_55.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_55.svg"
+      },
+      "fortiswitch_series_r14_2025q2_1": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_1.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_1.svg"
+      },
+      "fortiswitch_series_r14_2025q2_53": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_53.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_53.svg"
+      },
+      "fortigate_series_r22_2025q2_134": {
+        "filename": "FortiGate_Series_R22_2025Q2_134.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_134.svg"
+      },
+      "fortigate_series_r22_2025q2_21": {
+        "filename": "FortiGate_Series_R22_2025Q2_21.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_21.svg"
+      },
+      "fortiswitch_series_r14_2025q2_42": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_42.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_42.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_37": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_37.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_37.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_22": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_22.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_22.svg"
+      },
+      "fortigate_series_r22_2025q2_102": {
+        "filename": "FortiGate_Series_R22_2025Q2_102.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_102.svg"
+      },
+      "fortigate_series_r22_2025q2_44": {
+        "filename": "FortiGate_Series_R22_2025Q2_44.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_44.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_43": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_43.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_43.svg"
+      },
+      "fortigate_series_r22_2025q2_11": {
+        "filename": "FortiGate_Series_R22_2025Q2_11.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_11.svg"
+      },
+      "fortigate_series_r22_2025q2_126": {
+        "filename": "FortiGate_Series_R22_2025Q2_126.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_126.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_34": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_34.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_34.svg"
+      },
+      "fortiswitch_series_r14_2025q2_36": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_36.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_36.svg"
+      },
+      "fortiswitch_series_r14_2025q2_47": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_47.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_47.svg"
+      },
+      "fortigate_series_r22_2025q2_67": {
+        "filename": "FortiGate_Series_R22_2025Q2_67.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_67.svg"
+      },
+      "fortigate_series_r22_2025q2_113": {
+        "filename": "FortiGate_Series_R22_2025Q2_113.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_113.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_18": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_18.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_18.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_2": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_2.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_2.svg"
+      },
+      "fortigate_series_r22_2025q2_47": {
+        "filename": "FortiGate_Series_R22_2025Q2_47.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_47.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_23": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_23.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_23.svg"
+      },
+      "fortigate_series_r22_2025q2_74": {
+        "filename": "FortiGate_Series_R22_2025Q2_74.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_74.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_49": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_49.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_49.svg"
+      },
+      "fortigate_series_r22_2025q2_118": {
+        "filename": "FortiGate_Series_R22_2025Q2_118.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_118.svg"
+      },
+      "fortiswitch_series_r14_2025q2_21": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_21.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_21.svg"
+      },
+      "fortiap_series_r8_2025q2_31": {
+        "filename": "FortiAP Series_R8_2025Q2_31.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_31.svg"
+      },
+      "fortigate_series_r22_2025q2_101": {
+        "filename": "FortiGate_Series_R22_2025Q2_101.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_101.svg"
+      },
+      "fortigate_series_r22_2025q2_10": {
+        "filename": "FortiGate_Series_R22_2025Q2_10.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_10.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_35": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_35.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_35.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_3": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_3.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_3.svg"
+      },
+      "fortiap_series_r8_2025q2_2": {
+        "filename": "FortiAP Series_R8_2025Q2_2.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_2.svg"
+      },
+      "fortigate_series_r22_2025q2_64": {
+        "filename": "FortiGate_Series_R22_2025Q2_64.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_64.svg"
+      },
+      "fortigate_series_r22_2025q2_68": {
+        "filename": "FortiGate_Series_R22_2025Q2_68.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_68.svg"
+      },
+      "fortigate_series_r22_2025q2_96": {
+        "filename": "FortiGate_Series_R22_2025Q2_96.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_96.svg"
+      },
+      "fortigate_series_r22_2025q2_77": {
+        "filename": "FortiGate_Series_R22_2025Q2_77.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_77.svg"
+      },
+      "fortigate_series_r22_2025q2_79": {
+        "filename": "FortiGate_Series_R22_2025Q2_79.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_79.svg"
+      },
+      "fortigate_series_r22_2025q2_70": {
+        "filename": "FortiGate_Series_R22_2025Q2_70.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_70.svg"
+      },
+      "fortiswitch_series_r14_2025q2_61": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_61.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_61.svg"
+      },
+      "fortiswitch_series_r14_2025q2_44": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_44.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_44.svg"
+      },
+      "fortiap_series_r8_2025q2_26": {
+        "filename": "FortiAP Series_R8_2025Q2_26.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_26.svg"
+      },
+      "fortiswitch_series_r14_2025q2_45": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_45.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_45.svg"
+      },
+      "fortigate_series_r22_2025q2_71": {
+        "filename": "FortiGate_Series_R22_2025Q2_71.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_71.svg"
+      },
+      "fortigate_series_r22_2025q2_111": {
+        "filename": "FortiGate_Series_R22_2025Q2_111.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_111.svg"
+      },
+      "fortiap_series_r8_2025q2_4": {
+        "filename": "FortiAP Series_R8_2025Q2_4.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_4.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_39": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_39.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_39.svg"
+      },
+      "fortigate_series_r22_2025q2_1": {
+        "filename": "FortiGate_Series_R22_2025Q2_1.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_1.svg"
+      },
+      "fortigate_series_r22_2025q2_38": {
+        "filename": "FortiGate_Series_R22_2025Q2_38.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_38.svg"
+      },
+      "fortiswitch_series_r14_2025q2_14": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_14.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_14.svg"
+      },
+      "fortiswitch_series_r14_2025q2_19": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_19.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_19.svg"
+      },
+      "fortiswitch_series_r14_2025q2_65": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_65.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_65.svg"
+      },
+      "fortiap_series_r8_2025q2_17": {
+        "filename": "FortiAP Series_R8_2025Q2_17.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_17.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_11": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_11.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_11.svg"
+      },
+      "fortigate_series_r22_2025q2_105": {
+        "filename": "FortiGate_Series_R22_2025Q2_105.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_105.svg"
+      },
+      "fortigate_series_r22_2025q2_63": {
+        "filename": "FortiGate_Series_R22_2025Q2_63.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_63.svg"
+      },
+      "fortiap_series_r8_2025q2_13": {
+        "filename": "FortiAP Series_R8_2025Q2_13.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_13.svg"
+      },
+      "fortigate_series_r22_2025q2_116": {
+        "filename": "FortiGate_Series_R22_2025Q2_116.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_116.svg"
+      },
+      "fortiswitch_series_r14_2025q2_37": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_37.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_37.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_32": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_32.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_32.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_31": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_31.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_31.svg"
+      },
+      "fortigate_series_r22_2025q2_81": {
+        "filename": "FortiGate_Series_R22_2025Q2_81.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_81.svg"
+      },
+      "fortigate_series_r22_2025q2_78": {
+        "filename": "FortiGate_Series_R22_2025Q2_78.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_78.svg"
+      },
+      "fortigate_series_r22_2025q2_48": {
+        "filename": "FortiGate_Series_R22_2025Q2_48.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_48.svg"
+      },
+      "fortiap_series_r8_2025q2_19": {
+        "filename": "FortiAP Series_R8_2025Q2_19.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_19.svg"
+      },
+      "fortigate_series_r22_2025q2_127": {
+        "filename": "FortiGate_Series_R22_2025Q2_127.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_127.svg"
+      },
+      "fortigate_series_r22_2025q2_103": {
+        "filename": "FortiGate_Series_R22_2025Q2_103.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_103.svg"
+      },
+      "fortigate_series_r22_2025q2_99": {
+        "filename": "FortiGate_Series_R22_2025Q2_99.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_99.svg"
+      },
+      "fortiap_series_r8_2025q2_16": {
+        "filename": "FortiAP Series_R8_2025Q2_16.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_16.svg"
+      },
+      "fortigate_series_r22_2025q2_57": {
+        "filename": "FortiGate_Series_R22_2025Q2_57.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_57.svg"
+      },
+      "fortigate_series_r22_2025q2_86": {
+        "filename": "FortiGate_Series_R22_2025Q2_86.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_86.svg"
+      },
+      "fortigate_series_r22_2025q2_133": {
+        "filename": "FortiGate_Series_R22_2025Q2_133.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_133.svg"
+      },
+      "fortigate_series_r22_2025q2_84": {
+        "filename": "FortiGate_Series_R22_2025Q2_84.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_84.svg"
+      },
+      "fortiswitch_series_r14_2025q2_11": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_11.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_11.svg"
+      },
+      "fortigate_series_r22_2025q2_40": {
+        "filename": "FortiGate_Series_R22_2025Q2_40.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_40.svg"
+      },
+      "fortigate_series_r22_2025q2_14": {
+        "filename": "FortiGate_Series_R22_2025Q2_14.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_14.svg"
+      },
+      "fortiswitch_series_r14_2025q2_58": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_58.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_58.svg"
+      },
+      "fortigate_series_r22_2025q2_119": {
+        "filename": "FortiGate_Series_R22_2025Q2_119.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_119.svg"
+      },
+      "fortigate_series_r22_2025q2_83": {
+        "filename": "FortiGate_Series_R22_2025Q2_83.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_83.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_40": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_40.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_40.svg"
+      },
+      "fortiswitch_series_r14_2025q2_48": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_48.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_48.svg"
+      },
+      "fortiap_series_r8_2025q2_9": {
+        "filename": "FortiAP Series_R8_2025Q2_9.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_9.svg"
+      },
+      "fortiswitch_series_r14_2025q2_5": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_5.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_5.svg"
+      },
+      "fortigate_series_r22_2025q2_45": {
+        "filename": "FortiGate_Series_R22_2025Q2_45.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_45.svg"
+      },
+      "fortigate_series_r22_2025q2_59": {
+        "filename": "FortiGate_Series_R22_2025Q2_59.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_59.svg"
+      },
+      "fortiswitch_series_r14_2025q2_29": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_29.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_29.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_51": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_51.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_51.svg"
+      },
+      "fortigate_series_r22_2025q2_131": {
+        "filename": "FortiGate_Series_R22_2025Q2_131.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_131.svg"
+      },
+      "fortigate_series_r22_2025q2_41": {
+        "filename": "FortiGate_Series_R22_2025Q2_41.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_41.svg"
+      },
+      "fortiswitch_series_r14_2025q2_68": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_68.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_68.svg"
+      },
+      "fortiswitch_series_r14_2025q2_25": {
+        "filename": "FortiSwitch_Series_R14_2025Q2_25.svg",
+        "path": "fortinet_vss/svgs/FortiSwitch_Series_R14_2025Q2_25.svg"
+      },
+      "fortiap_series_r8_2025q2_25": {
+        "filename": "FortiAP Series_R8_2025Q2_25.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_25.svg"
+      },
+      "fortiap_series_r8_2025q2_29": {
+        "filename": "FortiAP Series_R8_2025Q2_29.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_29.svg"
+      },
+      "fortiap_series_r8_2025q2_18": {
+        "filename": "FortiAP Series_R8_2025Q2_18.svg",
+        "path": "fortinet_vss/svgs/FortiAP Series_R8_2025Q2_18.svg"
+      },
+      "fortigate_series_r22_2025q2_62": {
+        "filename": "FortiGate_Series_R22_2025Q2_62.svg",
+        "path": "fortinet_vss/svgs/FortiGate_Series_R22_2025Q2_62.svg"
+      },
+      "fortinet_icons_new_r2_2025q2_28": {
+        "filename": "Fortinet_Icons_new_R2_2025Q2_28.svg",
+        "path": "fortinet_vss/svgs/Fortinet_Icons_new_R2_2025Q2_28.svg"
+      }
+    }
+  },
+  "meraki_svgs": {
+    "mobile_phone_svg": {
+      "mobile_phone": {
+        "filename": "Mobile Phone.svg",
+        "path": "meraki_svgs/Mobile Phone.svg"
+      }
+    },
+    "laptop_svg": {
+      "laptop": {
+        "filename": "Laptop.svg",
+        "path": "meraki_svgs/Laptop.svg"
+      }
+    },
+    "sensors": {
+      "mt30": {
+        "filename": "MT30.svg",
+        "path": "meraki_svgs/Sensors/MT30.svg"
+      },
+      "mt15": {
+        "filename": "MT15.svg",
+        "path": "meraki_svgs/Sensors/MT15.svg"
+      },
+      "mt10_11_12_14": {
+        "filename": "MT10_11_12_14.svg",
+        "path": "meraki_svgs/Sensors/MT10_11_12_14.svg"
+      },
+      "mt40": {
+        "filename": "MT40.svg",
+        "path": "meraki_svgs/Sensors/MT40.svg"
+      },
+      "mt20": {
+        "filename": "MT20.svg",
+        "path": "meraki_svgs/Sensors/MT20.svg"
+      }
+    },
+    "cellular_gateway": {
+      "mg52e": {
+        "filename": "MG52E.svg",
+        "path": "meraki_svgs/Cellular Gateway/MG52E.svg"
+      },
+      "mg41_41e": {
+        "filename": "MG41_41E.svg",
+        "path": "meraki_svgs/Cellular Gateway/MG41_41E.svg"
+      },
+      "mg52": {
+        "filename": "MG52.svg",
+        "path": "meraki_svgs/Cellular Gateway/MG52.svg"
+      },
+      "mg21_21e": {
+        "filename": "MG21_21E.svg",
+        "path": "meraki_svgs/Cellular Gateway/MG21_21E.svg"
+      },
+      "mg51e": {
+        "filename": "MG51E.svg",
+        "path": "meraki_svgs/Cellular Gateway/MG51E.svg"
+      },
+      "mg51": {
+        "filename": "MG51.svg",
+        "path": "meraki_svgs/Cellular Gateway/MG51.svg"
+      }
+    },
+    "wireless": {
+      "mr36h": {
+        "filename": "MR36H.svg",
+        "path": "meraki_svgs/Wireless/MR36H.svg"
+      },
+      "cw917x-mr_gradient": {
+        "filename": "CW917X-MR (Gradient).svg",
+        "path": "meraki_svgs/Wireless/CW917X-MR (Gradient).svg"
+      },
+      "mr44_46_56": {
+        "filename": "MR44_46_56.svg",
+        "path": "meraki_svgs/Wireless/MR44_46_56.svg"
+      },
+      "mr36": {
+        "filename": "MR36.svg",
+        "path": "meraki_svgs/Wireless/MR36.svg"
+      },
+      "cw9166d1": {
+        "filename": "CW9166D1.svg",
+        "path": "meraki_svgs/Wireless/CW9166D1.svg"
+      },
+      "cw917x-mr": {
+        "filename": "CW917X-MR.svg",
+        "path": "meraki_svgs/Wireless/CW917X-MR.svg"
+      },
+      "cw916x-mr": {
+        "filename": "CW916X-MR.svg",
+        "path": "meraki_svgs/Wireless/CW916X-MR.svg"
+      },
+      "mr57": {
+        "filename": "MR57.svg",
+        "path": "meraki_svgs/Wireless/MR57.svg"
+      },
+      "mr76_86": {
+        "filename": "MR76_86.svg",
+        "path": "meraki_svgs/Wireless/MR76_86.svg"
+      },
+      "mr28": {
+        "filename": "MR28.svg",
+        "path": "meraki_svgs/Wireless/MR28.svg"
+      }
+    },
+    "vision": {
+      "mv32": {
+        "filename": "MV32.svg",
+        "path": "meraki_svgs/Vision/MV32.svg"
+      },
+      "mv63_63x": {
+        "filename": "MV63_63X.svg",
+        "path": "meraki_svgs/Vision/MV63_63X.svg"
+      },
+      "mv2": {
+        "filename": "MV2.svg",
+        "path": "meraki_svgs/Vision/MV2.svg"
+      },
+      "mv22_22x": {
+        "filename": "MV22_22X.svg",
+        "path": "meraki_svgs/Vision/MV22_22X.svg"
+      },
+      "mv72_72x": {
+        "filename": "MV72_72X.svg",
+        "path": "meraki_svgs/Vision/MV72_72X.svg"
+      },
+      "mv52": {
+        "filename": "MV52.svg",
+        "path": "meraki_svgs/Vision/MV52.svg"
+      },
+      "mv93_mv93x": {
+        "filename": "MV93_MV93X.svg",
+        "path": "meraki_svgs/Vision/MV93_MV93X.svg"
+      }
+    },
+    "icons_-_other": {
+      "vmx_medium": {
+        "filename": "vMX Medium.svg",
+        "path": "meraki_svgs/#Icons - Other/vMX Medium.svg"
+      },
+      "thousand_eyes_te": {
+        "filename": "Thousand Eyes (TE).svg",
+        "path": "meraki_svgs/#Icons - Other/Thousand Eyes (TE).svg"
+      },
+      "laptop_-_dashboard_view": {
+        "filename": "Laptop - Dashboard View.svg",
+        "path": "meraki_svgs/#Icons - Other/Laptop - Dashboard View.svg"
+      },
+      "vmx_small": {
+        "filename": "vMX Small.svg",
+        "path": "meraki_svgs/#Icons - Other/vMX Small.svg"
+      },
+      "insight": {
+        "filename": "Insight.svg",
+        "path": "meraki_svgs/#Icons - Other/Insight.svg"
+      },
+      "meraki_product_web_svg": {
+        "filename": "Meraki Product Web SVG.svg",
+        "path": "meraki_svgs/#Icons - Other/Meraki Product Web SVG.svg"
+      },
+      "miles": {
+        "filename": "Miles.svg",
+        "path": "meraki_svgs/#Icons - Other/Miles.svg"
+      },
+      "vmx_large": {
+        "filename": "vMX Large.svg",
+        "path": "meraki_svgs/#Icons - Other/vMX Large.svg"
+      }
+    },
+    "systems_manager": {
+      "mobile_phone": {
+        "filename": "Mobile Phone.svg",
+        "path": "meraki_svgs/Systems Manager/Mobile Phone.svg"
+      },
+      "laptop": {
+        "filename": "Laptop.svg",
+        "path": "meraki_svgs/Systems Manager/Laptop.svg"
+      }
+    },
+    "security_and_sd-wan": {
+      "mx75": {
+        "filename": "MX75.svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX75.svg"
+      },
+      "mx67w_front": {
+        "filename": "MX67W (Front).svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX67W (Front).svg"
+      },
+      "vmx_medium": {
+        "filename": "vMX Medium.svg",
+        "path": "meraki_svgs/Security and SD-WAN/vMX Medium.svg"
+      },
+      "z4_back": {
+        "filename": "Z4 (Back).svg",
+        "path": "meraki_svgs/Security and SD-WAN/Z4 (Back).svg"
+      },
+      "mx67c_front": {
+        "filename": "MX67C (Front).svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX67C (Front).svg"
+      },
+      "mx75_back": {
+        "filename": "MX75 (Back).svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX75 (Back).svg"
+      },
+      "z3c_front": {
+        "filename": "Z3C (Front).svg",
+        "path": "meraki_svgs/Security and SD-WAN/Z3C (Front).svg"
+      },
+      "mx67w_back": {
+        "filename": "MX67W (Back).svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX67W (Back).svg"
+      },
+      "mx68w_68cw_front": {
+        "filename": "MX68W_68CW (Front).svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX68W_68CW (Front).svg"
+      },
+      "z3c_back": {
+        "filename": "Z3C (Back).svg",
+        "path": "meraki_svgs/Security and SD-WAN/Z3C (Back).svg"
+      },
+      "mx250_mx450": {
+        "filename": "MX250_MX450.svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX250_MX450.svg"
+      },
+      "z3_front": {
+        "filename": "Z3 (Front).svg",
+        "path": "meraki_svgs/Security and SD-WAN/Z3 (Front).svg"
+      },
+      "z4c_back": {
+        "filename": "Z4C (Back).svg",
+        "path": "meraki_svgs/Security and SD-WAN/Z4C (Back).svg"
+      },
+      "vmx_small": {
+        "filename": "vMX Small.svg",
+        "path": "meraki_svgs/Security and SD-WAN/vMX Small.svg"
+      },
+      "mx67_front": {
+        "filename": "MX67 (Front).svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX67 (Front).svg"
+      },
+      "mx105": {
+        "filename": "MX105.svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX105.svg"
+      },
+      "mx85": {
+        "filename": "MX85.svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX85.svg"
+      },
+      "mx95": {
+        "filename": "MX95.svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX95.svg"
+      },
+      "mx68_front": {
+        "filename": "MX68 (Front).svg",
+        "path": "meraki_svgs/Security and SD-WAN/MX68 (Front).svg"
+      },
+      "vmx_large": {
+        "filename": "vMX Large.svg",
+        "path": "meraki_svgs/Security and SD-WAN/vMX Large.svg"
+      }
+    },
+    "switch": {
+      "ms450-12": {
+        "filename": "MS450-12.svg",
+        "path": "meraki_svgs/Switch/MS450-12.svg"
+      },
+      "ms120-8": {
+        "filename": "MS120-8.svg",
+        "path": "meraki_svgs/Switch/MS120-8.svg"
+      },
+      "9300-24ux": {
+        "filename": "9300-24UX.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300-24UX.svg"
+      },
+      "9300-48un": {
+        "filename": "9300-48UN.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300-48UN.svg"
+      },
+      "9300_uplink_-_nm-2-40g": {
+        "filename": "9300 Uplink - NM-2-40G.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300 Uplink - NM-2-40G.svg"
+      },
+      "9300_uplink_-_blank_cover": {
+        "filename": "9300 Uplink - Blank Cover.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300 Uplink - Blank Cover.svg"
+      },
+      "9300-48p": {
+        "filename": "9300-48P.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300-48P.svg"
+      },
+      "9300-48uxm": {
+        "filename": "9300-48UXM.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300-48UXM.svg"
+      },
+      "9300-48u": {
+        "filename": "9300-48U.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300-48U.svg"
+      },
+      "9300-24p": {
+        "filename": "9300-24P.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300-24P.svg"
+      },
+      "9300x-24y": {
+        "filename": "9300X-24Y.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300X-24Y.svg"
+      },
+      "9300x-12y": {
+        "filename": "9300X-12Y.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300X-12Y.svg"
+      },
+      "9300-24u": {
+        "filename": "9300-24U.svg",
+        "path": "meraki_svgs/Switch/C9300 Models/9300-24U.svg"
+      },
+      "ms130-12x": {
+        "filename": "MS130-12X.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-12X.svg"
+      },
+      "ms130-8x": {
+        "filename": "MS130-8X.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-8X.svg"
+      },
+      "ms130-48": {
+        "filename": "MS130-48.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-48.svg"
+      },
+      "ms130-24": {
+        "filename": "MS130-24.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-24.svg"
+      },
+      "ms130-8": {
+        "filename": "MS130-8.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-8.svg"
+      },
+      "ms130-24x": {
+        "filename": "MS130-24X.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-24X.svg"
+      },
+      "ms130-24p": {
+        "filename": "MS130-24P.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-24P.svg"
+      },
+      "ms130-48p": {
+        "filename": "MS130-48P.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-48P.svg"
+      },
+      "ms130-48x": {
+        "filename": "MS130-48X.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-48X.svg"
+      },
+      "ms130-8p": {
+        "filename": "MS130-8P.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-8P.svg"
+      },
+      "ms130-8p-i": {
+        "filename": "MS130-8P-I.svg",
+        "path": "meraki_svgs/Switch/MS130 Models/MS130-8P-I.svg"
+      },
+      "ms225-24": {
+        "filename": "MS225-24.svg",
+        "path": "meraki_svgs/Switch/MS2XX Models/MS225-24.svg"
+      },
+      "ms225-48": {
+        "filename": "MS225-48.svg",
+        "path": "meraki_svgs/Switch/MS2XX Models/MS225-48.svg"
+      },
+      "ms250-24": {
+        "filename": "MS250-24.svg",
+        "path": "meraki_svgs/Switch/MS2XX Models/MS250-24.svg"
+      },
+      "ms250-48": {
+        "filename": "MS250-48.svg",
+        "path": "meraki_svgs/Switch/MS2XX Models/MS250-48.svg"
+      },
+      "ms390-24_ma-mod-2x40g": {
+        "filename": "MS390-24 (MA-MOD-2X40G).svg",
+        "path": "meraki_svgs/Switch/MS3XX Models/MS390-24 (MA-MOD-2X40G).svg"
+      },
+      "ms390-24_ma-mod-8x10g": {
+        "filename": "MS390-24 (MA-MOD-8X10G).svg",
+        "path": "meraki_svgs/Switch/MS3XX Models/MS390-24 (MA-MOD-8X10G).svg"
+      },
+      "ms355-48x2": {
+        "filename": "MS355-48X2.svg",
+        "path": "meraki_svgs/Switch/MS3XX Models/MS355-48X2.svg"
+      },
+      "ms355-24x2": {
+        "filename": "MS355-24X2.svg",
+        "path": "meraki_svgs/Switch/MS3XX Models/MS355-24X2.svg"
+      },
+      "ms355-48x": {
+        "filename": "MS355-48X.svg",
+        "path": "meraki_svgs/Switch/MS3XX Models/MS355-48X.svg"
+      },
+      "ms355-24x": {
+        "filename": "MS355-24X.svg",
+        "path": "meraki_svgs/Switch/MS3XX Models/MS355-24X.svg"
+      },
+      "ms390-48_ma-mod-2x40g": {
+        "filename": "MS390-48 (MA-MOD-2X40G).svg",
+        "path": "meraki_svgs/Switch/MS3XX Models/MS390-48 (MA-MOD-2X40G).svg"
+      },
+      "ms390-48_ma-mod-8x10g": {
+        "filename": "MS390-48 (MA-MOD-8X10G).svg",
+        "path": "meraki_svgs/Switch/MS3XX Models/MS390-48 (MA-MOD-8X10G).svg"
+      },
+      "ms150-48mp": {
+        "filename": "MS150-48MP.svg",
+        "path": "meraki_svgs/Switch/MS150 Models/MS150-48MP.svg"
+      },
+      "ms150-24mp": {
+        "filename": "MS150-24MP.svg",
+        "path": "meraki_svgs/Switch/MS150 Models/MS150-24MP.svg"
+      }
+    }
+  }
+}

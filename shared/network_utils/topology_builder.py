@@ -238,7 +238,9 @@ class TopologyBuilder:
         # Check for missing positions
         for device in devices:
             device_id = device.get('id')
-            if device_id and device_id not in positions:
+            if not device_id:
+                validation_results['errors'].append("Device found without ID")
+            elif device_id not in positions:
                 validation_results['warnings'].append(f"Device {device_id} has no position")
 
         # Check for invalid connections

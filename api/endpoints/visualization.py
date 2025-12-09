@@ -9,9 +9,9 @@ from pydantic import BaseModel
 import json
 from pathlib import Path
 
-from ...shared.network_utils.data_formatter import NetworkDataFormatter
-from ...shared.network_utils.topology_builder import TopologyBuilder
-from ...shared.visualization.renderer import VisualizationRenderer
+from shared.network_utils.data_formatter import NetworkDataFormatter
+from shared.network_utils.topology_builder import TopologyBuilder
+from shared.visualization.renderer import VisualizationRenderer
 
 router = APIRouter()
 
@@ -70,7 +70,7 @@ async def export_visualization(request: VisualizationExport, req: Request):
         config = req.app.state.config
 
         # Create export directory
-        export_dir = config.config.exports_dir
+        export_dir = config.config.exports_dir / "static"
         export_dir.mkdir(parents=True, exist_ok=True)
 
         # Generate filename
@@ -91,6 +91,9 @@ async def export_visualization(request: VisualizationExport, req: Request):
             # Would integrate SVG export
             renderer = VisualizationRenderer()
             renderer.export_svg(request.topology_data, filepath)
+        elif request.format == "html":
+            renderer = VisualizationRenderer()
+            renderer.render_html_viewer(request.topology_data, filepath)
 
         return {
             "message": "Visualization exported successfully",
@@ -108,12 +111,12 @@ async def list_visualization_scenes(req: Request):
     """List available visualization scenes"""
     try:
         config = req.app.state.config
-        export_dir = config.config.exports_dir
+        export_dir = config.config.exports_dir / "static"
 
         scenes = []
         if export_dir.exists():
             for file_path in export_dir.glob("*"):
-                if file_path.suffix in ['.json', '.gltf', '.glb', '.svg']:
+                if file_path.suffix in ['.json', '.gltf', '.glb', '.svg', '.html'] and file_path.name != "dashboard.html":
                     scenes.append({
                         "name": file_path.stem,
                         "format": file_path.suffix[1:],  # Remove the dot
@@ -216,3 +219,117 @@ async def validate_topology_data(topology_data: Dict[str, Any]):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Validation failed: {str(e)}")
+
+
+@router.post("/generate_from_discovery")
+async def generate_from_discovery(req: Request):
+    """Generate visualization from discovered devices"""
+    try:
+        from shared.device_handling.device_collector import UnifiedDeviceCollector
+        from shared.network_utils.authentication import AuthManager
+        
+        # Get discovered devices
+        auth_manager = AuthManager()
+        collector = UnifiedDeviceCollector(auth_manager)
+        
+        # Try to load from disk first (persistence)
+        import os
+        if os.path.exists("data/discovered_devices.json"):
+            collector.load_devices("data/discovered_devices.json")
+            
+        devices = collector.get_all_devices()
+        
+        if not devices:
+            raise HTTPException(status_code=404, detail="No devices found in discovery. Please run discovery first.")
+
+        # Convert devices to dict format for topology builder
+        device_dicts = []
+        for d in devices:
+            # Map device fields to visualization format
+            d_type = getattr(d, 'device_type', 'unknown')
+            if hasattr(d_type, 'value'):
+                d_type = d_type.value
+            elif hasattr(d_type, 'name'):
+                d_type = d_type.name
+            else:
+                d_type = str(d_type)
+
+            dev_dict = {
+                "id": d.id,
+                "name": d.name or d.id,
+                "type": d_type,
+                "vendor": getattr(d, 'vendor', 'unknown'),
+                "ip": getattr(d, 'ip_address', None)
+            }
+            device_dicts.append(dev_dict)
+
+        # Build topology with inferred connections
+        topology_builder = TopologyBuilder()
+        connections = []
+        
+        # Identify core devices
+        fortigates = [d for d in device_dicts if 'fortigate' in str(d['type']).lower()]
+        switches = [d for d in device_dicts if 'switch' in str(d['type']).lower()]
+        aps = [d for d in device_dicts if 'ap' in str(d['type']).lower()]
+        clients = [d for d in device_dicts if d not in fortigates and d not in switches and d not in aps]
+        
+        # 1. Connect Switches to FortiGate (assuming star topology for now)
+        if fortigates:
+            core_gate = fortigates[0] # Use first FortiGate as root
+            for sw in switches:
+                connections.append((core_gate['id'], sw['id']))
+                
+            # 2. Connect APs to Switches (distribute evenly or connect to first)
+            # If no switches, connect to FortiGate
+            if switches:
+                for i, ap in enumerate(aps):
+                    # Simple distribution: round-robin APs to switches
+                    target_sw = switches[i % len(switches)]
+                    connections.append((target_sw['id'], ap['id']))
+            else:
+                for ap in aps:
+                    connections.append((core_gate['id'], ap['id']))
+                    
+            # 3. Connect Clients to APs (or Switches/Gate)
+            if aps:
+                for i, client in enumerate(clients):
+                    target_ap = aps[i % len(aps)]
+                    connections.append((target_ap['id'], client['id']))
+            elif switches:
+                for i, client in enumerate(clients):
+                    target_sw = switches[i % len(switches)]
+                    connections.append((target_sw['id'], client['id']))
+            else:
+                for client in clients:
+                    connections.append((core_gate['id'], client['id']))
+        
+        topology = topology_builder.build_topology(device_dicts, connections)
+        
+        # Apply 3D formatting to enrich with models
+        formatter = NetworkDataFormatter()
+        topology = formatter.format_for_3d_visualization(topology)
+        
+        # Generate visualization
+        config = req.app.state.config
+        export_dir = config.config.exports_dir / "static"
+        export_dir.mkdir(parents=True, exist_ok=True)
+        
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"discovery_{timestamp}.html"
+        filepath = export_dir / filename
+        
+        renderer = VisualizationRenderer()
+        renderer.render_html_viewer(topology, filepath)
+        
+        return {
+            "message": "Visualization generated from discovery",
+            "filepath": str(filepath),
+            "url": f"/static/{filename}",
+            "device_count": len(devices)
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to generate from discovery: {str(e)}")

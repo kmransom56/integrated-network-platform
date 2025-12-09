@@ -1,0 +1,5743 @@
+{
+	"info": {
+		"_postman_id": "223fca45-f3e0-4c52-b97e-1b1849ad70ab",
+		"name": "FortiManager",
+		"description": "# FortiManager collection\n\nHere are published examples for FortiManager API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7177108",
+		"_collection_link": "https://blue-meteor-505030.postman.co/workspace/FortiOS~836c11ee-fe71-4a13-a99d-30d79481119a/collection/7177108-223fca45-f3e0-4c52-b97e-1b1849ad70ab?action=share&source=collection_link&creator=7177108"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// extract and save session key",
+									"pm.environment.set(\"fmg-session\", JSON.parse(responseBody)[\"session\"]);",
+									"",
+									"// test login success",
+									"pm.test(\"Login successfull\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"",
+									"    if (code == 0) {",
+									"        pm.visualizer.set(\"<html><body><span style='color:green'>Login successfull</span></body></html>\");",
+									"    } else {",
+									"        pm.visualizer.set(\"<html><body><span style='color:red'>Cannot login: \"+ msg +\"</span></body></html>\");",
+									"    }",
+									"",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"data\": {\n                \"user\": \"ibadmin\",\n                \"passwd\": \"{{password}}\"\n            },\n            \"url\": \"/sys/login/user\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// test logout success",
+									"pm.test(\"Login successfull\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"",
+									"    if (code == 0) {",
+									"        pm.visualizer.set(\"<html><body><span style='color:green'>Logout successfull</span></body></html>\");",
+									"    } else {",
+									"        pm.visualizer.set(\"<html><body><span style='color:red'>Cannot logout: \"+ msg +\"</span></body></html>\");",
+									"    }",
+									"",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"url\": \"/sys/logout\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication with FortiCloud",
+			"item": [
+				{
+					"name": "Get token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// test  success",
+									"pm.test(\"Fortinet OAUTH successfull\", () => {",
+									"    let status = pm.response.json()['status'];",
+									"",
+									"    if (status == \"success\") {",
+									"        let token = pm.response.json()['access_token'];",
+									"        let expires = new Date(Date.now() + pm.response.json()['expires_in']*1000);",
+									"        pm.visualizer.set(\"<html><body><span style='color:green'>Retrieved OATH token valid until \" + expires + \"</span></body></html>\");",
+									"        pm.environment.set(\"oauth-token\", token);",
+									"    } else {",
+									"        pm.visualizer.set(\"<html><body><span style='color:red'>Fortinet OAUTH rejected</span></body></html>\");",
+									"    }",
+									"",
+									"    pm.expect(status).to.equal(\"success\", \"Fortinet OAUTH error\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{user}}\",\n    \"password\": \"{{password}}\",\n    \"client_id\": \"FortiManager\",\n    \"grant_type\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://customerapiauth.fortinet﻿.com/api/v1/oauth/token/",
+							"protocol": "https",
+							"host": [
+								"customerapiauth",
+								"fortinet﻿",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"oauth",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// test login success",
+									"pm.test(\"Login successfull\", () => {",
+									"    let msg = pm.response.json()['message'];",
+									"    let session = pm.response.json()['session'];",
+									"",
+									"    if (session) {",
+									"        pm.visualizer.set(\"<html><body><span style='color:green'>Login successfull</span></body></html>\");",
+									"        pm.environment.set(\"fmg-session\", session);",
+									"    } else {",
+									"        pm.visualizer.set(\"<html><body><span style='color:red'>Cannot login: \"+ msg +\"</span></body></html>\");",
+									"    }",
+									"",
+									"    pm.expect(session).to.not.be.undefined;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"access_token\": \"{{oauth-token}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/p/forticloud_jsonrpc_login/",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"p",
+								"forticloud_jsonrpc_login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// test logout success",
+									"pm.test(\"Login successfull\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"",
+									"    if (code == 0) {",
+									"        pm.visualizer.set(\"<html><body><span style='color:green'>Logout successfull</span></body></html>\");",
+									"    } else {",
+									"        pm.visualizer.set(\"<html><body><span style='color:red'>Cannot logout: \"+ msg +\"</span></body></html>\");",
+									"    }",
+									"",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"url\": \"/sys/logout\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "## Usage\n\nThis folder is only for logging in to FortiManager Cloud managed by Fortinet.\n\nYou first need to call \"Get token\" to authenticate to Fortinet FortiCloud and then \"Login\" to authenticate to your FortiManager cloud instance.\n\n## Variables used\n\nVariables from regular login are reused, with following meaning:\n\n\\* **host** : Your cloud instance hostname. It composed of account id, region, and \"fortimanager.forticloud.com\". For example \"123456.eu-central-1.fortimanager.forticloud.com\".  \n\\* **user** : apiId string from credentials file you got when you created IAM API user.  \n\\* **password** : password string from credentials file you got when you created IAM API user.\n\n## How to create cloud API user\n\n\\* Login to support.fortinet.com  \n\\* Switch to \"IAM\" service  \n\\* Navigate to \"API Users\" menu  \n\\* Create new API user - add \"FortiManager Cloud\" portal and directly edit it and enable it with the access privileges you want"
+		},
+		{
+			"name": "Users on FortiManager",
+			"item": [
+				{
+					"name": "Change password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>hostname</td>",
+									"            <td>ip</td>",
+									"            <td>sn</td>",
+									"            <td>os_type</td>",
+									"            <td>version</td>",
+									"            <td>connection</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{hostname}}</td>",
+									"                <td>{{ip}}</td>",
+									"                <td>{{sn}}</td>",
+									"                <td>{{os_type}}</td>",
+									"                <td>{{_human_version}}</td>",
+									"                <td>{{conn_status}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (i=0; i<responseData.length; i++) {",
+									"    responseData[i][\"_human_version\"] = responseData[i][\"os_ver\"].split(\".\")[0];",
+									"    responseData[i][\"_human_version\"] += \".\";",
+									"    responseData[i][\"_human_version\"] += responseData[i][\"mr\"];",
+									"    responseData[i][\"_human_version\"] += \".\";",
+									"    responseData[i][\"_human_version\"] += responseData[i][\"patch\"];",
+									"}",
+									"",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"update\",\n    \"params\": [{\n        \"data\": {\n            \"password\": \"{{password}}\"\n        },\n        \"url\": \"/cli/global/system/admin/user/{{user}}\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "System",
+			"item": [
+				{
+					"name": "Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <tr>",
+									"            <th>Hostname</th>",
+									"            <th>Version</th>",
+									"            <th>Platform</th>",
+									"            <th>SN</th>",
+									"            <th>HA mode</th>",
+									"        </tr>",
+									"",
+									"        <tr>",
+									"            <td>{{response.Hostname}}</td>",
+									"            <td>{{response.Major}}.{{response.Minor}}.{{response.Patch}} ({{response.Build}})</td>",
+									"            <td>{{response.___Platform_Full_Name}}</td>",
+									"            <td>{{response.___Serial_Number}}</td>",
+									"            <td>{{response.___HA_Mode}}</td>",
+									"        </tr>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let udata = JSON.parse(responseBody)[\"result\"][0][\"data\"]",
+									"udata[\"___Platform_Full_Name\"] = udata[\"Platform Full Name\"]",
+									"udata[\"___Serial_Number\"] = udata[\"Serial Number\"]",
+									"udata[\"___HA_Mode\"] = udata[\"HA Mode\"]",
+									"",
+									"pm.visualizer.set(template, {",
+									"    response: udata",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/sys/status\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Interfaces",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }        ",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>ipv4</td>",
+									"            <td>ipv4 allowed access</td>",
+									"            <td>ipv6</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{ip}}</td>",
+									"                <td><ul>",
+									"                {{#each allowaccess}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"                <td>{{ipv6.ip6-address}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/cli/global/system/interface\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ADOMs",
+			"item": [
+				{
+					"name": "List ADOMs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Name</td>",
+									"            <td>Version</td>",
+									"            <td>State</td>",
+									"            <td>Workspace mode</td>",
+									"            <td>Member devices</td>",
+									"        </tr>",
+									"        </thead><tbody>",
+									"        {{#each .}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>",
+									"                    <script>",
+									"                    document.write(\"{{os_ver}}\".split(\".\")[0] + \".\" + \"{{mr}}\");",
+									"                    </script>",
+									"                </td>",
+									"                <td><script>",
+									"                    if (\"{{state}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{state}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{state}}\"); }",
+									"                </script></td>",
+									"                <td><script>",
+									"                    if (\"{{workspace_mode}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{workspace_mode}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{workspace_mode}}\"); }",
+									"                </script></td>",
+									"                <td><ul>",
+									"                {{#each ___object_member}}",
+									"                    <li>{{name}} / {{vdom}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let udata = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (let i=0; i<udata.length; i++) {",
+									"    udata[i][\"___object_member\"] = udata[i][\"object member\"];",
+									"}",
+									"",
+									"pm.visualizer.set(template, udata);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/dvmdb/adom\",\n            \"option\": \"object member\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single ADOM info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Name</td>",
+									"            <td>Version</td>",
+									"            <td>State</td>",
+									"            <td>Workspace mode</td>",
+									"            <td>Member devices</td>",
+									"        </tr>",
+									"        </thead><tbody>",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>",
+									"                    <script>",
+									"                    document.write(\"{{os_ver}}\".split(\".\")[0] + \".\" + \"{{mr}}\");",
+									"                    </script>",
+									"                </td>",
+									"                <td><script>",
+									"                    if (\"{{state}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{state}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{state}}\"); }",
+									"                </script></td>",
+									"                <td><script>",
+									"                    if (\"{{workspace_mode}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{workspace_mode}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{workspace_mode}}\"); }",
+									"                </script></td>",
+									"                <td><ul>",
+									"                {{#each ___object_member}}",
+									"                    <li>{{name}} / {{vdom}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let udata = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"udata[\"___object_member\"] = udata[\"object member\"];",
+									"pm.visualizer.set(template, udata);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/dvmdb/adom/{{adom}}\",\n            \"option\": \"object member\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create ADOM",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"add\",\n    \"params\": [\n        {\n            \"data\": [\n                {\n                    \"name\": \"{{adom}}\"\n                }\n            ],\n            \"url\": \"/dvmdb/adom\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ADOM",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"delete\",\n    \"params\": [\n        {\n            \"url\": \"/dvmdb/adom/{{adom}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List ADOMs Arbys",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Name</td>",
+									"            <td>Version</td>",
+									"            <td>State</td>",
+									"            <td>Workspace mode</td>",
+									"            <td>Member devices</td>",
+									"        </tr>",
+									"        </thead><tbody>",
+									"        {{#each .}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>",
+									"                    <script>",
+									"                    document.write(\"{{os_ver}}\".split(\".\")[0] + \".\" + \"{{mr}}\");",
+									"                    </script>",
+									"                </td>",
+									"                <td><script>",
+									"                    if (\"{{state}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{state}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{state}}\"); }",
+									"                </script></td>",
+									"                <td><script>",
+									"                    if (\"{{workspace_mode}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{workspace_mode}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{workspace_mode}}\"); }",
+									"                </script></td>",
+									"                <td><ul>",
+									"                {{#each ___object_member}}",
+									"                    <li>{{name}} / {{vdom}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let udata = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (let i=0; i<udata.length; i++) {",
+									"    udata[i][\"___object_member\"] = udata[i][\"object member\"];",
+									"}",
+									"",
+									"pm.visualizer.set(template, udata);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/dvmdb/adom\",\n            \"option\": \"object member\"\n        }\n    ],\n    \"session\": \"aAH/A7ZaxXf4d+vNksHPndljXwLw5ruo2Y7CtUeNIIFqPKE7lbKV5aUFqwNbKn1PgvGfRfwWOKgPG4kzSl5L/g==\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.128.144.132:443/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"10",
+								"128",
+								"144",
+								"132"
+							],
+							"port": "443",
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List ADOMs Sonic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Name</td>",
+									"            <td>Version</td>",
+									"            <td>State</td>",
+									"            <td>Workspace mode</td>",
+									"            <td>Member devices</td>",
+									"        </tr>",
+									"        </thead><tbody>",
+									"        {{#each .}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>",
+									"                    <script>",
+									"                    document.write(\"{{os_ver}}\".split(\".\")[0] + \".\" + \"{{mr}}\");",
+									"                    </script>",
+									"                </td>",
+									"                <td><script>",
+									"                    if (\"{{state}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{state}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{state}}\"); }",
+									"                </script></td>",
+									"                <td><script>",
+									"                    if (\"{{workspace_mode}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{workspace_mode}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{workspace_mode}}\"); }",
+									"                </script></td>",
+									"                <td><ul>",
+									"                {{#each ___object_member}}",
+									"                    <li>{{name}} / {{vdom}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let udata = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (let i=0; i<udata.length; i++) {",
+									"    udata[i][\"___object_member\"] = udata[i][\"object member\"];",
+									"}",
+									"",
+									"pm.visualizer.set(template, udata);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/dvmdb/adom\",\n            \"option\": \"object member\"\n        }\n    ],\n    \"session\": \"aRcK00b24dDadwYwjgiSlDQ2t83k5hphiVtKUYxL2cR4++kzrfAN9haKhBd4u2MSmryYzLhvMlph2cMjLf2Mtg==\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.128.156.36:443/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"10",
+								"128",
+								"156",
+								"36"
+							],
+							"port": "443",
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List ADOMs BWW",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Name</td>",
+									"            <td>Version</td>",
+									"            <td>State</td>",
+									"            <td>Workspace mode</td>",
+									"            <td>Member devices</td>",
+									"        </tr>",
+									"        </thead><tbody>",
+									"        {{#each .}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>",
+									"                    <script>",
+									"                    document.write(\"{{os_ver}}\".split(\".\")[0] + \".\" + \"{{mr}}\");",
+									"                    </script>",
+									"                </td>",
+									"                <td><script>",
+									"                    if (\"{{state}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{state}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{state}}\"); }",
+									"                </script></td>",
+									"                <td><script>",
+									"                    if (\"{{workspace_mode}}\" == 1) { document.write(\"enabled\"); }",
+									"                    else if (\"{{workspace_mode}}\" == 0) { document.write(\"disabled\"); }",
+									"                    else { document.write(\"{{workspace_mode}}\"); }",
+									"                </script></td>",
+									"                <td><ul>",
+									"                {{#each ___object_member}}",
+									"                    <li>{{name}} / {{vdom}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let udata = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (let i=0; i<udata.length; i++) {",
+									"    udata[i][\"___object_member\"] = udata[i][\"object member\"];",
+									"}",
+									"",
+									"pm.visualizer.set(template, udata);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/dvmdb/adom\",\n            \"option\": \"object member\"\n        }\n    ],\n    \"session\": \"Q/VKokRdJcA9VjS8vV5OLjrLmW2LPFZ4eg0NMGX6KsP5euOdTlZkodkyocwk4DmAoUegmMdjqU3jQMdaLQJgTg==\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://10.128.145.4:443/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"10",
+								"128",
+								"145",
+								"4"
+							],
+							"port": "443",
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Managed devices & groups",
+			"item": [
+				{
+					"name": "List devices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>hostname</td>",
+									"            <td>ip</td>",
+									"            <td>sn</td>",
+									"            <td>os_type</td>",
+									"            <td>version</td>",
+									"            <td>connection</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{hostname}}</td>",
+									"                <td>{{ip}}</td>",
+									"                <td>{{sn}}</td>",
+									"                <td>{{os_type}}</td>",
+									"                <td>{{_human_version}}</td>",
+									"                <td>{{conn_status}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (i=0; i<responseData.length; i++) {",
+									"    responseData[i][\"_human_version\"] = responseData[i][\"os_ver\"].split(\".\")[0];",
+									"    responseData[i][\"_human_version\"] += \".\";",
+									"    responseData[i][\"_human_version\"] += responseData[i][\"mr\"];",
+									"    responseData[i][\"_human_version\"] += \".\";",
+									"    responseData[i][\"_human_version\"] += responseData[i][\"patch\"];",
+									"}",
+									"",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/dvmdb/device\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List unauthorized devices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>hostname</td>",
+									"            <td>ip</td>",
+									"            <td>sn</td>",
+									"            <td>os_type</td>",
+									"            <td>version</td>",
+									"            <td>connection</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{hostname}}</td>",
+									"                <td>{{ip}}</td>",
+									"                <td>{{sn}}</td>",
+									"                <td>{{os_type}}</td>",
+									"                <td>{{_human_version}}</td>",
+									"                <td>{{conn_status}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (i=0; i<responseData.length; i++) {",
+									"    responseData[i][\"_human_version\"] = responseData[i][\"os_ver\"].split(\".\")[0];",
+									"    responseData[i][\"_human_version\"] += \".\";",
+									"    responseData[i][\"_human_version\"] += responseData[i][\"mr\"];",
+									"    responseData[i][\"_human_version\"] += \".\";",
+									"    responseData[i][\"_human_version\"] += responseData[i][\"patch\"];",
+									"}",
+									"",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"filter\": [[\n                \"mgmt_mode\",\n                \"==\",\n                \"unreg\"\n            ]],\n            \"url\": \"/dvmdb/device\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List contracts for all devices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        div.sn {",
+									"            font-size: 1.4em;",
+									"            text-decoration: underline;",
+									"        }",
+									"",
+									"        ul {",
+									"            margin-bottom: 0;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    {{#each .}}",
+									"        <div class=\"sn\">{{sn}}</div>",
+									"        <ul>",
+									"            <li>Registration account: {{account}}</li>",
+									"        </ul>",
+									"",
+									"        <table>",
+									"            <thead><tr>",
+									"                <td>Entitlement</td>",
+									"                <td>Description</td>",
+									"                <td>Support level</td>",
+									"                <td>Expires on</td>",
+									"            </tr></thead>",
+									"            <tbody>",
+									"            {{#each entitlements}}",
+									"                <tr>",
+									"                    <td>{{entitlement}}</td>",
+									"                    <td>{{_entitlement}}</td>",
+									"                    <td>{{_support}}</td>",
+									"                    <td>{{_expires}}</td>",
+									"            {{/each}}",
+									"            </tbody>",
+									"        </table>",
+									"    {{/each}}",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let parsed = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"",
+									"// parse support levels",
+									"let levels = {};",
+									"parsed.support_level_desc.split('*').forEach((e) => {",
+									"    let kv = e.split(':', 2);",
+									"    levels[kv[0]] = kv[1];",
+									"});",
+									"",
+									"// parse entitlements descriptions",
+									"let ents = {};",
+									"parsed.support_type_desc.split('*').forEach((e) => {",
+									"    let kv = e.split(':', 2);",
+									"    ents[kv[0]] = kv[1];",
+									"});",
+									"",
+									"// create data object containing all SNs and their entitlements",
+									"let devices = [];",
+									"parsed.contract.forEach((e) => {",
+									"    let device = {",
+									"        account : e.account,",
+									"        sn : e.serial,",
+									"        entitlements : [],",
+									"    }",
+									"",
+									"    e.contract_item.forEach((c) => {",
+									"        let ci = c.split(':')[0].split('-');",
+									"        device.entitlements.push({",
+									"            entitlement : ci[0],",
+									"//            _entitlement : ents[ci[0]] == undefined || ents[ci[0]] == \"\" ? ci[0] : ents[ci[0]],",
+									"            _entitlement : ents[ci[0]],",
+									"            _support : levels[ci[2]],",
+									"            expires: ci[3],",
+									"            _expires: (new Date('' + ci[3].substring(0,4) + '-' + ci[3].substring(4,6) + '-' + ci[3].substring(6,8) + 'T00:00:00Z')).toString(),",
+									"        });",
+									"    });",
+									"",
+									"    devices.push(device);",
+									"});",
+									"",
+									"pm.visualizer.set(template, devices);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"url\": \"/um/misc/dump_contract\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// save last task ID",
+									"try {",
+									"    let taskId = JSON.parse(responseBody)[\"result\"][0].data.taskid;",
+									"    pm.environment.set(\"lastTask\", taskId);",
+									"    // visualize",
+									"    pm.visualizer.set(\"<html><body><span>Started task ID \" + taskId + \"</span></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [{\n        \"data\": {\n            \"adom\": \"{{adom}}\",\n            \"device\": {\n                \"adm_usr\": \"{{device-admin}}\",\n                \"adm_pass\": [\"{{device-password}}\"],\n                \"ip\": \"{{device-ip}}\",\n                \"mgmt_mode\": \"fmg\",\n                \"desc\": \"API test\",\n                \"name\": \"{{device}}\"\n            },\n            \"flags\": [\n                \"create_task\",\n                \"nonblocking\"\n            ]\n        },\n        \"url\": \"/dvm/cmd/add/device\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authorize device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [{\n        \"data\": {\n            \"adom\": \"{{adom}}\",\n            \"device\": {\n                \"adm_usr\": \"{{device-admin}}\",\n                \"adm_pass\": [\"{{device-password}}\"],\n                \"device action\": \"promote_unreg\",\n                \"name\": \"{{device}}\"\n            }\n        },\n        \"url\": \"/dvm/cmd/add/device\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Move device to ADOM",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"add\",\n    \"params\": [{\n        \"data\": {\n            \"name\": \"{{device}}\",\n            \"vdom\": \"{{vdom}}\"\n        },\n        \"url\": \"/dvmdb/adom/{{adom-new}}/object member\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// save last task ID",
+									"try {",
+									"    let taskId = JSON.parse(responseBody)[\"result\"][0].data.taskid;",
+									"    pm.environment.set(\"lastTask\", taskId);",
+									"    // visualize",
+									"    pm.visualizer.set(\"<html><body><span>Started task ID \" + taskId + \"</span></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [{\n        \"data\": {\n            \"adom\": \"{{adom}}\",\n            \"device\": \"{{device}}\",\n            \"flags\": [\n                \"create_task\",\n                \"nonblocking\"\n            ]\n        },\n        \"url\": \"/dvm/cmd/del/device\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Device info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// ",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"",
+									"<h2>Status for device {{name}}</h2>",
+									"",
+									"<table>",
+									"    <tr><td>Hostname: </td><td>{{hostname}}</td></tr>",
+									"    <tr><td>Connection status: </td><td>{{conn_status}}</td></tr>",
+									"    <tr><td>Firmware:</td><td>{{_human_version}}</td></tr>",
+									"    <tr><td>Platform:</td><td>{{platform_str}}</td></tr>",
+									"</table>",
+									"</body>",
+									"</html>",
+									"`",
+									"",
+									"try { // if user is not authenticated (for example) this will be missing",
+									"    let parsed = JSON.parse(responseBody)['result'][0]['data'];",
+									"",
+									"    parsed[\"_human_version\"] = String(parsed[\"os_ver\"]).split(\".\")[0] + \".\" + parsed[\"mr\"] + \".\" + parsed[\"patch\"] + \" (b\" + parsed[\"build\"] + \")\";",
+									"",
+									"    if (parsed['conn_status'] == 1)      { parsed['conn_status'] = \"up\";      }",
+									"    else if (parsed['conn_status'] == 2) { parsed['conn_status'] = \"down\";    }",
+									"    else                                 { parsed['conn_status'] = \"unknown\"; }",
+									"",
+									"    pm.environment.set(\"device-platform\", parsed[\"platform_str\"]);",
+									"    pm.visualizer.set(template, parsed)",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/dvmdb/device/{{device}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get device groups",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// ",
+									"let template = `",
+									"<html>",
+									"<body>",
+									"{{#each .}}",
+									"<h3>{{group}}</h3>",
+									"",
+									"Members:",
+									"<ul>",
+									"    {{#each members}}",
+									"    <li>{{.}}</li>",
+									"    {{/each}}",
+									"</ul>",
+									"",
+									"",
+									"{{/each}}",
+									"</body>",
+									"</html>",
+									"`",
+									"",
+									"try { // if user is not authenticated (for example) this will be missing",
+									"    let original = JSON.parse(responseBody)",
+									"    let custom = [];",
+									"",
+									"    original.result[0].data.forEach(function(e) {",
+									"        let d = new Object()",
+									"        d[\"group\"] = e.name",
+									"        d[\"members\"] = []",
+									"        ",
+									"        if (e[\"object member\"]) {",
+									"            e[\"object member\"].forEach(function(m) {",
+									"                d[\"members\"].push(m.name)",
+									"            })",
+									"        }",
+									"",
+									"        custom.push(d);",
+									"    })",
+									"",
+									"    pm.visualizer.set(template, custom)",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"filter\": [ // limit to custom groups\n                [\n                    \"type\",\n                    \"==\",\n                    \"0\"\n                ]\n            ],\n            \"option\": [\n                \"object member\"\n            ],\n            \"url\": \"/dvmdb/group\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add device to group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"method\": \"add\",\n  \"params\": [\n    {\n      \"data\": [\n        {\n          \"name\": \"{{device}}\",\n          \"vdom\": \"root\"\n        }\n      ],\n      \"url\": \"/dvmdb/group/{{group}}/object member\"\n    }\n  ],\n  \"session\": \"{{fmg-session}}\",\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove device from group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"method\": \"delete\",\n  \"params\": [\n    {\n      \"data\": [\n        {\n          \"name\": \"{{device}}\",\n          \"vdom\": \"root\"\n        }\n      ],\n      \"url\": \"/dvmdb/group/{{group}}/object member\"\n    }\n  ],\n  \"session\": \"{{fmg-session}}\",\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Install general configuration to device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// save last task ID",
+									"try {",
+									"    let taskId = JSON.parse(responseBody)[\"result\"][0].data.task;",
+									"    pm.environment.set(\"lastTask\", taskId);",
+									"    // visualize",
+									"    pm.visualizer.set(\"<html><body><span>Started task ID \" + taskId + \"</span></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"method\": \"exec\",\n  \"params\": [\n    {\n      \"data\": [\n        {\n            \"adom\": \"{{adom}}\",\n            \"scope\": [{\n                \"name\": \"{{device}}\",\n                \"vdom\": \"root\"\n            }]\n        }\n      ],\n      \"url\": \"/securityconsole/install/device\"\n    }\n  ],\n  \"session\": \"{{fmg-session}}\",\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Firmware",
+			"item": [
+				{
+					"name": "Upgrade device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// save last task ID",
+									"try {",
+									"    let taskId = JSON.parse(responseBody)[\"result\"][0].data.taskid;",
+									"    pm.environment.set(\"lastTask\", taskId);",
+									"    // visualize",
+									"    pm.visualizer.set(\"<html><body><span>Started task ID \" + taskId + \"</span></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"data\": {\n                \"adom\": \"{{adom}}\",\n                \"create_task\": \"enable\",\n                \"device\": [\n                    {\n                        \"name\": \"{{device}}\"\n                    }\n                ],\n                \"flags\": [\n                  \"none\"\n                ],\n                \"image\": {\n                    \"release\": \"6.4.4\"\n                }\n            },\n            \"url\": \"/um/image/upgrade\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Policy hit counts",
+			"item": [
+				{
+					"name": "Refresh policies hitcounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// save last task ID",
+									"try {",
+									"    let taskId = JSON.parse(responseBody)[\"result\"][0].taskid;",
+									"    pm.environment.set(\"lastTask\", taskId);",
+									"    // visualize",
+									"    pm.visualizer.set(\"<html><body><span>Started task ID \" + taskId + \"</span></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"data\": {\n                \"adom\": \"{{adom}}\",\n                \"pkg\": \"{{policy-package}}\"\n            },\n            \"url\": \"/sys/hitcount\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Last hitcounts results",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize it",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"<h2>IPv4 policies hitcounts</h2>",
+									"",
+									"<table>",
+									"<thead><tr>",
+									"    <td>Policy ID</td>",
+									"    <td>Name</td>",
+									"    <td>Source iface</td>",
+									"    <td>Destination iface</td>",
+									"    <td>Packets</td>",
+									"    <td>Bytes</td>",
+									"    <td>Hitcounts</td>",
+									"    <td>Last hit</td>",
+									"</tr></thead>",
+									"<tbody>",
+									"",
+									"{{#each .}}",
+									"<tr>",
+									"    <td>{{policyid}}</td>",
+									"    <td>{{name}}</td>",
+									"    <td>{{srcintf}}</td>",
+									"    <td>{{dstintf}}</td>",
+									"    <td>{{pkts}}</td>",
+									"    <td>{{byte}}</td>",
+									"    <td>{{hitcount}}</td>",
+									"    <td><script>",
+									"        hit = new Date({{last_hit}}*1000);",
+									"        document.write(hit);",
+									"    </script></td>",
+									"</tr>",
+									"{{/each}}",
+									"",
+									"</tbody>",
+									"</table>",
+									"<small>To update these counters, policies hitcounts refresh request must be sent first.</small>",
+									"",
+									"</body>",
+									"</html>",
+									"`",
+									"response = JSON.parse(responseBody);",
+									"// reverse history order",
+									"//response.result[0].data.line.reverse();",
+									"policies = response.result[0].data[\"firewall policy\"];",
+									"if (policies === undefined) {",
+									"    pm.visualizer.set(\"<html><body><h2>Last task result does not contain policies hitcounts!</h2></body></html>\");    ",
+									"} else {",
+									"    policies.push(policies.shift()); // make policy id 0 to appear at the end",
+									"    pm.visualizer.set(template, policies)",
+									"}",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"method\": \"get\",\n  \"params\": [\n    {\n      \"url\": \"/sys/task/result\",\n      \"data\": {\n          \"taskid\": \"{{lastTask}}\"\n      }\n    }\n  ],\n  \"session\": \"{{fmg-session}}\",\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "## Usage\n\nHit counts are no longer displayed automatically when listing firewall policies from policy package.\n\nInstead, FortiManager must be explicitly requested to collect current \"hitcounts\" from FortiGates, which is done by calling URL \"/sys/hitcount\" with the right ADOM and policy package name.\n\nThis call starts a task and caller must wait for the task to finish before continuing with the next step.\n\nCompleted task contains \"hitcounts\" data in its result. Task results are retrieved using separate URL \"/sys/task/result\"."
+		},
+		{
+			"name": "Policy packages",
+			"item": [
+				{
+					"name": "List policy packages",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>obj ver</td>",
+									"            <td>instalation targets</td>",
+									"        </tr>",
+									"        </thead><tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{\"obj ver\"}}</td>",
+									"                <td><ul>",
+									"                {{#each _scope_member}}",
+									"                    <li>{{name}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let udata = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (let i=0; i<udata.length; i++) {",
+									"    udata[i][\"_scope_member\"] = udata[i][\"scope member\"];",
+									"}",
+									"pm.visualizer.set(template, {",
+									"    response: udata",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/pm/pkg/adom/{{adom}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List firewall policies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 10px 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul {",
+									"              list-style-type: none;",
+									"        }",
+									"        ",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>policyid</td>",
+									"            <td>status</td>",
+									"            <td>srcintf</td>",
+									"            <td>dstintf</td>",
+									"            <td>srcaddr</td>",
+									"            <td>dstaddr</td>",
+									"            <td>schedule</td>",
+									"            <td>service</td>",
+									"            <td>action</td>",
+									"            <td>nat</td>",
+									"            <td>created</td>",
+									"        </tr>",
+									"        </thead><tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{policyid}}</td>",
+									"                <td>{{status}}</td>",
+									"                <td><ul>",
+									"                {{#each srcintf}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>                ",
+									"                <td><ul>",
+									"                {{#each dstintf}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>                ",
+									"                <td><ul>",
+									"                {{#each srcaddr}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>                ",
+									"                <td><ul>",
+									"                {{#each dstaddr}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>                ",
+									"                <td>{{schedule}}</td>",
+									"                <td>{{service}}</td>",
+									"                <td>{{action}}</td>",
+									"                <td>{{nat}}</td>",
+									"                <td>{{__created}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let d = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"// haven't found a way ho to refer to variables with spaces from the template",
+									"for (let i=0; i<d.length; i++) {",
+									"    // all this just to how nice time",
+									"    let tmp = new Date(d[i][\"_created timestamp\"]*1000);",
+									"    offS = \"+\";",
+									"    if (tmp.getTimezoneOffset() < 0) { offS = \"-\" }",
+									"    offH = Math.abs(tmp.getTimezoneOffset()) / 60;",
+									"    offM = Math.abs(tmp.getTimezoneOffset()) % 60;",
+									"    d[i][\"__created\"] = tmp.getDate() + \".\" + (tmp.getMonth()+1) + \".\" + tmp.getFullYear() + \" \"",
+									"                      + tmp.getHours().toString().padStart(2, '0') + \":\" + tmp.getMinutes().toString().padStart(2, '0') + \" \"",
+									"                      + offS + offH.toString().padStart(2, '0') + offM.toString().padStart(2, '0');",
+									"}",
+									"pm.visualizer.set(template, {",
+									"    response: d",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/pm/config/adom/{{adom}}/pkg/{{policy-package}}/firewall/policy\",\n            \"fields\": [\n                \"obj seq\",\n                \"status\",\n                \"policyid\",\n                \"srcintf\",\n                \"dstintf\",\n                \"srcaddr\",\n                \"dstaddr\",\n                \"action\",\n                \"schedule\",\n                \"service\",\n                \"users\",\n                \"logtraffic\",\n                \"nat\",\n                \"name\",\n                \"comments\",\n                \"extra info\"\n            ]\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Install policy package to device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// save last task ID",
+									"try {",
+									"    let taskId = JSON.parse(responseBody)[\"result\"][0].data.task;",
+									"    pm.environment.set(\"lastTask\", taskId);",
+									"    // visualize",
+									"    pm.visualizer.set(\"<html><body><span>Started task ID \" + taskId + \"</span></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"method\": \"exec\",\n  \"params\": [\n    {\n      \"data\": {\n        \"adom\": \"root\",\n        \"pkg\": \"{{policy-package}}\",\n        \"scope\": [\n          {\n            \"name\": \"{{device}}\",\n            \"vdom\": \"root\"\n          }\n        ]\n      },\n      \"url\": \"/securityconsole/install/package\"\n    }\n  ],\n  \"session\": \"{{fmg-session}}\",\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reinstall specific policy package",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// save last task ID",
+									"try {",
+									"    let taskId = JSON.parse(responseBody)[\"result\"][0].data.task;",
+									"    pm.environment.set(\"lastTask\", taskId);",
+									"    // visualize",
+									"    pm.visualizer.set(\"<html><body><span>Started task ID \" + taskId + \"</span></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"method\": \"exec\",\n  \"params\": [\n    {\n      \"data\": {\n        \"adom\": \"root\",\n        \"target\": [\n          {\n            \"pkg\": \"{{policy-package}}\",\n            \"scope\": [\n                {\n                    \"name\": \"{{device}}\",\n                    \"vdom\": \"root\"\n                }\n            ]\n          }\n        ]\n      },\n      \"url\": \"/securityconsole/reinstall/package\"\n    }\n  ],\n  \"session\": \"{{fmg-session}}\",\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Firewall objects",
+			"item": [
+				{
+					"name": "List firewall addresses",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>type</td>",
+									"            <td>subnet</td>",
+									"            <td>fqdn</td>",
+									"            <td>start-end</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{type}}</td>",
+									"                <td>{{subnet}}</td>",
+									"                <td>{{fqdn}}</td>",
+									"                <td>{{start-ip}}-{{end-ip}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/pm/config/adom/{{adom}}/obj/firewall/address\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create firewall address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"method\": \"set\",\n  \"params\": [\n    {\n      \"data\": [\n        {\n          \"name\": \"{{address-name}}\",\n          \"type\": \"ipmask\",\n          \"subnet\": \"{{address-ip}}/32\"\n        }\n      ],\n      \"url\": \"/pm/config/adom/{{adom}}/obj/firewall/address\"\n    }\n  ],\n  \"session\": \"{{fmg-session}}\",\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete firewall address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"delete\",\n    \"params\": [\n        {\n        \"url\": \"/pm/config/adom/{{adom}}/obj/firewall/address/{{address-name}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List firewall services",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>protocol</td>",
+									"            <td>tcp port ranges</td>",
+									"            <td>udp port ranges</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{protocol}}</td>",
+									"                <td><ul>",
+									"                {{#each tcp-portrange}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"                <td><ul>",
+									"                {{#each udp-portrange}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"responseData = responseData.sort((a,b) => {",
+									"  const nameA = a.name.toUpperCase(); // ignore upper and lowercase",
+									"  const nameB = b.name.toUpperCase(); // ignore upper and lowercase",
+									"  if (nameA < nameB) {",
+									"    return -1;",
+									"  }",
+									"  if (nameA > nameB) {",
+									"    return 1;",
+									"  }",
+									"  // names must be equal",
+									"  return 0;",
+									"});",
+									"",
+									"console.log(responseData);",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [{\n        \"url\": \"/pm/config/adom/{{adom}}/obj/firewall/service/custom\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List firewall services with OR filter",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>protocol</td>",
+									"            <td>tcp port ranges</td>",
+									"            <td>udp port ranges</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{protocol}}</td>",
+									"                <td><ul>",
+									"                {{#each tcp-portrange}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"                <td><ul>",
+									"                {{#each udp-portrange}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"responseData = responseData.sort((a,b) => {",
+									"  const nameA = a.name.toUpperCase(); // ignore upper and lowercase",
+									"  const nameB = b.name.toUpperCase(); // ignore upper and lowercase",
+									"  if (nameA < nameB) {",
+									"    return -1;",
+									"  }",
+									"  if (nameA > nameB) {",
+									"    return 1;",
+									"  }",
+									"  // names must be equal",
+									"  return 0;",
+									"});",
+									"",
+									"console.log(responseData);",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [{\n        \"filter\": [\n            // this returns services DNS, HTTP and HTTPS because in this example all filters are logical OR\n            [ \"tcp-portrange\", \"in\", \"80\", \"443\" ], // notice how we can filter for multiple services using single filter (which is internally logical OR)\n            [ \"udp-portrange\", \"==\", \"53\" ],\n            //\n            // note that following filer does not add anything more (in default configuration),\n            // because SNMP service is defined with udp-portrange \"161-162\" and the filter must match the whole string   \n            [ \"udp-portrange\", \"==\", \"161\" ]\n            // possible filters that would match also SNMP service can be one of following:\n            // [ \"udp-portrange\", \"==\", \"161-162\" ]\n            // [ \"udp-portrange\", \"like\", \"161%\" ]\n            // [ \"udp-portrange\", \"glob\", \"161*\" ]\n        ],\n        \"url\": \"/pm/config/adom/{{adom}}/obj/firewall/service/custom\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List firewall services with AND filter",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>protocol</td>",
+									"            <td>tcp port ranges</td>",
+									"            <td>udp port ranges</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{protocol}}</td>",
+									"                <td><ul>",
+									"                {{#each tcp-portrange}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"                <td><ul>",
+									"                {{#each udp-portrange}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"responseData = responseData.sort((a,b) => {",
+									"  const nameA = a.name.toUpperCase(); // ignore upper and lowercase",
+									"  const nameB = b.name.toUpperCase(); // ignore upper and lowercase",
+									"  if (nameA < nameB) {",
+									"    return -1;",
+									"  }",
+									"  if (nameA > nameB) {",
+									"    return 1;",
+									"  }",
+									"  // names must be equal",
+									"  return 0;",
+									"});",
+									"",
+									"console.log(responseData);",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [{\n        \"filter\": [\n            // this returns only service(s) that have (TCP port range set to 80 or 443) and (UDP port range set to 53) at the same time\n            // ! Note that this example doesn't make much sense in the real world configuration !\n            [ \"tcp-portrange\", \"in\", \"80\", \"443\" ], // notice how we can filter for multiple services using single filter (which is internally logical OR)\n            \"&&\",\n            [ \"udp-portrange\", \"==\", \"53\" ]\n        ],\n        \"url\": \"/pm/config/adom/{{adom}}/obj/firewall/service/custom\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List firewall service groups",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>members</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td><ul>",
+									"                {{#each member}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [{\n        /*\n        \"filter\": [\n            [\n                \"name\",\n                \"==\",\n                \"{{firewall-servicegroup-name}}\"\n            ]\n        ],\n        */\n        \"url\": \"/pm/config/adom/{{adom}}/obj/firewall/service/group\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create firewall service group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"set\",\n    \"params\": [{\n        \"data\": [{\n            \"name\": \"{{firewall-servicegroup-name}}\",\n            \"member\": [\n                \"POP3\",\n                \"SMTP\",\n                \"IMAP\"\n            ]\n        }],\n        \"url\": \"/pm/config/adom/{{adom}}/obj/firewall/service/group\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete firewall service group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"delete\",\n    \"params\": [{\n        \"url\": \"/pm/config/adom/{{adom}}/obj/firewall/service/group/{{firewall-servicegroup-name}}\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SD-WAN",
+			"item": [
+				{
+					"name": "6.4 only",
+					"item": [
+						{
+							"name": "SD-WAN  to normalized mapping",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"No reported error in response\", () => {",
+											"    let code = pm.response.json()['result'][0]['status']['code'];",
+											"    let msg = pm.response.json()['result'][0]['status']['message'];",
+											"    pm.expect(code).to.eq(0, msg);",
+											"});",
+											"",
+											"// visualize",
+											"let template = `",
+											"<html>",
+											"<head>",
+											"    <style>",
+											"        td {",
+											"            padding: 5px 10px 5px 10px;",
+											"        }",
+											"",
+											"        thead td {",
+											"            font-weight: bold;",
+											"        }",
+											"        ul, li {",
+											"            margin-bottom: 0px;",
+											"        }",
+											"    </style>",
+											"</head>",
+											"<body>",
+											"    <h4>General interface mapping</h4>",
+											"    <small><b>Note:</b> This is not used in v7 any more! Anything shown here was configured on v6 before upgrade.</small><br/><br/>",
+											"    <table>",
+											"        <thead><tr>",
+											"            <td>SDWAN interface name</td>",
+											"            <td>Normalized interfaces</td>",
+											"            <td>Gateway</td>",
+											"            <td>Source</td>",
+											"            <td>Weight</td>",
+											"            <td>Priority</td>",
+											"            <td>Cost</td>",
+											"            <td>Status</td>",
+											"        </tr></thead>",
+											"        <tbody>",
+											"        {{#each response}}",
+											"            <tr>",
+											"                <td>{{name}}</td>",
+											"                <td><ul>",
+											"                {{#each interface}}",
+											"                    <li>{{.}}</li>",
+											"                {{/each}}",
+											"                </ul></td>",
+											"                <td>{{gateway}}</td>",
+											"                <td>{{source}}</td>",
+											"                <td>{{weight}}</td>",
+											"                <td>{{priority}}</td>",
+											"                <td>{{cost}}</td>",
+											"                <td>{{status}}</td>",
+											"                <td><ul>",
+											"            </tr>",
+											"        {{/each}}",
+											"        </tbody>",
+											"    </table>",
+											"",
+											"    {{#each response}}",
+											"    {{#if dynamic_mapping}}",
+											"    <h4>Per-device interface mapping for {{name}}</h4>",
+											"    {{#each dynamic_mapping}}",
+											"    <table>",
+											"        <thead><tr>",
+											"            <td>Gateway</td>",
+											"            <td>Source</td>",
+											"            <td>Weight</td>",
+											"            <td>Priority</td>",
+											"            <td>Cost</td>",
+											"            <td>Status</td>",
+											"        </tr></thead>",
+											"        <tbody>",
+											"        <tr>",
+											"            <td>{{gateway}}</td>",
+											"            <td>{{source}}</td>",
+											"            <td>{{weight}}</td>",
+											"            <td>{{priority}}</td>",
+											"            <td>{{cost}}</td>",
+											"            <td>{{status}}</td>",
+											"            <td><ul>",
+											"        </tr>",
+											"        </tbody>",
+											"    </table>",
+											"    {{/each}}",
+											"    {{/if}}",
+											"    {{/each}}",
+											"",
+											"</body></html>",
+											"`;",
+											"",
+											"",
+											"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+											"responseData[\"_name\"] = pm.environment.get(\"sdwan-profile\");",
+											"if (responseData.length > 0 && responseData[0].interface.length > 0) {",
+											"    pm.environment.set(\"normalized-iface\", responseData[0].interface[0]);",
+											"}",
+											"console.log(responseData);",
+											"pm.visualizer.set(template, {",
+											"    response: responseData",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/pm/config/adom/{{adom}}/obj/dynamic/virtual-wan-link/members\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/jsonrpc",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"jsonrpc"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List profiles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"        ul, li {",
+									"            margin-bottom: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Name</td>",
+									"            <td>Description</td>",
+									"            <td>Assigned to</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{description}}</td>",
+									"                <td><ul>{{#each _scope_member}}",
+									"                    <li>{{name}} : {{vdom}}</li>",
+									"                {{/each}}</ul></td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (let i=0; i<responseData.length; i++) { // template can't use variables with spaces",
+									"    responseData[i][\"_scope_member\"] = responseData[i][\"scope member\"];",
+									"    if (i == 0) { // save first sdwan profile to env. variable and also its first member",
+									"        pm.environment.set(\"sdwan-profile\", responseData[i][\"name\"]);",
+									"        if (responseData[i][\"scope member\"] && responseData[i][\"scope member\"].length > 0) {",
+									"            pm.environment.set(\"device\", responseData[i][\"scope member\"][0].name);",
+									"            pm.environment.set(\"vdom\", responseData[i][\"scope member\"][0].vdom);",
+									"        }",
+									"    }",
+									"}",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/pm/wanprof/adom/{{adom}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"        ul, li {",
+									"            margin-bottom: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <h4>General</h4>",
+									"    <table>",
+									"        <tr><td>Name: </td><td>{{response._name}}</td></tr>",
+									"        <tr><td>LB mode: </td><td>{{response.load-balance-mode}}</td></tr>",
+									"        <tr><td>Fail detect: </td><td>{{response.fail-detect}}</td></tr>",
+									"    </table>",
+									"",
+									"    <h4>Zones</h4>",
+									"    <table>",
+									"        <thead><tr>",
+									"            <td>Zone name</td>",
+									"        </tr></thead>",
+									"        <tbody>",
+									"        {{#each response.zone}}",
+									"            <tr><td>{{name}}</td></tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"",
+									"    <h4>Dynamic members</h4>",
+									"    <small><b>Note:</b> This is not used in v7 any more! Anything shown here was configured on v6 before upgrade.</small><br/><br/>",
+									"",
+									"    <table>",
+									"        <thead><tr>",
+									"            <td>Interfaces</td>",
+									"            <td>Status</td>",
+									"            <td>Zones</td>",
+									"        </tr></thead>",
+									"        <tbody>",
+									"        {{#each response.members}}",
+									"            {{#if _dynamic-member}}",
+									"            <tr>",
+									"                <td><ul>",
+									"                {{#each _dynamic-member}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"                <td>{{status}}</td>",
+									"                <td><ul>",
+									"                {{#each zone}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"            {{/if}}",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"",
+									"    <h4>Static members</h4>",
+									"    <table>",
+									"        <thead><tr>",
+									"            <td>Interfaces</td>",
+									"            <td>Gateway</td>",
+									"            <td>Source</td>",
+									"            <td>Status</td>",
+									"            <td>Zones</td>",
+									"        </tr></thead>",
+									"        <tbody>",
+									"        {{#each response.members}}",
+									"            {{#if interface}}",
+									"            <tr>",
+									"                <td><ul>",
+									"                {{#each interface}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"                <td>{{gateway}}</td>",
+									"                <td>{{source}}</td>",
+									"                <td>{{status}}</td>",
+									"                <td><ul>",
+									"                {{#each zone}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"            {{/if}}",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"responseData[\"_name\"] = pm.environment.get(\"sdwan-profile\");",
+									"if (responseData[\"zone\"] && responseData[\"zone\"].length > 0) {",
+									"    pm.environment.set(\"sdwan-zone\", responseData[\"zone\"][0].name);",
+									"}",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            /*\n            // Note: in 6.2 ADOM, sdwan didn't exist and different URL had to be used\n            //       see SD-WAN folder documentation for more info\n            \"url\": \"/pm/config/adom/{{adom}}/wanprof/{{sdwan-profile}}/system/virtual-wan-link\" // 6.2 ADOM\n            */\n            \"url\": \"/pm/config/adom/{{adom}}/wanprof/{{sdwan-profile}}/system/sdwan\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change profile assignment to devices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"update\",\n    \"params\": [\n        {\n            \"data\": {\n                \"scope member\": [\n                    {\n                        \"name\": \"{{device}}\",\n                        \"vdom\": \"{{vdom}}\"\n                    }\n                ],\n            },\n            \"url\": \"/pm/wanprof/adom/{{adom}}/{{sdwan-profile}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get member interfaces in zone",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"        ul, li {",
+									"            margin-bottom: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <h3>SD-WAN interface members in zone \"{{response._zone}}\" of profile \"{{response._profile}}\"</h3>",
+									"",
+									"    <h4>Dynamic members</h4>",
+									"    <small><b>Note:</b> This is not used in v7 any more! Anything shown here was configured on v6 before upgrade.</small><br/><br/>",
+									"",
+									"    <table>",
+									"        <thead><tr>",
+									"            <td>Interfaces</td>",
+									"            <td>Status</td>",
+									"            <td>Zones</td>",
+									"        </tr></thead>",
+									"        <tbody>",
+									"        {{#each response.data}}",
+									"            {{#if _dynamic-member}}",
+									"            <tr>",
+									"                <td><ul>",
+									"                {{#each _dynamic-member}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"                <td>{{status}}</td>",
+									"                <td><ul>",
+									"                {{#each zone}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"            {{/if}}",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"",
+									"    <h4>Static members</h4>",
+									"    <table>",
+									"        <thead><tr>",
+									"            <td>Interfaces</td>",
+									"            <td>Gateway</td>",
+									"            <td>Source</td>",
+									"            <td>Status</td>",
+									"            <td>Zones</td>",
+									"        </tr></thead>",
+									"        <tbody>",
+									"        {{#each response.data}}",
+									"            {{#if interface}}",
+									"            <tr>",
+									"                <td><ul>",
+									"                {{#each interface}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"                <td>{{gateway}}</td>",
+									"                <td>{{source}}</td>",
+									"                <td>{{status}}</td>",
+									"                <td><ul>",
+									"                {{#each zone}}",
+									"                    <li>{{.}}</li>",
+									"                {{/each}}",
+									"                </ul></td>",
+									"            </tr>",
+									"            {{/if}}",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: { ",
+									"        \"_profile\": pm.environment.get(\"sdwan-profile\"),",
+									"        \"_zone\": pm.environment.get(\"sdwan-zone\"),",
+									"        \"data\": responseData",
+									"    }",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            /*\n            // Note: in 6.2 ADOM, sdwan didn't exist and different URL had to be used + filter must be disabled\n            //       see SD-WAN folder documentation for more info\n            \"url\": \"/pm/config/adom/{{adom}}/obj/dynamic/virtual-wan-link/members\"  // 6.2 ADOM\n            */\n            \"filter\": [\n                [\"zone\", \"==\", \"{{sdwan-zone}}\"]\n            ],\n            \"url\": \"/pm/config/adom/{{adom}}/wanprof/{{sdwan-profile}}/system/sdwan/members\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add member interface to zone",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html><body>",
+									" Added member interface \"{{response._iface}}\" to SD-WAN profile \"{{response._name}}\" zone \"{{response._zone}}\" with ID {{response.seq-num}}.",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"responseData[\"_name\"] = pm.environment.get(\"sdwan-profile\");",
+									"responseData[\"_iface\"] = pm.environment.get(\"normalized-iface\");",
+									"responseData[\"_zone\"] = pm.environment.get(\"sdwan-zone\");",
+									"pm.environment.set(\"sdwan-member-id\", responseData[\"seq-num\"]);",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"add\",\n    \"params\": [\n        {\n            \"data\": {\n                \"zone\": \"{{sdwan-zone}}\",\n                \"interface\": \"{{normalized-iface}}\",\n                \"gateway\": \"1.2.3.4\",\n                \"priority\": 10,\n                \"cost\": 20,\n                \"status\": \"enable\"\n            },\n            \"url\": \"/pm/config/adom/{{adom}}/wanprof/{{sdwan-profile}}/system/sdwan/members\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete member interface",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"delete\",\n    \"params\": [\n        {\n            \"url\": \"/pm/config/adom/{{adom}}/wanprof/{{sdwan-profile}}/system/sdwan/members/{{sdwan-member-id}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# SD-WAN\n\n## Changes between v6.4 and v7.0\n\nBe aware that there substantial changes in FortiManager regarding SD-WAN Central managmement after upgrading to FortiManager v7. Please see [official documentation](https://docs.fortinet.com/document/fortimanager/7.0.3/sd-wan-configuration-migration/749083/introduction) for more details.\n\nIn short, in v6 SD-WAN profile contains SD-WAN interface objects as members. Each of these objects points to one \"normalized interface\", which FortiManager later maps to physical interface when installing config to device.\n\nIn v7, neither SD-WAN interface objects nor \"normalized interfaces\" are allowed in SD-WAN profile. There can be only physical interfaces configured.\n\nTo partialy simulate the behavior of FortiManager v6, it is possible to specify \"variables\" for interface name and gateway IP address. Those must be \"Device VDOM\" \"Meta Fields\" that need to values specified per device/vdom.\n\nDuring the upgrade process FortiManager tries to convert old configuration into new one, but that only works for very simple environments. It is necessary to fix the configuration manually after the upgrade.\n\nOther possible way is to write a program that uses this API to collect the SD-WAN interface configuration before upgrade (on v6) and restore it after (on v7). Fortinet Support has one and can help with the process.\n\n## Differencies between 6.2 and 6.4\n\nIn 6.2 (and this applies to ADOM version, and must be considered even if FortiManager firmware version is 7.0) SD-WAN as we know it didn't exist.\n\nThere was \"Virtual WAN link\" instead.\n\nDifference is subtle, but some URLs are different in 6.2 - mainly those that have \"sdwan\" string inside, which usually needs to be replaced by \"virtual-wan-link\".\n\nAnother difference is than in 6.2 there were no zones - only implicit interface \"virtual-wan-link\" was used."
+		},
+		{
+			"name": "Normalized interface",
+			"item": [
+				{
+					"name": "Interface mapping",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"        ul, li {",
+									"            margin-bottom: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <h4>Per-device mapping of normalized interface \"{{niface}}\"</h4>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Device</td>",
+									"            <td>VDOM</td>",
+									"            <td>Physical interface</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"        {{#each dynamic_mapping}}",
+									"        {{#each _scope}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{vdom}}</td>",
+									"                <td>{{../local-intf}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        {{/each}}",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"",
+									"    <h4>Per-platform mapping of normalized interface \"{{niface}}\"</h4>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Platform</td>",
+									"            <td>Physical interface</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"        {{#each platform_mapping}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{intf-zone}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        {{#if _default_enabled}}",
+									"        <tr>",
+									"            <td><i>default</i></td>",
+									"            <td><i>{{defmap-intf}}</i></td>",
+									"        </tr>",
+									"        {{/if}}",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"for (let i=0; i<responseData.length; i++) {",
+									"    responseData[i][\"_default_enabled\"] = responseData[i][\"default-mapping\"] == \"enable\";",
+									"}",
+									"pm.visualizer.set(template, {",
+									"    niface: pm.environment.get(\"normalized-iface\"),",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"filter\": [ \n                [\"name\", \"==\", \"{{normalized-iface}}\"]\n            ],\n            \"url\": \"/pm/config/adom/{{adom}}/obj/dynamic/interface\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						},
+						"description": "# Usage\n\nBe aware that the are three plases that decide physical interface from normalized one:\n\n1. Per-device mapping has highest priority\n2. Per-platform mapping applies if per-device didn't match\n3. Default (shown here as per-platform with \"default\" as platform name), if it was specified (usually it is not)."
+					},
+					"response": []
+				},
+				{
+					"name": "Device interface mapping",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html><body>",
+									"Device <b>{{response._device}}</b> (vdom \"{{response._vdom}}\") maps per-device normalized interface <b>{{response._niface}}</b> to physical interface <b>{{response._physical}}</b>.",
+									"</body></html>",
+									"`;",
+									"",
+									"let templateNotFound = `",
+									"<html><body>",
+									"Device <b>{{response._device}}</b> (vdom \"{{response._vdom}}\") does not have per-device normalized interface <b>{{response._niface}}</b>.",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"let tdata = {};",
+									"tdata[\"_device\"] = pm.environment.get(\"device\");",
+									"tdata[\"_vdom\"] = pm.environment.get(\"vdom\");",
+									"tdata[\"_niface\"] = pm.environment.get(\"normalized-iface\");",
+									"",
+									"for (let i=0; responseData && i<responseData.length; i++) {",
+									"    for (let y=0; y<responseData[i]._scope.length; y++) {",
+									"        if (responseData[i][\"_scope\"][y].name == pm.environment.get(\"device\") && responseData[i][\"_scope\"][y].vdom == pm.environment.get(\"vdom\") ) {",
+									"            tdata[\"_physical\"] = responseData[i][\"local-intf\"][0];",
+									"        }",
+									"    }",
+									"}",
+									"",
+									"if (tdata[\"_physical\"]) {",
+									"    pm.visualizer.set(template, {",
+									"        response: tdata",
+									"    });",
+									"} else {",
+									"    pm.visualizer.set(templateNotFound, {",
+									"        response: tdata",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/pm/config/adom/{{adom}}/obj/dynamic/interface/{{normalized-iface}}/dynamic_mapping\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Platform interface mapping",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html><body>",
+									"Device's <b>{{response._device}}</b> platform <b>{{response._platform}}</b> maps per-platform normalized interface <b>{{response._niface}}</b> to physical interface <b>{{response.intf-zone}}</b>.",
+									"</body></html>",
+									"`;",
+									"",
+									"let templateNotFound = `",
+									"<html><body>",
+									"Device's <b>{{response._device}}</b> platform <b>{{response._platform}}</b> does not have per-platform normalized interface of name <b>{{response._niface}}</b>.",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"if (responseData) {",
+									"    responseData[\"_device\"] = pm.environment.get(\"device\");",
+									"    responseData[\"_platform\"] = pm.environment.get(\"device-platform\");",
+									"    responseData[\"_niface\"] = pm.environment.get(\"normalized-iface\");",
+									"    pm.visualizer.set(template, {",
+									"        response: responseData",
+									"    });",
+									"} else {",
+									"    responseData = {};",
+									"    responseData[\"_device\"] = pm.environment.get(\"device\");",
+									"    responseData[\"_platform\"] = pm.environment.get(\"device-platform\");",
+									"    responseData[\"_niface\"] = pm.environment.get(\"normalized-iface\");",
+									"    pm.visualizer.set(templateNotFound, {",
+									"        response: responseData",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/pm/config/adom/{{adom}}/obj/dynamic/interface/{{normalized-iface}}/platform_mapping/{{device-platform}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# Normalized interfaces\n\nOn FortiManager, \"normalized interface\" is virtual interface, which doesn't physically exist, however very often has the same name as real physical interface.\n\nThe main idea is to be able to use the same configuration for devices with different architecture. During the configuration installation, \"normalized interface\" maps to physical one according to device's architecture.\n\nFor example, if we want to apply the same configuration to FortiGate-VM which has interfaces port1-port10 and FortiGate-60E with interfaces internal1-internal7, we can use port2 in all configuration settings and update \"normalized interface\" port2 to map to internal2 if target device is FortiGate-60E (and keep the default configuration which maps to port2 for FortiGate-VM).\n\nIn addtional to architecture/platform mapping, it is also possible to specify per-device mapping if we need more granularity.\n\n## API endpoints\n\nAPI calls in this folder show how to retrieve the mapping rules for per-device or per-platform or both."
+		},
+		{
+			"name": "Meta fields",
+			"item": [
+				{
+					"name": "Create VDOM meta field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"add\",\n    \"params\": [\n        {\n            \"data\": {\n                \"importance\": \"optional\",\n                \"length\": 255,\n                \"name\": \"{{meta-vdom-field-name}}\",\n                \"status\": \"enable\"\n            },\n            \"url\": \"/dvmdb/_meta_fields/vdom\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get VDOM meta fields",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"        ul, li {",
+									"            margin-bottom: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <h4>Meta fields of \"Device VDOM\" type</h4>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Name</td>",
+									"            <td>Importance</td>",
+									"            <td>Lenght</td>",
+									"            <td>Status</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{importance}}</td>",
+									"                <td>{{length}}</td>",
+									"                <td>{{status}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"url\": \"/dvmdb/_meta_fields/vdom\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get VDOM meta values",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"        ul, li {",
+									"            margin-bottom: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <h4>Meta fields values for device \"{{_device}}\" VDOM \"{{_vdom}}\"</h4>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>Name</td>",
+									"            <td>Value</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response._meta_fields}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{value}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"responseData[\"_meta_fields\"] = [];",
+									"Object.keys(responseData[\"meta fields\"]).forEach(a => {",
+									"    responseData[\"_meta_fields\"].push({",
+									"        name: a,",
+									"        value: responseData[\"meta fields\"][a]",
+									"    });",
+									"});",
+									"pm.visualizer.set(template, {",
+									"    _device: pm.environment.get(\"device\"),",
+									"    _vdom: pm.environment.get(\"vdom\"),",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"meta fields\": [\n                \"*\" // not sure what is really expected here because any input results in returning all meta fields\n            ],\n            \"url\": \"/dvmdb/adom/{{adom}}/device/{{device}}/vdom/{{vdom}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set VDOM meta value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"set\",\n    \"params\": [\n        {\n            \"data\": {\n                \"meta fields\": {\n                    \"{{meta-vdom-field-name}}\": \"{{meta-vdom-field-value}}\"\n                }\n            },\n            \"url\": \"/dvmdb/adom/{{adom}}/device/{{device}}/vdom/{{vdom}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# Meta fields\n\nMeta fields are custom variables defined for specific context.\n\nIn this case we are working with \"Device VDOM\" context, which means that value stored in defined meta field is related to specific VDOM of specific device.\n\nCustom meta fields must be first explicitly created before assigning values to them.\n\n## Usage\n\nThis is useful when we want to use the same configuration for many different devices/vdoms, but during the configuration installation phase we want to replace variable with device/vdom specific contents.\n\nSince FortiManage v7 this is also only possible way to use Central managed SD-WAN without specifying physical interfaces in SD-WAN profile. See [official documentation](https://docs.fortinet.com/document/fortimanager/7.0.0/new-features/794804/new-sd-wan-template#Metafield) for more information."
+		},
+		{
+			"name": "IPSec",
+			"item": [
+				{
+					"name": "List IPSec phase1s",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>remote ip</td>",
+									"            <td>local ip</td>",
+									"            <td>local iface</td>",
+									"            <td>type</td>",
+									"            <td>mode</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{remote-gw}}</td>",
+									"                <td>{{local-gw}}</td>",
+									"                <td>{{interface}}</td>",
+									"                <td>{{type}}</td>",
+									"                <td>{{mode}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [{\n        \"url\": \"pm/config/device/{{device}}/vdom/{{vdom}}/vpn/ipsec/phase1-interface\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create IPSec phase1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>remote ip</td>",
+									"            <td>local ip</td>",
+									"            <td>local iface</td>",
+									"            <td>type</td>",
+									"            <td>mode</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{remote-gw}}</td>",
+									"                <td>{{local-gw}}</td>",
+									"                <td>{{interface}}</td>",
+									"                <td>{{type}}</td>",
+									"                <td>{{mode}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"set\",\n    \"params\": [{\n        \"data\": [{\n            \"name\": \"{{ipsec-name}}\",\n            \"remote-gw\": \"5.5.5.5\",\n            \"interface\": [\"wan1\"],\n            \"type\": \"static\",\n            \"mode\": \"main\",\n            \"peertype\": \"any\",\n            \"proposal\": [\n                \"aes128-sha256\"\n            ],\n            \"dhgrp\": [\n                \"14\",\n                \"5\"\n            ],\n            \"psksecret\": \"pwdpwdpwd\"\n        }],        \n        \"url\": \"pm/config/device/{{device}}/vdom/{{vdom}}/vpn/ipsec/phase1-interface\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete IPSec phase1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"delete\",\n    \"params\": [{      \n        \"url\": \"pm/config/device/{{device}}/vdom/{{vdom}}/vpn/ipsec/phase1-interface/{{ipsec-name}}\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List IPSec phase2s",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>phase1</td>",
+									"            <td>local selector</td>",
+									"            <td>remote selector</td>",
+									"            <td>keyalive</td>",
+									"            <td>auto-negotiate</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{phase1name}}</td>",
+									"                <td>{{src-subnet}}</td>",
+									"                <td>{{dst-subnet}}</td>",
+									"                <td>{{keepalive}}</td>",
+									"                <td>{{auto-negotiate}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [{\n        \"url\": \"pm/config/device/{{device}}/vdom/{{vdom}}/vpn/ipsec/phase2-interface\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create IPSec phase2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        ul, li {",
+									"            margin: 0px;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>remote ip</td>",
+									"            <td>local ip</td>",
+									"            <td>local iface</td>",
+									"            <td>type</td>",
+									"            <td>mode</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{remote-gw}}</td>",
+									"                <td>{{local-gw}}</td>",
+									"                <td>{{interface}}</td>",
+									"                <td>{{type}}</td>",
+									"                <td>{{mode}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"set\",\n    \"params\": [{\n        \"data\": [{\n            \"name\": \"{{ipsec-name}}\",\n            \"phase1name\": \"{{ipsec-name}}\",\n            \"proposal\": [\n                \"aes128-sha256\"\n            ],\n            \"dhgrp\": [\n                \"14\",\n                \"5\"\n            ],\n            \"src-subnet\": [\"10.10.10.0\", \"255.255.255.0\"],\n            \"dst-subnet\": [\"20.20.20.0\", \"255.255.255.0\"]\n        }],        \n        \"url\": \"pm/config/device/{{device}}/vdom/{{vdom}}/vpn/ipsec/phase2-interface\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete IPSec phase2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"delete\",\n    \"params\": [{\n        \"url\": \"pm/config/device/{{device}}/vdom/{{vdom}}/vpn/ipsec/phase2-interface/{{ipsec-name}}\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proxy to FortiGate",
+			"item": [
+				{
+					"name": "Get config file",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"try {",
+									"    let cfg = JSON.parse(responseBody)[\"result\"][0].data[0].response;",
+									"    pm.visualizer.set(\"<html><body><pre>\" + cfg + \"</pre></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"data\": {\n                \"action\": \"get\",\n                \"resource\": \"/api/v2/monitor/system/config/backup/?scope=global\",\n                \"target\": [\"/adom/{{adom}}/device/{{device}}\"]\n            },\n            \"url\": \"/sys/proxy/json\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all licenses status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// ",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"",
+									"        tbody td.header {",
+									"            font-style: italic;",
+									"            color: grey;",
+									"            padding-top: 1em;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"",
+									"<h2>Licenses:</h2>",
+									"",
+									"<table>",
+									"    <thead><tr>",
+									"        <td>License</td>",
+									"        <td>Status</td>",
+									"        <td>Expires on</td>",
+									"    </tr></thead>",
+									"    <tbody>",
+									"        {{#each .}}",
+									"            <tr><td colspan=\"3\" class=\"header\">{{entitlement}}</td></tr>",
+									"            {{#each licenses}}",
+									"                <tr>",
+									"                <td>{{_license}}</td>",
+									"                <td>{{status}}</td>",
+									"                <td>{{_expires}}</td>",
+									"            </tr>",
+									"            {{/each}}",
+									"        {{/each}}",
+									"    </tbody>",
+									"</table>",
+									"</body>",
+									"</html>",
+									"`",
+									"",
+									"// visualize",
+									"try {",
+									"    let parsed = JSON.parse(responseBody)[\"result\"][0].data[0].response.results;",
+									"    // make array from dics",
+									"    let licenses = [];",
+									"    Object.keys(parsed).forEach((lic) => {",
+									"        parsed[lic]._license = lic;",
+									"        // when we have a chance, create also humad readable date/time ",
+									"        let d = new Date(parsed[lic].expires * 1000);",
+									"        if (isNaN(d)) {",
+									"            parsed[lic]._expires = \"-\";",
+									"        } else {",
+									"            parsed[lic]._expires = d.toString();",
+									"        }",
+									"        //",
+									"        licenses.push(parsed[lic]);",
+									"    });",
+									"",
+									"    //group licenses by entitlements",
+									"    let byent = licenses.reduce(function(acc, val) {",
+									"        if (val.entitlement == undefined || val.entitlement == \"\") val.entitlement = \"Others\";",
+									"        if (acc[val.entitlement] == undefined) acc[val.entitlement] = [];",
+									"        acc[val.entitlement].push(val);",
+									"        return acc;",
+									"    }, {});",
+									"",
+									"    // make it array again",
+									"    let byentar = [];",
+									"    Object.keys(byent).forEach((e) => byentar.push({",
+									"        entitlement: e,",
+									"        licenses: byent[e],",
+									"    }));",
+									"",
+									"    // and sort by entitlements",
+									"    byentar.sort((a,b) => {",
+									"        if (a.entitlement > b.entitlement) return 1;",
+									"        if (a.entitlement < b.entitlement) return -1;",
+									"        return 0;",
+									"    });",
+									"",
+									"    // render html",
+									"    pm.visualizer.set(template, byentar);",
+									"} catch(err) {",
+									"    console.log(err);",
+									"    pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"data\": {\n                \"action\": \"get\",\n                \"resource\": \"/api/v2/monitor/license/status\",\n                \"target\": [\"/adom/{{adom}}/device/{{device}}\"]\n            },\n            \"url\": \"/sys/proxy/json\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change admin password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"try {",
+									"    let cfg = JSON.parse(responseBody)[\"result\"][0].data[0].response;",
+									"    pm.visualizer.set(\"<html><body><pre>\" + cfg + \"</pre></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"data\": {\n                \"action\": \"post\",\n                \"resource\": \"/api/v2/monitor/system/change-password/select\",\n                \"target\": [\"/adom/{{adom}}/device/{{device}}\"],\n                \"payload\": {\n                    \"mkey\": \"{{device-admin}}\",\n                    \"old_password\": \"{{device-password}}\",\n                    \"new_password\": \"{{device-password}}\"\n                }\n            },\n            \"url\": \"/sys/proxy/json\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scripts",
+			"item": [
+				{
+					"name": "List scripts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>type</td>",
+									"            <td>taget</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{type}}</td>",
+									"                <td>{{target}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [\n        {\n            \"data\": {\n                \"adom\": \"{{adom}}\"\n            },\n            \"url\": \"/dvmdb/script\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create script",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"set\",\n    \"params\": [\n        {\n            \"data\": {\n                \"target\": \"device_database\",\n                \"type\": \"cli\",\n                \"name\": \"{{script}}\",\n                \"content\": \"config system global\\nset admintimeout 400\\nend\\n\"\n            },\n            \"url\": \"/dvmdb/script\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Run script",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// save last task ID",
+									"try {",
+									"    let taskId = JSON.parse(responseBody)[\"result\"][0].data.task;",
+									"    pm.environment.set(\"lastTask\", taskId);",
+									"    // visualize",
+									"    pm.visualizer.set(\"<html><body><span>Started task ID \" + taskId + \"</span></body></html>\");",
+									"} catch(err) {",
+									"  pm.visualizer.set(\"<html><body><span style='color:red'>Response parsing error: \"+err.message+\"</span></body></html>\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"exec\",\n    \"params\": [\n        {\n            \"data\": {\n                \"adom\": \"{{adom}}\",\n                \"package\": \"{{policy-package}}\",\n                \"scope\" : [\n                    {\n                        \"name\": \"{{device}}\",\n                        \"vdom\": \"{{vdom}}\"\n                    }\n                ],\n                \"script\": \"{{script}}\"\n            },\n            \"url\": \"/dvmdb/script/execute\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete script",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"delete\",\n    \"params\": [\n        {\n            \"data\": {\n                \"adom\": \"{{adom}}\"\n            },\n            \"url\": \"/dvmdb/script/{{script}}\"\n        }\n    ],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Last task status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize it",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"<h2>Status of task #{{result.0.data.id}}</h2>",
+									"",
+									"<table>",
+									"<tr><td>Title:</td><td>{{result.0.data.title}}</td></tr>",
+									"<tr><td>Percentage:</td><td>{{result.0.data.percent}}</td></tr>",
+									"<tr><td>Status:</td><td>{{result.0.data.line.0.detail}}</td></tr>",
+									"</table>",
+									"",
+									"<h2>History of task #{{result.0.data.id}}</h2>",
+									"",
+									"<table>",
+									"    <thead>",
+									"        <tr><td>Percentage</td><td>Name</td><td>Details</td></tr>",
+									"    </thead>",
+									"    <tbody>",
+									"        {{#each result.0.data.line}}",
+									"        {{#each history}}",
+									"        <tr>",
+									"            <td>{{percent}}</td>",
+									"            <td>{{name}}</td>",
+									"            <td>{{detail}}</td>",
+									"        </tr>",
+									"        {{/each}}",
+									"        {{/each}}",
+									"    </tbody>",
+									"</table>",
+									"",
+									"</body>",
+									"</html>",
+									"`",
+									"response = JSON.parse(responseBody);",
+									"// reverse history order",
+									"//response.result[0].data.line.reverse();",
+									"response.result[0].data.line.forEach(element => element.history.reverse());",
+									"//",
+									"pm.visualizer.set(template, response)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"method\": \"get\",\n  \"params\": [\n    {\n      \"url\": \"/task/task/{{lastTask}}\"\n    }\n  ],\n  \"session\": \"{{fmg-session}}\",\n  \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Work in progress",
+			"item": [
+				{
+					"name": "List scripts outputs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No reported error in response\", () => {",
+									"    let code = pm.response.json()['result'][0]['status']['code'];",
+									"    let msg = pm.response.json()['result'][0]['status']['message'];",
+									"    pm.expect(code).to.eq(0, msg);",
+									"});",
+									"",
+									"// visualize",
+									"let template = `",
+									"<html>",
+									"<head>",
+									"    <style>",
+									"        td {",
+									"            padding: 5px 10px 5px 10px;",
+									"        }",
+									"",
+									"        thead td {",
+									"            font-weight: bold;",
+									"        }",
+									"    </style>",
+									"</head>",
+									"<body>",
+									"    <table>",
+									"        <thead>",
+									"        <tr>",
+									"            <td>name</td>",
+									"            <td>type</td>",
+									"            <td>taget</td>",
+									"        </tr>",
+									"        </thead>",
+									"        <tbody>",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{name}}</td>",
+									"                <td>{{type}}</td>",
+									"                <td>{{target}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"        </tbody>",
+									"    </table>",
+									"</body></html>",
+									"`;",
+									"",
+									"",
+									"let responseData = JSON.parse(responseBody)[\"result\"][0][\"data\"];",
+									"pm.visualizer.set(template, {",
+									"    response: responseData",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"get\",\n    \"params\": [{\n            \"url\": \"/dvmdb/global/script/log/summary\"\n    }],\n    \"session\": \"{{fmg-session}}\",\n    \"verbose\": 1,\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://10.128.156.36:443/jsonrpc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://10.128.156.36:443/jsonrpc",
+							"protocol": "https",
+							"host": [
+								"10",
+								"128",
+								"156",
+								"36"
+							],
+							"port": "443",
+							"path": [
+								"jsonrpc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": " http://localhost:3001/api/generate-certificate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"serverName\": \"ibue1pfntfmg05\", \"serverIp\": \"10.128.144.132\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/generate-certificate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"generate-certificate"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

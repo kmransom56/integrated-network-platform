@@ -127,14 +127,14 @@ class NetworkDataFormatter:
 
         if vendor == 'fortinet':
             if 'fortigate' in model:
-                return 'models/fortinet/FortiGate_600E.glb'
+                return 'models/assets/fortinet/FG-600E.glb'
             elif 'fortiswitch' in model:
-                return 'models/fortinet/FortiSwitch_148E.glb'
+                return 'models/assets/fortinet/FS-148E.glb'
             elif 'fortiap' in model:
-                return 'models/fortinet/FortiAP_432F.glb'
+                return 'models/assets/fortinet/FAP-432F.glb'
 
         # Default model
-        return 'models/device_generic.glb'
+        return 'models/assets/server.glb'
 
     @staticmethod
     def _get_icon_path(device: Dict[str, Any]) -> Optional[str]:

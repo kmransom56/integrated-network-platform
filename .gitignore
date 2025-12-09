@@ -1,83 +1,43 @@
+# System
+.DS_Store
+Thumbs.db
+
 # Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
+*.pyc
+*.pyo
+*.pyd
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Virtual environments
+env/
 venv/
 .venv/
-ENV/
-env/
-.ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment
+.env
+.env.local
+
+# Project Specific - Archives & Legacy
+archive/
+archived_projects/
+
+# Logs & Temporary Output
+logs/
+*.log
+exports/
+static/
 
 # IDE
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
+*.code-workspace
 
-# OS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Local Databases & Caches
+*.db
+*.sqlite
+data/mac_vendor_cache.db
 
-# Logs
-*.log
-logs/
-
-# Data and exports (can be large)
-data/
-exports/
-assets/models/
-assets/icons/
-!assets/models/.gitkeep
-!assets/icons/.gitkeep
-
-# Configuration (sensitive)
-config.local.yaml
-.env
-.env.local
-.env.production
-.env.development
-
-# Temporary files
-*.tmp
-*.bak
-.cache/
-
-# Test outputs
-.coverage
-.pytest_cache/
-htmlcov/
-.tox/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Network device credentials and data
-credentials/
-device_data/
-network_configs/
+# Models (Optional - if library is too large)
+models/library/
+*.pdf

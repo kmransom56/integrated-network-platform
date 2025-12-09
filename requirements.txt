@@ -13,6 +13,7 @@ pyyaml>=6.0
 # Development and testing
 pytest>=7.4.0
 pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
 
 # Optional: For enhanced image processing (uncomment if needed)
 # Pillow>=10.0.0
@@ -20,3 +21,9 @@ pytest-asyncio>=0.21.0
 
 # Optional: For 3D model processing (uncomment if needed)
 # pygltflib>=1.0.0
+meraki>=1.38.0
+mac-vendor-lookup>=0.1.0
+
+# Quality and Optimization
+ruff>=0.1.0
+mypy>=1.0.0

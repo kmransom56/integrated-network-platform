@@ -1,0 +1,4768 @@
+{
+  "version": "1.0",
+  "generated": "1764637854.1031516",
+  "total_models": 529,
+  "models": [
+    {
+      "name": "FortiSwitch",
+      "type": "fortiswitch",
+      "svgPath": "/optimized_svgs/FortiSwitch.svg",
+      "tags": [
+        "optimized_svgs",
+        "fortiswitch"
+      ]
+    },
+    {
+      "name": "FortiAP",
+      "type": "fortiap",
+      "svgPath": "/optimized_svgs/FortiAP.svg",
+      "tags": [
+        "optimized_svgs",
+        "fortiap"
+      ]
+    },
+    {
+      "name": "FortiGate",
+      "type": "fortigate",
+      "svgPath": "/optimized_svgs/FortiGate.svg",
+      "tags": [
+        "optimized_svgs",
+        "fortigate"
+      ]
+    },
+    {
+      "name": "Laptop",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Laptop.svg",
+      "tags": [
+        "optimized_svgs",
+        "generic"
+      ]
+    },
+    {
+      "name": "Smartphone",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Smartphone.svg",
+      "tags": [
+        "optimized_svgs",
+        "generic"
+      ]
+    },
+    {
+      "name": "FNR-3500F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiNDR_Series_R2_2025Q2/FNR-3500F__F_.svg",
+      "tags": [
+        "FortiNDR_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FNR-3600G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiNDR_Series_R2_2025Q2/FNR-3600G.svg",
+      "tags": [
+        "FortiNDR_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FNR-1000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiNDR_Series_R2_2025Q2/FNR-1000F__F_.svg",
+      "tags": [
+        "FortiNDR_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortIRecorder",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortIRecorder.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiCNAPP",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiCNAPP.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Generic_-_VM",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Generic_-_VM.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiGSLB",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiGSLB.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiDDoS",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiDDoS.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiCamera",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiCamera.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiAppSec_Cloud",
+      "type": "fortiap",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiAppSec_Cloud.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "fortiap"
+      ]
+    },
+    {
+      "name": "FortiTester",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiTester.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiData",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiData.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Appliance_-_5U",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Appliance_-_5U.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiMonitor",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiMonitor.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiSIEM",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiSIEM.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Appliance_-_Servers",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Appliance_-_Servers.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiWeb",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiWeb.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiMail",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiMail.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiAIOps",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiAIOps.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiCloud",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiCloud.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Appliance_-_Small_Chassis",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Appliance_-_Small_Chassis.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiDeceptor",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiDeceptor.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiManager",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiManager.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiAuthenticator",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiAuthenticator.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiCASB",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiCASB.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiIsolator",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiIsolator.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiVoice",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiVoice.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Generic_-_Router",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Generic_-_Router.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiSRA",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiSRA.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Appliance_-_1U",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Appliance_-_1U.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiAI",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiAI.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiSwitch",
+      "type": "fortiswitch",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiSwitch.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "fortiswitch"
+      ]
+    },
+    {
+      "name": "FortiEDR",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiEDR.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiNAC",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiNAC.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiAP",
+      "type": "fortiap",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiAP.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "fortiap"
+      ]
+    },
+    {
+      "name": "FortiGate",
+      "type": "fortigate",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiGate.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "fortigate"
+      ]
+    },
+    {
+      "name": "Appliance_-_Desktop",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Appliance_-_Desktop.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiNDR",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiNDR.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Appliance_-_2U",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Appliance_-_2U.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Appliance_-_3U",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Appliance_-_3U.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiSOAR",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiSOAR.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Generic_-_Hosted_Svc",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Generic_-_Hosted_Svc.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiExtender",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiExtender.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Generic_-_Container",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Generic_-_Container.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "User_-_Mutiple",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/User_-_Mutiple.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Generic_-_Data",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Generic_-_Data.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiPAM",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiPAM.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiGuard",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiGuard.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Appliance_-_Large_Chassis",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Appliance_-_Large_Chassis.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiToken",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiToken.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Generic_-_Firewall",
+      "type": "fortigate",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Generic_-_Firewall.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "fortigate"
+      ]
+    },
+    {
+      "name": "FortiAnalyzer",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiAnalyzer.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiDLP",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiDLP.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiCNP",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiCNP.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiProxy",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiProxy.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiSandbox",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiSandbox.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiRecon",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiRecon.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiADC",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiADC.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "User_-_SIngle",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/User_-_SIngle.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Generic_-_Application",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Generic_-_Application.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiClient",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/FortiClient.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Generic_-_Cloud",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Icons_new_R2_2025Q2/Generic_-_Cloud.svg",
+      "tags": [
+        "Fortinet_Icons_new_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "SFP_Fiber_GE_Transceiver",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/SFP_Fiber_GE_Transceiver.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "FEX-511F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/FEX-511F__F_.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "SFP__10GE_Transceiver",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/SFP__10GE_Transceiver.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "SFP_RJ45_GE_Transceiver",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/SFP_RJ45_GE_Transceiver.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "FEX-40D__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/FEX-40D__F_.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiRPS-100__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/FortiRPS-100__R_.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "FEX-20D__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/FEX-20D__F_.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "QSFP__40GE___QSF28_100GE_Transceiver",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/QSFP__40GE___QSF28_100GE_Transceiver.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "FEX-201_211E_202E_212E__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/FEX-201_211E_202E_212E__R_.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "FRPS-740__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Fortinet_Accessories_and_Other Products_R4_2021Q3/FRPS-740__R_.svg",
+      "tags": [
+        "Fortinet_Accessories_and_Other Products_R4_2021Q3",
+        "generic"
+      ]
+    },
+    {
+      "name": "FNC-CA-500F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiNAC_Series_R1_2024Q2/FNC-CA-500F__F_.svg",
+      "tags": [
+        "FortiNAC_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FNC-M-550F_CA-600F_CA-700F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiNAC_Series_R1_2024Q2/FNC-M-550F_CA-600F_CA-700F__F_.svg",
+      "tags": [
+        "FortiNAC_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FON-860i__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FON-860i__F_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FVC-100D8__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FVC-100D8__F_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FVC-180D8__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FVC-180D8__F_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FVC-300DT__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FVC-300DT__F_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FVC-70D4__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FVC-70D4__R_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FVC-40D2__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FVC-40D2__R_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FVE-20E2",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FVE-20E2.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FGV-70D4__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FGV-70D4__R_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiFone__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FortiFone__F_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FVC-180DT__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FVC-180DT__F_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiFone_Cordless_Base__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FortiFone_Cordless_Base__F_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FVE-20E4",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FVE-20E4.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FVC-100DT__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiVoice_Series_R2_2025Q2/FVC-100DT__F_.svg",
+      "tags": [
+        "FortiVoice_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDC-1000G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDeceptor_Series_R1_2024Q2/FDC-1000G__F_.svg",
+      "tags": [
+        "FortiDeceptor_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDC-100G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDeceptor_Series_R1_2024Q2/FDC-100G__F_.svg",
+      "tags": [
+        "FortiDeceptor_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDR-100G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDeceptor_Series_R1_2024Q2/FDR-100G__F_.svg",
+      "tags": [
+        "FortiDeceptor_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-3032E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-3032E__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSR-424F-POE__CF_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSR-424F-POE__CF_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-2048F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-2048F.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-1024D__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-1024D__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124F__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSR-108F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSR-108F.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-548D-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-548D-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-248D-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-248D-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-1024E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-1024E__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-448D-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-448D-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-224D-POE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-224D-POE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-448D-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-448D-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-148F-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-148F-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-108E-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-108E-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-110G-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-110G-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-224E-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-224E-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-1048E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-1048E__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124E.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-424E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-424E__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-248D-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-248D-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-324B-POE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-324B-POE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124F-FPOE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124F-FPOE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-524D-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-524D-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-108F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-108F.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124D-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124D-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-424E-PoE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-424E-PoE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-T1024E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-T1024E__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-624F_-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-624F_-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-148F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-148F.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-1048D__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-1048D__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124F-POE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124F-POE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124G.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124B-POE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124B-POE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124E-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124E-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-424D-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-424D-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-3032D__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-3032D__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124G-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124G-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-108E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-108E.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-108E-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-108E-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-448D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-448D.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-28C__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-28C__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-108F-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-108F-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-108D-POE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-108D-POE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-248E-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-248E-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-448E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-448E.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-424F-FPOE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-424F-FPOE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-424D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-424D.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-448E-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-448E-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-548D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-548D.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-80-POE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-80-POE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSR-216F-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSR-216F-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-348B__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-348B__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-648F_-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-648F_-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-M426E-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-M426E-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSR-112F-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSR-112F-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-248D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-248D.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-524D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-524D.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-224D-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-224D-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-148F-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-148F-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSR-112D-POE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSR-112D-POE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-248E-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-248E-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-224B-POE__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-224B-POE__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124E-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124E-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-448E-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-448E-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-424D-FPOE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-424D-FPOE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-124D__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-124D__F_.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-424E-Fiber",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-424E-Fiber.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSW-108F-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSwitch_Series_R14_2025Q2/FSW-108F-POE.svg",
+      "tags": [
+        "FortiSwitch_Series_R14_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FEX-101F__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiExtender_Series_R2_2025Q2/FEX-101F__R_.svg",
+      "tags": [
+        "FortiExtender_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FBS-10F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiExtender_Series_R2_2025Q2/FBS-10F.svg",
+      "tags": [
+        "FortiExtender_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FEV-211F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiExtender_Series_R2_2025Q2/FEV-211F.svg",
+      "tags": [
+        "FortiExtender_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FEX-511G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiExtender_Series_R2_2025Q2/FEX-511G.svg",
+      "tags": [
+        "FortiExtender_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FEX-212F__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiExtender_Series_R2_2025Q2/FEX-212F__R_.svg",
+      "tags": [
+        "FortiExtender_Series_R2_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-3000D-FSX__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-3000D-FSX__R_.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-400E__CF_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-400E__CF_.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-1000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-1000F__F_.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-400F__CF_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-400F__CF_.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-600F__CF_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-600F__CF_.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-4000D__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-4000D__R_.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-2000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-2000F__F_.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-100D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-100D.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-4000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-4000F__F_.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWB-3000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiWeb_Series_R1_2024Q2/FWB-3000F__F_.svg",
+      "tags": [
+        "FortiWeb_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPX-400E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiProxy_Series_R1_2024Q2/FPX-400E__F_.svg",
+      "tags": [
+        "FortiProxy_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPX-2000G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiProxy_Series_R1_2024Q2/FPX-2000G__R_.svg",
+      "tags": [
+        "FortiProxy_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPX-2000E__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiProxy_Series_R1_2024Q2/FPX-2000E__R_.svg",
+      "tags": [
+        "FortiProxy_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPX-4000G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiProxy_Series_R1_2024Q2/FPX-4000G__R_.svg",
+      "tags": [
+        "FortiProxy_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPX-400G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiProxy_Series_R1_2024Q2/FPX-400G__F_.svg",
+      "tags": [
+        "FortiProxy_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPX-4000E__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiProxy_Series_R1_2024Q2/FPX-4000E__R_.svg",
+      "tags": [
+        "FortiProxy_Series_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-1000D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-1000D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "SFP_Fiber_GE_Transceiver",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/SFP_Fiber_GE_Transceiver.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-92D_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-92D_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "QSFP__40GE_Transceiver",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/QSFP__40GE_Transceiver.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3400E_3401E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3400E_3401E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-80F-DSL",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-80F-DSL.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-400E-Bypass",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-400E-Bypass.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3600E_3601E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3600E_3601E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FortiGate_Shelf_Manager",
+      "type": "fortigate",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FortiGate_Shelf_Manager.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "fortigate"
+      ]
+    },
+    {
+      "name": "FIM-7921F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FIM-7921F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3300E_3301E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3300E_3301E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3980E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3980E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-4800_4801F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-4800_4801F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-240D-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-240D-POE.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3500_3501F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3500_3501F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-40_41F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-40_41F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-300C",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-300C.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-140D-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-140D-POE.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-90_91G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-90_91G.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-5001C",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-5001C.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "fG-900_901G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/fG-900_901G.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-98D-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-98D-POE.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-90D_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-90D_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-5001D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-5001D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-60E-DSL",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-60E-DSL.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-7121F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-7121F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-50G-DSL",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-50G-DSL.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-50E_51E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-50E_51E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3800D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3800D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-4200_4201F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-4200_4201F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FIM-7904E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FIM-7904E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-80D_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-80D_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-300D_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-300D_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-140E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-140E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-30E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-30E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FCTRL-5103B",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FCTRL-5103B.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FCTRL-5902D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FCTRL-5902D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-60D-POE_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-60D-POE_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-400E_401E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-400E_401E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-60_61F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-60_61F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWF-80_81F-2R",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FWF-80_81F-2R.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-400_401F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-400_401F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-2500E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-2500E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-70G-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-70G-POE.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-5101C",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-5101C.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3000D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3000D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-500E_501E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-500E_501E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-200_201G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-200_201G.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-90_91E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-90_91E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3700D_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3700D_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-2600_2601F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-2600_2601F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "SFP__10GE_Transceiver",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/SFP__10GE_Transceiver.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-1200D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-1200D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-240D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-240D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "SFP_RJ45_GE_Transceiver",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/SFP_RJ45_GE_Transceiver.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FCTRL-5913C",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FCTRL-5913C.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-60D_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-60D_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-4400_4401F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-4400_4401F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-600_601F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-600_601F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FGR-30D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FGR-30D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-100F_101F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-100F_101F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-30G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-30G.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Antenna__LS_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/Antenna__LS_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-5060",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-5060.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3200_3201F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3200_3201F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FGR-90D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FGR-90D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-1100E_1101E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-1100E_1101E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-100_101E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-100_101E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FIM-7901E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FIM-7901E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3200D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3200D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3700_3701F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3700_3701F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "CFP2_100GE_Transceiver",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/CFP2_100GE_Transceiver.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-200_201E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-200_201E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-70G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-70G.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-90D-POE_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-90D-POE_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3810D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3810D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-140E-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-140E-POE.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-60E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-60E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG_FWF-50G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG_FWF-50G.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-7081F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-7081F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FGR-60F_-3G4G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FGR-60F_-3G4G.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-900D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-900D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-70D_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-70D_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FIM-7910E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FIM-7910E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-400D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-400D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-600C",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-600C.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-500D_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-500D_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-5020",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-5020.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3960E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3960E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-120_121F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-120_121F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPM-7620E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FPM-7620E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-200_201F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-200_201F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-300E_301E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-300E_301E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-140D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-140D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FIM-7920E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FIM-7920E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-100EF",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-100EF.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-800D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-800D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-800C",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-800C.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Antenna__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/Antenna__F_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-70_71F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-70_71F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPM-7620F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FPM-7620F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-200D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-200D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FGR-70F-3G4G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FGR-70F-3G4G.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-7030E_Chassis",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-7030E_Chassis.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FGR-70F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FGR-70F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-2200E_2201E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-2200E_2201E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "Antenna__RS_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/Antenna__RS_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-100D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-100D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-94D-POE_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-94D-POE_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3100D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3100D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3815D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3815D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-200D-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-200D-POE.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FGR-50G-5G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FGR-50G-5G.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-1500D_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-1500D_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-7040E_Chassis",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-7040E_Chassis.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-2000E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-2000E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-50G-SFP-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-50G-SFP-POE.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-1500DT",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-1500DT.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-3000_3001F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-3000_3001F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-7060E_Chassis",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-7060E_Chassis.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-70D-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-70D-POE.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-1800_1801F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-1800_1801F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-80_81E_-POE_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-80_81E_-POE_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FGR-60D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FGR-60D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-6x00F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-6x00F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-1000_1001F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-1000_1001F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-60E-POE",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-60E-POE.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-50G-SFP",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-50G-SFP.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-600E_601E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-600E_601E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FGR-35D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FGR-35D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FCTRL-5903C",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FCTRL-5903C.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-80_81F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-80_81F.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-600D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-600D.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FG-5144C__CF_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FG-5144C__CF_.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPM-7630E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiGate_Series_R22_2025Q2/FPM-7630E.svg",
+      "tags": [
+        "FortiGate_Series_R22_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "WLC-1000D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/WLC-1000D.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-U432F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-U432F__F_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "WLM-100D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/WLM-100D.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-231K",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-231K.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-S311C_321C__3FR_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-S311C_321C__3FR_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-221B_221C_321C__3FR_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-221B_221C_321C__3FR_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-U234F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-U234F__F_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-U431_433F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-U431_433F.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-224E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-224E.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-432F_234F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-432F_234F__F_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-U221_223EV_31",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-U221_223EV_31.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-222E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-222E.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-U321_323EV",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-U321_323EV.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "WLC-500D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/WLC-500D.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-231E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-231E.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-421_423E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-421_423E.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "WLC-50D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/WLC-50D.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-234G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-234G__R_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-U221_223EV",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-U221_223EV.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-23JF__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-23JF__F_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "WLC-3000D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/WLC-3000D.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-320B_320C__3FR_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-320B_320C__3FR_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-221_223E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-221_223E.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "WLM-1000D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/WLM-1000D.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-321E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-321E.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "GPI-115_13",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/GPI-115_13.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "WLC-200D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/WLC-200D.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-U422EV",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-U422EV.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-S313C_323C__3FR_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-S313C_323C__3FR_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-U421_423EV",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-U421_423EV.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-231F_233F_431F_433F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-231F_233F_431F_433F.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-223B_223C__3FR_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-223B_223C__3FR_.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-243K",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-243K.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAP-241K",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiAP Series_R8_2025Q2/FAP-241K.svg",
+      "tags": [
+        "FortiAP Series_R8_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS220-24_24P-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS220-24_24P-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-8LP-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-8LP-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS320-48_48FP_48LP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS320-48_48FP_48LP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS355-24X-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS355-24X-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-48-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-48-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-24P-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-24P-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-8FP-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-8FP-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "GR10-HW-UK_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/GR10-HW-UK_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-48LP-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-48LP-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX250-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX250-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS320-24_24P-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS320-24_24P-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-48FP-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-48FP-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MV12WE-HW_Side",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MV12WE-HW_Side.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR20-HW_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR20-HW_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MV32-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MV32-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "Z3C-HW-NA_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/Z3C-HW-NA_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX400-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX400-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS425-32-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS425-32-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR30H-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR30H-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-48-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-48-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-48FP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-48FP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX67C-HW-NA_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX67C-HW-NA_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "GR60-HW-UK_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/GR60-HW-UK_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX68CW-HW-NA_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX68CW-HW-NA_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS410-32-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS410-32-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-48-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-48-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX64-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX64-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX68-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX68-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR42E-HW_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR42E-HW_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MC74-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MC74-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "SME_Licenses",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/SME_Licenses.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-24-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-24-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS355-48X2-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS355-48X2-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-24-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-24-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX80-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX80-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MV12N-HW_Side",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MV12N-HW_Side.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS220-48_48FP_48LP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS220-48_48FP_48LP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX67W-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX67W-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX600-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX600-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS225-48-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS225-48-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX65-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX65-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR52_MR53-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR52_MR53-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-8-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-8-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR72_MR84-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR72_MR84-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-48LP-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-48LP-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR18_MR26-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR18_MR26-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-24P-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-24P-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-24-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-24-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX67C-HW-WW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX67C-HW-WW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS420-24-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS420-24-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS425-32-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS425-32-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS220-8_8P-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS220-8_8P-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "GR60-HW-EU_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/GR60-HW-EU_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS355-24X2-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS355-24X2-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS350-24X-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS350-24X-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS125-48LP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS125-48LP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS350-24_24P-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS350-24_24P-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-48LP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-48LP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX68W-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX68W-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS225-24-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS225-24-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR55-HW_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR55-HW_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS125-24P-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS125-24P-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR45-HW_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR45-HW_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-48FP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-48FP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX64W-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX64W-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "Z3C-HW-WW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/Z3C-HW-WW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS225-48-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS225-48-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR32_MR34_MR42-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR32_MR34_MR42-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-24-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-24-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS225-24-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS225-24-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MG21-HW-NA___MG21-HW-WW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MG21-HW-NA___MG21-HW-WW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-8LP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-8LP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-48-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-48-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MV22-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MV22-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX68CW-HW-WW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX68CW-HW-WW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-48LP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-48LP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-24P-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-24P-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS355-48X-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS355-48X-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "Z1-HW-xx",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/Z1-HW-xx.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "Z3-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/Z3-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR70-HW_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR70-HW_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS350-48_48FP_48LP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS350-48_48FP_48LP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MG21E-HW-NA___MG21E-HW-WW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MG21E-HW-NA___MG21E-HW-WW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS425-16-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS425-16-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX84-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX84-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS420-48-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS420-48-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS450-12_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS450-12_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX64-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX64-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS125-24-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS125-24-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX65W-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX65W-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MV71-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MV71-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX450-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX450-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX100-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX100-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MI_Series",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MI_Series.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR66-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR66-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS125-48FP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS125-48FP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-48FP-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-48FP-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-8FP-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-8FP-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS120-8-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS120-8-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MV12W-HW_Side",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MV12W-HW_Side.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS125-48-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS125-48-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS425-16-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS425-16-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "GR10-HW-EU_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/GR10-HW-EU_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MX67-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MX67-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MV72-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MV72-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS410-16-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS410-16-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MV21-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MV21-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "GR10-HW-US_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/GR10-HW-US_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "GR60-HW-US_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/GR60-HW-US_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MS210-24P-HW_Rear",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MS210-24P-HW_Rear.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR62-HW_Front",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR62-HW_Front.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "MR53E-HW_Top",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/Security - Cisco Meraki/MR53E-HW_Top.svg",
+      "tags": [
+        "Security - Cisco Meraki",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-300F__FMG-200F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-300F__FMG-200F__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-200F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-200F.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMR-3000D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMR-3000D.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDB-500D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FDB-500D.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWN-3000B",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FWN-3000B.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FXX-3000E__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FXX-3000E__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-400G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-400G__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-800G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-800G.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FML-3000F__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FML-3000F__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FXX-1000D__CF_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FXX-1000D__CF_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FXX-400C__FAZ_FMG_300D__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FXX-400C__FAZ_FMG_300D__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG_FAZ-3700G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG_FAZ-3700G__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-1000F__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-1000F__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-1000F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-1000F.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-1000E__B_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-1000E__B_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FML-60D",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FML-60D.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-1000E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-1000E__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-810G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-810G.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-400G__F__59",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-400G__F__59.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3500G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3500G__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3500E__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3500E__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-3000F__B_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-3000F__B_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FXX-3000D__FAZ-3000D_3000E__FMG-4000D_4000E__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FXX-3000D__FAZ-3000D_3000E__FMG-4000D_4000E__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWN-200B",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FWN-200B.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3900E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3900E__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3900E__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3900E__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-2000E__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-2000E__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-150G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-150G__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FML-2000F__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FML-2000F__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-400G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-400G__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPA-1000G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FPA-1000G__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-800F___FMG-300F__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-800F___FMG-300F__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-2000E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-2000E__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-2000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-2000F__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-3000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-3000F__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAO-500G",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAO-500G.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3700F_FMG-3700G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3700F_FMG-3700G__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-1000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-1000F__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3500E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3500E__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FPA-3000G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FPA-3000G__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FWN-1000B",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FWN-1000B.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-400E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-400E.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3000G_FMG-3000G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3000G_FMG-3000G__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-800F___FMG-300F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-800F___FMG-300F__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-400G__R__60",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-400G__R__60.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3700F_FMG-3700G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3700F_FMG-3700G__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3500G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3500G__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FXX-3000E__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FXX-3000E__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAC-3000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAC-3000F__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FAZ-3000G_FMG-3000G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FAZ-3000G_FMG-3000G__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FMG-410G__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FMG-410G__R_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FXX-200D__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2/FXX-200D__F_.svg",
+      "tags": [
+        "FAZ_FAC_FML_FMG_FMR_FPA_FAO_Series_R16_2025Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDD-200F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDDoS_Series_R2_2024Q2/FDD-200F__F_.svg",
+      "tags": [
+        "FortiDDoS_Series_R2_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDD-800B__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDDoS_Series_R2_2024Q2/FDD-800B__F_.svg",
+      "tags": [
+        "FortiDDoS_Series_R2_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDD-3000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDDoS_Series_R2_2024Q2/FDD-3000F__F_.svg",
+      "tags": [
+        "FortiDDoS_Series_R2_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDD-1000B__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDDoS_Series_R2_2024Q2/FDD-1000B__F_.svg",
+      "tags": [
+        "FortiDDoS_Series_R2_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDD-2000B__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDDoS_Series_R2_2024Q2/FDD-2000B__F_.svg",
+      "tags": [
+        "FortiDDoS_Series_R2_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDD-1500F",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDDoS_Series_R2_2024Q2/FDD-1500F.svg",
+      "tags": [
+        "FortiDDoS_Series_R2_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDD-400B__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDDoS_Series_R2_2024Q2/FDD-400B__F_.svg",
+      "tags": [
+        "FortiDDoS_Series_R2_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FDD-2000F__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiDDoS_Series_R2_2024Q2/FDD-2000F__F_.svg",
+      "tags": [
+        "FortiDDoS_Series_R2_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSA-500G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSandbox_R1_2024Q2/FSA-500G__F_.svg",
+      "tags": [
+        "FortiSandbox_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSA-1500G__F_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSandbox_R1_2024Q2/FSA-1500G__F_.svg",
+      "tags": [
+        "FortiSandbox_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSA-3000D__R_",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSandbox_R1_2024Q2/FSA-3000D__R_.svg",
+      "tags": [
+        "FortiSandbox_R1_2024Q2",
+        "generic"
+      ]
+    },
+    {
+      "name": "FSA-2000E",
+      "type": "generic",
+      "svgPath": "/optimized_svgs/FortiSandbox_R1_2024Q2/FSA-2000E.svg",
+      "tags": [
+        "FortiSandbox_R1_2024Q2",
+        "generic"
+      ]
+    }
+  ]
+}
